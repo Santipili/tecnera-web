@@ -1,5 +1,5 @@
 import Header from "@/components/Header";
-import { Features, FAQ, HeroCarousel, Services, Products } from "@/components/homeSections";
+import { Features, FAQ, HeroCarousel, Products } from "@/components/homeSections";
 
 export default function Home() {
   return (
