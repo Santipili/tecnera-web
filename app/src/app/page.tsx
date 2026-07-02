@@ -1,15 +1,15 @@
 import Header from "@/components/layout/Header";
-import { Features, FAQ, HeroCarrousel, Products } from "@/components/homeSections";
+import { Hero, Products, CustomDev, Features, FAQ } from "@/components/homeSections";
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-light dark:bg-dark transition-colors duration-300">
+    <div className="min-h-screen bg-light transition-colors duration-300">
       <Header />
       <main>
-        <HeroCarrousel />
-        <Features />
-        {/* <Services /> */}
+        <Hero />
         <Products />
+        <CustomDev />
+        <Features />
         <FAQ />
       </main>
     </div>

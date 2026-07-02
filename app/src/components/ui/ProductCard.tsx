@@ -22,16 +22,16 @@ const btnClass =
 
 export default function ProductCard({ title, description, features, image, href }: ProductCardProps) {
   return (
-    <div className="group rounded-2xl border border-primary/10 dark:border-white/10 bg-white dark:bg-card-bg overflow-hidden hover:border-secondary/40 hover:shadow-xl transition-all duration-300">
+    <div className="group rounded-2xl border border-primary/10 bg-white overflow-hidden hover:border-secondary/40 hover:shadow-xl transition-all duration-300">
       <div className="relative h-52 w-full bg-gradient-to-br from-primary/5 to-secondary/5">
         <Image src={image} alt={title} fill className="object-cover" />
       </div>
       <div className="p-7">
-        <h3 className="text-xl font-extrabold text-neutral dark:text-light">{title}</h3>
-        <p className="mt-2 text-sm text-subtext dark:text-white/60 leading-relaxed">{description}</p>
+        <h3 className="text-xl font-extrabold text-neutral">{title}</h3>
+        <p className="mt-2 text-sm text-subtext leading-relaxed">{description}</p>
         <ul className="mt-5 space-y-3">
           {features.map((feature, i) => (
-            <li key={i} className="flex items-start gap-2.5 text-sm text-neutral dark:text-white/80">
+            <li key={i} className="flex items-start gap-2.5 text-sm text-neutral">
               <svg className="h-5 w-5 text-secondary flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                 <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
               </svg>

@@ -3,7 +3,6 @@ import { Geist, Geist_Mono, Nunito } from "next/font/google";
 import "./globals.css";
 
 import Footer from "@/components/layout/Footer";
-import { ThemeProvider } from "@/components/layout/ThemeProvider";
 
 const nunito = Nunito({
   subsets: ["latin"],
@@ -32,17 +31,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="es" suppressHydrationWarning>
+    <html lang="es">
       <body className={`${geistSans.variable} ${geistMono.variable} ${nunito.variable} antialiased`}>
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `(function(){try{var t=localStorage.getItem('tecnera-theme');if(t==='dark'||(t===null&&window.matchMedia('(prefers-color-scheme:dark)').matches)){document.documentElement.classList.add('dark')}}catch(e){}})()`,
-          }}
-        />
-        <ThemeProvider>
-          {children}
-          <Footer />
-        </ThemeProvider>
+        {children}
+        <Footer />
       </body>
     </html>
   );
