@@ -14,14 +14,14 @@ const plans = [
     name: "Starter",
     price: "A consultar",
     desc: "Para organizaciones pequeñas que quieren dar sus primeros pasos digitales.",
-    features: ["Hasta 500 socios", "App para socios", "Panel de administración", "Soporte por email"],
+    features: ["Hasta 500 socios", "Mannaz", "Panel de administración", "Soporte por email"],
     highlight: false,
   },
   {
     name: "Pro",
     price: "A consultar",
     desc: "Para organizaciones en crecimiento que necesitan más capacidad y automatización.",
-    features: ["Socios ilimitados", "App para socios + Nexo", "Integraciones con sistemas existentes", "Reportes automáticos", "Soporte prioritario"],
+    features: ["Socios ilimitados", "Mannaz + Odal", "Integraciones con sistemas existentes", "Reportes automáticos", "Soporte prioritario"],
     highlight: true,
   },
   {
@@ -35,7 +35,7 @@ const plans = [
 
 export default function PreciosPage() {
   return (
-    <div className="min-h-screen bg-light dark:bg-dark">
+    <div className="min-h-screen bg-light">
       <Header />
       <main>
         {/* Hero */}
@@ -54,7 +54,7 @@ export default function PreciosPage() {
         </section>
 
         {/* Plans */}
-        <section className="py-24 bg-light dark:bg-dark">
+        <section className="py-24 bg-light">
           <div className="max-w-6xl mx-auto px-4 tablet:px-6 laptop:px-8">
             <div className="grid tablet:grid-cols-3 gap-8">
               {plans.map((plan, i) => (
@@ -63,7 +63,7 @@ export default function PreciosPage() {
                   className={`rounded-2xl p-8 shadow-lg relative flex flex-col ${
                     plan.highlight
                       ? "bg-gradient-to-br from-primary to-[#0A3D35] text-white ring-2 ring-secondary"
-                      : "bg-white dark:bg-card-bg"
+                      : "bg-white"
                   }`}
                 >
                   {plan.highlight && (
@@ -72,19 +72,19 @@ export default function PreciosPage() {
                     </span>
                   )}
                   <div className="mb-8">
-                    <h3 className={`text-xl font-extrabold mb-2 ${plan.highlight ? "text-white" : "text-neutral dark:text-light"}`}>
+                    <h3 className={`text-xl font-extrabold mb-2 ${plan.highlight ? "text-white" : "text-neutral"}`}>
                       {plan.name}
                     </h3>
-                    <p className={`text-2xl font-black mb-3 ${plan.highlight ? "text-secondary" : "text-primary dark:text-secondary"}`}>
+                    <p className={`text-2xl font-black mb-3 ${plan.highlight ? "text-secondary" : "text-primary"}`}>
                       {plan.price}
                     </p>
-                    <p className={`text-sm leading-relaxed ${plan.highlight ? "text-white/70" : "text-subtext dark:text-white/60"}`}>
+                    <p className={`text-sm leading-relaxed ${plan.highlight ? "text-white/70" : "text-subtext"}`}>
                       {plan.desc}
                     </p>
                   </div>
                   <ul className="space-y-3 mb-8 flex-1">
                     {plan.features.map((feature, j) => (
-                      <li key={j} className={`flex items-start gap-3 text-sm ${plan.highlight ? "text-white/90" : "text-neutral dark:text-white/80"}`}>
+                      <li key={j} className={`flex items-start gap-3 text-sm ${plan.highlight ? "text-white/90" : "text-neutral"}`}>
                         <Check className={`h-4 w-4 flex-shrink-0 mt-0.5 ${plan.highlight ? "text-secondary" : "text-secondary"}`} />
                         {feature}
                       </li>
@@ -96,7 +96,7 @@ export default function PreciosPage() {
                 </div>
               ))}
             </div>
-            <p className="text-center text-sm text-subtext dark:text-white/50 mt-10">
+            <p className="text-center text-sm text-subtext mt-10">
               Todos los precios son orientativos y se definen según las necesidades de cada organización.
             </p>
           </div>

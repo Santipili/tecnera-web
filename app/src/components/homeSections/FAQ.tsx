@@ -60,7 +60,7 @@ export default function FAQ() {
 
   return (
     // <section id="faq" className="py-24 bg-light">
-    <section id="faq" className="py-20 bg-white dark:bg-dark relative overflow-hidden transition-colors duration-300">
+    <section id="faq" className="py-20 bg-white relative overflow-hidden transition-colors duration-300">
       <div className="mx-auto max-w-3xl px-4 tablet:px-6 laptop:px-8">
         <SectionHeader
           tag="Preguntas frecuentes"
@@ -89,13 +89,13 @@ export default function FAQ() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.35, delay: index * 0.08 }}
               viewport={{ once: true }}
-              className="bg-gradient-to-br from-[#EAEAEA] to-white dark:from-card-bg dark:to-[#0d2420] rounded-xl shadow-lg overflow-hidden border-l-4 border-[#00A478] hover:shadow-xl transition-all duration-300"
+              className="bg-gradient-to-br from-[#EAEAEA] to-white rounded-xl shadow-lg overflow-hidden border-l-4 border-[#00A478] hover:shadow-xl transition-all duration-300"
             >
               <button
                 onClick={() => handleToggle(index)}
                 className="w-full px-6 py-5 flex items-center justify-between text-left hover:bg-white/50 transition-colors duration-200"
               >
-                <h3 className="text-lg md:text-xl text-[#005647] dark:text-secondary pr-4">
+                <h3 className="text-lg md:text-xl text-[#005647] pr-4">
                   {faq.question}
                 </h3>
                 <div className="flex-shrink-0 w-8 h-8 bg-[#005647] rounded-full flex items-center justify-center">
@@ -109,7 +109,7 @@ export default function FAQ() {
 
               {openIndex === index && (
                 <div className="px-6 pb-5 pt-0">
-                  <p className="text-[#3A3A3A] dark:text-white/70 leading-relaxed">
+                  <p className="text-[#3A3A3A] leading-relaxed">
                     {faq.answer}
                   </p>
                 </div>
@@ -118,7 +118,7 @@ export default function FAQ() {
           ))}
         </div>
 
-        <div className="mt-16 text-center bg-gradient-to-r from-[#005647] to-[#00A478] rounded-2xl p-8 text-white">
+        {/* <div className="mt-16 text-center bg-gradient-to-r from-[#005647] to-[#00A478] rounded-2xl p-8 text-white">
           <h3 className="text-2xl mb-4">
             ¿Tienes más preguntas?
           </h3>
@@ -135,7 +135,7 @@ export default function FAQ() {
               Contactar por WhatsApp
             </a>
           </div>
-        </div>
+        </div> */}
 
       </div>
     </section>

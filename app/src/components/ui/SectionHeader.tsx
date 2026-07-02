@@ -25,7 +25,7 @@ export default function SectionHeader({
         transition={{ duration: 0.5 }}
         viewport={{ once: true }}
         className={`text-3xl tablet:text-4xl font-extrabold tracking-tight leading-tight ${
-          dark ? "text-white" : "text-neutral dark:text-light"
+          dark ? "text-white" : "text-neutral"
         }`}
       >
         {title}
@@ -49,7 +49,7 @@ export default function SectionHeader({
           transition={{ duration: 0.5, delay: 0.15 }}
           viewport={{ once: true }}
           className={`mt-4 max-w-2xl text-base leading-relaxed ${
-            dark ? "text-white/70" : "text-subtext dark:text-white/60"
+            dark ? "text-white/70" : "text-subtext"
           } ${centered ? "mx-auto" : ""}`}
         >
           {description}

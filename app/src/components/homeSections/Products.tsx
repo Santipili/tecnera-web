@@ -6,15 +6,15 @@ import { products } from "@/data/products";
 
 export default function Products() {
   return (
-    <section id="productos" className="py-24 bg-[#EAEAEA] dark:bg-dark transition-colors duration-300">
+    <section id="productos" className="py-24 bg-[#EAEAEA] transition-colors duration-300">
       <div className="mx-auto max-w-7xl px-4 tablet:px-6 laptop:px-6">
         <SectionHeader
           tag="Productos"
-          title="Soluciones listas para tu organizacion"
+          title="Dejá atrás Excel, WhatsApp y procesos manuales."
           description="Herramientas probadas que se adaptan a tu realidad. Implementacion rapida, resultados desde el primer dia."
           centered
         />
-        <div className="grid grid-cols-1 tablet:grid-cols-2 laptop:grid-cols-3 gap-8 max-w-4xl laptop:max-w-5xl desktop:max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 tablet:grid-cols-2 gap-8 max-w-4xl mx-auto">
           {products.map((product, i) => (
             <motion.div
               key={i}

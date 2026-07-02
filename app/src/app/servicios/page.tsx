@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 
 export default function ServiciosPage() {
   return (
-    <div className="min-h-screen bg-light dark:bg-dark">
+    <div className="min-h-screen bg-light">
       <Header />
       <main>
         {/* Hero */}

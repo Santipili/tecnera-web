@@ -1,15 +1,16 @@
 import type { Metadata } from "next";
 import Header from "@/components/layout/Header";
 import Products from "@/components/homeSections/Products";
+import CustomDev from "@/components/homeSections/CustomDev";
 
 export const metadata: Metadata = {
   title: "Productos | Tecnera",
-  description: "Soluciones digitales para tu organización: App para Socios, Nexo y Desarrollos Personalizados.",
+  description: "Soluciones digitales para tu organización: Mannaz, Odal y Desarrollo Personalizado.",
 };
 
 export default function ProductosPage() {
   return (
-    <div className="min-h-screen bg-light dark:bg-dark">
+    <div className="min-h-screen bg-light">
       <Header />
       <main>
         <section className="py-24 bg-gradient-to-br from-primary via-[#0A3D35] to-primary text-white">
@@ -21,11 +22,12 @@ export default function ProductosPage() {
               Soluciones digitales para<br className="hidden tablet:block" /> cada necesidad
             </h1>
             <p className="text-white/80 text-lg max-w-2xl mx-auto leading-relaxed">
-              Desde apps móviles para socios hasta plataformas de datos. Cada producto está diseñado para organizaciones como la tuya.
+              Desde un CRM para afiliados hasta un ERP para operaciones. Cada producto está diseñado para organizaciones como la tuya.
             </p>
           </div>
         </section>
         <Products />
+        <CustomDev />
       </main>
     </div>
   );

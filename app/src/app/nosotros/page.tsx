@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 
 export default function NosotrosPage() {
   return (
-    <div className="min-h-screen bg-light dark:bg-dark">
+    <div className="min-h-screen bg-light">
       <Header />
       <main>
         {/* Hero */}
@@ -30,17 +30,17 @@ export default function NosotrosPage() {
         </section>
 
         {/* Historia */}
-        <section className="py-24 bg-light dark:bg-dark">
+        <section className="py-24 bg-light">
           <div className="max-w-5xl mx-auto px-4 tablet:px-6 laptop:px-8">
             <div className="grid laptop:grid-cols-2 gap-16 items-center">
               <div>
-                <h2 className="text-3xl font-extrabold text-neutral dark:text-light mb-6">
+                <h2 className="text-3xl font-extrabold text-neutral mb-6">
                   ¿Por qué existe Tecnera?
                 </h2>
-                <p className="text-subtext dark:text-white/70 leading-relaxed mb-5">
+                <p className="text-subtext leading-relaxed mb-5">
                   Vimos que las organizaciones —mutuales, clubes, cooperativas— seguían gestionando todo con planillas de Excel y sistemas que nadie quería usar. Mientras tanto, sus socios esperaban la misma experiencia digital que tenían en otras áreas de su vida.
                 </p>
-                <p className="text-subtext dark:text-white/70 leading-relaxed">
+                <p className="text-subtext leading-relaxed">
                   Decidimos construir herramientas específicas para ese segmento: simples, rápidas de implementar y económicamente accesibles para organizaciones de cualquier tamaño.
                 </p>
               </div>
@@ -55,9 +55,9 @@ export default function NosotrosPage() {
         </section>
 
         {/* Valores */}
-        <section className="py-24 bg-[#EAEAEA] dark:bg-[#0d2420]">
+        <section className="py-24 bg-[#EAEAEA]">
           <div className="max-w-7xl mx-auto px-4 tablet:px-6 laptop:px-8">
-            <h2 className="text-3xl font-extrabold text-neutral dark:text-light text-center mb-12">
+            <h2 className="text-3xl font-extrabold text-neutral text-center mb-12">
               Lo que nos guía
             </h2>
             <div className="grid tablet:grid-cols-2 laptop:grid-cols-4 gap-6">
@@ -69,12 +69,12 @@ export default function NosotrosPage() {
               ].map((value, i) => {
                 const Icon = value.icon;
                 return (
-                  <div key={i} className="bg-white dark:bg-card-bg rounded-2xl p-8 shadow-sm text-center">
+                  <div key={i} className="bg-white rounded-2xl p-8 shadow-sm text-center">
                     <div className="w-14 h-14 bg-gradient-to-br from-primary to-secondary rounded-xl flex items-center justify-center mx-auto mb-5">
                       <Icon className="w-7 h-7 text-white" />
                     </div>
-                    <h3 className="font-bold text-neutral dark:text-light mb-2">{value.title}</h3>
-                    <p className="text-sm text-subtext dark:text-white/60 leading-relaxed">{value.desc}</p>
+                    <h3 className="font-bold text-neutral mb-2">{value.title}</h3>
+                    <p className="text-sm text-subtext leading-relaxed">{value.desc}</p>
                   </div>
                 );
               })}
@@ -83,7 +83,7 @@ export default function NosotrosPage() {
         </section>
 
         {/* Stats */}
-        <section className="py-20 bg-light dark:bg-dark">
+        <section className="py-20 bg-light">
           <div className="max-w-4xl mx-auto px-4 tablet:px-6">
             <div className="grid grid-cols-3 gap-8 text-center">
               {[
@@ -93,7 +93,7 @@ export default function NosotrosPage() {
               ].map((stat, i) => (
                 <div key={i}>
                   <p className="text-4xl laptop:text-5xl font-black text-secondary mb-2">{stat.number}</p>
-                  <p className="text-sm text-subtext dark:text-white/60 leading-snug">{stat.label}</p>
+                  <p className="text-sm text-subtext leading-snug">{stat.label}</p>
                 </div>
               ))}
             </div>

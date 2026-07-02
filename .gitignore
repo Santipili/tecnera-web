@@ -46,5 +46,5 @@ skills-lock.json
 /docs
 
 /app/node_modules
-
+/app/.next
 package-lock.json
