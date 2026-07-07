@@ -16,7 +16,7 @@ export default function Header() {
   return (
     // <header className=" top-0 z-40 backdrop-blur bg-white/80 border-b border-neutral-200 transition-colors duration-300">
     <header className="bg-transparent top-0 z-40 backdrop-blur border-b border-neutral-200 transition-colors duration-300">
-      <nav className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      <nav className="w-full px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
         <Link href="/" className="flex items-center gap-3 flex-shrink-0">
           <Image
             src="/IMAGOTIPO_TECNERA_COLOR.png"
