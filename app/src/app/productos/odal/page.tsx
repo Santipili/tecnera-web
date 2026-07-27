@@ -3,6 +3,7 @@ import Image from "next/image";
 import Header from "@/components/layout/Header";
 import PrimaryCTAButton from "@/components/ui/PrimaryCTAButton";
 import WhatsappCTAButton from "@/components/ui/WhatsappCTAButton";
+import NeuralNetworkBackground from "@/components/ui/NeuralNetworkBackground";
 import { products } from "@/data/products";
 import {
   CheckCircle2,
@@ -120,30 +121,32 @@ function PlaceholderScreenshot({
 
 export default function OdalPage() {
   return (
-    <div className="min-h-screen bg-light">
+    <div className="min-h-screen">
       <Header />
       <main>
         {/* Hero */}
-        <section className="py-12 bg-gradient-to-br from-[#0095C7] via-[#005647] to-primary text-white">
-          <div className="max-w-7xl mx-auto px-4 tablet:px-6 laptop:px-8">
+        <section className="relative overflow-hidden bg-light py-12">
+          <div className="absolute inset-0 z-0">
+            <NeuralNetworkBackground className="h-full w-full" color="28, 28, 28" />
+          </div>
+          <div className="relative z-10 max-w-7xl mx-auto px-4 tablet:px-6 laptop:px-8">
             <div className="grid laptop:grid-cols-[minmax(0,0.9fr)_minmax(0,1.6fr)] gap-12 items-center">
               {/* Logo */}
               <div className="flex justify-center laptop:justify-start translate-y-2 laptop:-translate-x-24">
                 <div className="relative w-[30rem] h-[30rem] laptop:w-[39rem] laptop:h-[39rem] flex items-center justify-center">
-                  <div className="absolute inset-0 rounded-full bg-white/10 blur-2xl" />
                   <Image
                     src={product.logo}
                     alt={product.title}
                     width={490}
                     height={490}
-                    className="relative object-contain drop-shadow-2xl"
+                    className="relative object-contain"
                   />
                 </div>
               </div>
 
               {/* Card */}
-              <div className="ml-auto w-full max-w-2xl bg-white/10 backdrop-blur-md border border-white/15 rounded-2xl p-5 laptop:p-6 shadow-2xl">
-                <p className="text-white text-lg leading-relaxed mb-6">
+              <div className="ml-auto w-full max-w-2xl bg-white border border-primary/10 rounded-2xl p-5 laptop:p-6 shadow-lg shadow-black/30">
+                <p className="text-neutral text-lg leading-relaxed mb-6">
                   Odal centraliza reclamos, órdenes de trabajo, presupuestos e inspecciones en una sola
                   plataforma pensada para empresas de mantenimiento y servicios técnicos. Ordená tu operación
                   diaria y tomá decisiones con información real, actualizada y disponible en el momento en
@@ -161,7 +164,7 @@ export default function OdalPage() {
         {/* Dashboard */}
         <section className="py-24 bg-light">
           <div className="max-w-6xl mx-auto px-4 tablet:px-6 laptop:px-8">
-            <h2 className="text-3xl font-extrabold text-neutral text-center mb-3">
+            <h2 className="font-[family-name:var(--font-heading)] text-2xl tablet:text-3xl font-normal tracking-wide text-neutral text-center mb-3">
               Así se ve Odal por dentro
             </h2>
             <p className="text-subtext text-center max-w-2xl mx-auto mb-12 leading-relaxed">
@@ -186,7 +189,7 @@ export default function OdalPage() {
         {/* Customización */}
         <section className="py-24 bg-[#EAEAEA]">
           <div className="max-w-7xl mx-auto px-4 tablet:px-6 laptop:px-8">
-            <h2 className="text-3xl font-extrabold text-neutral text-center mb-3">
+            <h2 className="font-[family-name:var(--font-heading)] text-2xl tablet:text-3xl font-normal tracking-wide text-neutral text-center mb-3">
               Customización de la plataforma
             </h2>
             <p className="text-subtext text-center max-w-2xl mx-auto mb-12 leading-relaxed">
@@ -209,7 +212,7 @@ export default function OdalPage() {
         {/* Áreas relevantes */}
         <section className="py-24 bg-light">
           <div className="max-w-[88rem] mx-auto px-4 tablet:px-6 laptop:px-8">
-            <h2 className="text-3xl font-extrabold text-neutral text-center mb-16">
+            <h2 className="font-[family-name:var(--font-heading)] text-2xl tablet:text-3xl font-normal tracking-wide text-neutral text-center mb-16">
               Áreas relevantes
             </h2>
             <div className="flex flex-col gap-16">
@@ -252,7 +255,7 @@ export default function OdalPage() {
         {/* Pricing */}
         <section className="py-24 bg-[#EAEAEA]">
           <div className="max-w-6xl mx-auto px-4 tablet:px-6 laptop:px-8">
-            <h2 className="text-3xl font-extrabold text-neutral text-center mb-3">
+            <h2 className="font-[family-name:var(--font-heading)] text-2xl tablet:text-3xl font-normal tracking-wide text-neutral text-center mb-3">
               Planes y precios
             </h2>
             <p className="text-subtext text-center max-w-2xl mx-auto mb-12 leading-relaxed">

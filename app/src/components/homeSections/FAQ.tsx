@@ -1,12 +1,10 @@
 "use client";
 import { useState } from "react";
 import SectionHeader from "@/components/ui/SectionHeader";
-import { ChevronDown, ChevronUp } from 'lucide-react';
 import { motion } from "framer-motion";
 import { faqs } from "@/data/faq";
 import type { FAQItem } from "@/data/faq";
 
-//TODO: Reemplazar por el accordeon deseado
 function AccordionItem({
   item,
   isOpen,
@@ -17,126 +15,113 @@ function AccordionItem({
   onToggle: () => void;
 }) {
   return (
-    <div className={`border-b border-primary/10 transition-colors duration-200 ${isOpen ? "bg-white" : ""}`}>
+    <div className="border-b border-primary/10">
       <button
         onClick={onToggle}
-        className="flex w-full items-center justify-between py-6 px-2 text-left cursor-pointer group"
+        className="flex w-full items-center justify-between py-5 text-left cursor-pointer group"
       >
-        <span className="text-base font-bold text-neutral pr-4 group-hover:text-primary transition-colors">
+        <span className="text-sm font-bold text-neutral pr-4 group-hover:text-primary transition-colors">
           {item.question}
         </span>
-        <span className={`flex-shrink-0 h-8 w-8 rounded-full flex items-center justify-center transition-all duration-300 ${isOpen ? "bg-secondary/15 rotate-180" : "bg-primary/5 group-hover:bg-primary/10"}`}>
-          <svg
-            className="h-4 w-4 text-primary"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-            strokeWidth={2.5}
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M19 9l-7 7-7-7"
-            />
+        <span
+          className={`flex-shrink-0 h-8 w-8 rounded-full flex items-center justify-center bg-primary transition-all duration-300 ${
+            isOpen ? "rotate-180" : ""
+          }`}
+        >
+          <svg className="h-4 w-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+            <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
           </svg>
         </span>
       </button>
-      <div
-        className={`overflow-hidden transition-all duration-300 ease-in-out ${isOpen ? "max-h-96 pb-6" : "max-h-0"
-          }`}
-      >
-        <p className="text-sm text-subtext leading-relaxed px-2">{item.answer}</p>
+      <div className={`overflow-hidden transition-all duration-300 ease-in-out ${isOpen ? "max-h-96 pb-5" : "max-h-0"}`}>
+        <p className="text-sm text-subtext leading-relaxed">{item.answer}</p>
       </div>
     </div>
   );
 }
 
+const inputClass =
+  "w-full rounded-xl border border-primary/15 bg-light px-4 py-3 text-sm text-neutral placeholder:text-subtext focus:border-primary focus:outline-none transition-colors";
+
 export default function FAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
+  const [submitted, setSubmitted] = useState(false);
 
   const handleToggle = (index: number) => {
     setOpenIndex(openIndex === index ? null : index);
   };
 
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const data = Object.fromEntries(new FormData(e.currentTarget));
+    console.log({ action: "contacto_form_submit", source: "faq", data });
+    setSubmitted(true);
+    e.currentTarget.reset();
+  };
+
   return (
-    // <section id="faq" className="py-24 bg-light">
-    <section id="faq" className="py-20 bg-white relative overflow-hidden transition-colors duration-300">
-      <div className="mx-auto max-w-3xl px-4 tablet:px-6 laptop:px-8">
+    <section id="faq" className="relative py-24 transition-colors duration-300">
+      <div className="mx-auto max-w-[90rem] px-4 sm:px-6 lg:px-6">
         <SectionHeader
           tag="Preguntas frecuentes"
           title="Puede que ya tengamos la respuesta"
-          description="Las dudas mas comunes que recibimos de organizaciones como la tuya."
           centered
+          emphasize
         />
-        {/* <div className="rounded-2xl border border-primary/10 overflow-hidden">
-          {faqs.map((faq, index) => (
-            <AccordionItem
-              key={index}
-              item={faq}
-              isOpen={openIndex === index}
-              onToggle={() => handleToggle(index)}
-            />
-          ))}
-        </div> */}
 
-        {/* Otro modelo de accordeon, TODO: reemplazar por el deseado */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            viewport={{ once: true }}
+            className="rounded-[2rem] border border-primary/10 bg-white p-8 lg:p-10 shadow-lg shadow-black/30"
+          >
+            {faqs.map((faq, index) => (
+              <AccordionItem
+                key={index}
+                item={faq}
+                isOpen={openIndex === index}
+                onToggle={() => handleToggle(index)}
+              />
+            ))}
+          </motion.div>
 
-        <div className="space-y-4">
-          {faqs.map((faq, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.35, delay: index * 0.08 }}
-              viewport={{ once: true }}
-              className="bg-gradient-to-br from-[#EAEAEA] to-white rounded-xl shadow-lg overflow-hidden border-l-4 border-[#00A478] hover:shadow-xl transition-all duration-300"
-            >
-              <button
-                onClick={() => handleToggle(index)}
-                className="w-full px-6 py-5 flex items-center justify-between text-left hover:bg-white/50 transition-colors duration-200"
-              >
-                <h3 className="text-lg md:text-xl text-[#005647] pr-4">
-                  {faq.question}
-                </h3>
-                <div className="flex-shrink-0 w-8 h-8 bg-[#005647] rounded-full flex items-center justify-center">
-                  {openIndex === index ? (
-                    <ChevronUp className="w-5 h-5 text-white" />
-                  ) : (
-                    <ChevronDown className="w-5 h-5 text-white" />
-                  )}
-                </div>
-              </button>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+            viewport={{ once: true }}
+            className="rounded-[2rem] border border-primary/10 bg-light p-8 lg:p-10 shadow-lg shadow-black/30"
+          >
+            <h3 className="text-xl font-extrabold text-neutral">Contanos tu proyecto</h3>
+            <p className="mt-2 text-sm text-subtext leading-relaxed">
+              Dejanos tus datos y te respondemos a la brevedad.
+            </p>
 
-              {openIndex === index && (
-                <div className="px-6 pb-5 pt-0">
-                  <p className="text-[#3A3A3A] leading-relaxed">
-                    {faq.answer}
-                  </p>
-                </div>
-              )}
-            </motion.div>
-          ))}
+            {submitted ? (
+              <div className="mt-8 flex items-center gap-3 rounded-xl bg-secondary/10 px-4 py-4 text-sm font-bold text-primary">
+                <svg className="h-5 w-5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                </svg>
+                ¡Gracias! Recibimos tu mensaje y te vamos a contactar pronto.
+              </div>
+            ) : (
+              <form onSubmit={handleSubmit} className="mt-8 flex flex-col gap-4">
+                <input name="name" required placeholder="Nombre y apellido" className={inputClass} />
+                <input name="email" type="email" required placeholder="Email" className={inputClass} />
+                <input name="organization" placeholder="Organización" className={inputClass} />
+                <textarea name="message" required rows={4} placeholder="Contanos sobre tu proyecto o consulta" className={inputClass} />
+                <button
+                  type="submit"
+                  className="mt-2 inline-flex items-center justify-center gap-2 rounded-full bg-primary px-7 py-3.5 text-sm font-bold text-white hover:bg-secondary hover:text-primary transition-colors cursor-pointer w-fit"
+                >
+                  Enviar mensaje
+                </button>
+              </form>
+            )}
+          </motion.div>
         </div>
-
-        {/* <div className="mt-16 text-center bg-gradient-to-r from-[#005647] to-[#00A478] rounded-2xl p-8 text-white">
-          <h3 className="text-2xl mb-4">
-            ¿Tienes más preguntas?
-          </h3>
-          <p className="text-gray-100 mb-6">
-            Estamos aquí para ayudarte. Agenda una reunión o contáctanos por WhatsApp.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a
-              href="https://wa.me/5492235254045?text=Hola,%20vengo%20desde%20la%20web%20de%20Tecnera,%20necesitaría%20más%20información%20sobre%20el%20producto"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-block bg-white text-[#005647] px-8 py-3 rounded-lg hover:bg-[#00DBA0] transition-colors duration-300"
-            >
-              Contactar por WhatsApp
-            </a>
-          </div>
-        </div> */}
-
       </div>
     </section>
   );

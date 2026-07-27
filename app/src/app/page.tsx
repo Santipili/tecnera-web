@@ -1,15 +1,15 @@
 import Header from "@/components/layout/Header";
-import { Hero, Products, CustomDev, Features, FAQ } from "@/components/homeSections";
+import { Hero, Products, Features, Roadmap, FAQ } from "@/components/homeSections";
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-light transition-colors duration-300">
+    <div className="min-h-screen transition-colors duration-300">
       <Header />
       <main>
         <Hero />
         <Products />
-        <CustomDev />
         <Features />
+        <Roadmap />
         <FAQ />
       </main>
     </div>

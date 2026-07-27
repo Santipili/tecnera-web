@@ -23,15 +23,16 @@
   --color-card-bg: var(--card-bg);
   --color-border-color: var(--border-color);
 
-  --breakpoint-phone: 320px;
-  --breakpoint-tablet: 640px;
-  --breakpoint-tabletxl: 840px;
-  --breakpoint-laptop: 1024px;
-  --breakpoint-desktop: 1280px;
+  --breakpoint-phone: 20rem;
+  --breakpoint-tablet: 40rem;
+  --breakpoint-tabletxl: 52.5rem;
+  --breakpoint-laptop: 64rem;
+  --breakpoint-desktop: 80rem;
 
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
   --font-nunito: var(--font-nunito);
+  --font-heading: var(--font-heading-src);
 }
 
 body {

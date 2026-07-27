@@ -7,6 +7,7 @@ interface SectionHeaderProps {
   description?: string;
   centered?: boolean;
   dark?: boolean;
+  emphasize?: boolean;
 }
 
 export default function SectionHeader({
@@ -15,8 +16,10 @@ export default function SectionHeader({
   description,
   centered = false,
   dark = false,
+  emphasize = false,
 }: SectionHeaderProps) {
   void tag;
+  const emphasizeWidthRem = Math.max(6, Math.min(24, title.length * 0.24));
   return (
     <header className={`mb-12 ${centered ? "text-center" : ""}`}>
       <motion.h2
@@ -24,21 +27,23 @@ export default function SectionHeader({
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
         viewport={{ once: true }}
-        className={`text-3xl tablet:text-4xl font-extrabold tracking-tight leading-tight ${
-          dark ? "text-white" : "text-neutral"
+        className={`font-[family-name:var(--font-heading)] font-normal tracking-wide leading-snug ${
+          emphasize ? "text-2xl tablet:text-3xl [-webkit-text-stroke:1.5px_currentColor]" : "text-2xl tablet:text-3xl"
+        } ${dark ? "text-white" : "text-neutral"} ${
+          emphasize ? "[text-shadow:0_0_14px_rgba(249,250,248,1),0_0_8px_rgba(249,250,248,1),0_2px_4px_rgba(249,250,248,1)]" : ""
         }`}
       >
         {title}
       </motion.h2>
       <motion.span
-        className="block h-0.5 bg-secondary mt-2"
+        className={`block mt-2 ${emphasize ? "h-1 bg-primary" : "h-0.5 bg-secondary"}`}
         initial={{ scaleX: 0 }}
         whileInView={{ scaleX: 1 }}
         transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
         viewport={{ once: true }}
         style={{
           transformOrigin: centered ? "center" : "left",
-          maxWidth: centered ? "6rem" : "4rem",
+          maxWidth: emphasize ? `${emphasizeWidthRem}rem` : centered ? "6rem" : "4rem",
           ...(centered ? { marginLeft: "auto", marginRight: "auto" } : {}),
         }}
       />

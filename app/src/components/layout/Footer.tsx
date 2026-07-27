@@ -1,108 +1,111 @@
 "use client";
+import Image from "next/image";
 import Link from "next/link";
-import { Mail, Phone, MapPin, MessageCircle } from 'lucide-react';
+import { Mail, Phone, MapPin, MessageCircle } from "lucide-react";
+
+const productLinks = [
+  { label: "Mannaz — CRM de afiliados", href: "/productos/mannaz" },
+  { label: "Odal — ERP de operaciones", href: "/productos/odal" },
+  { label: "Desarrollos a medida", href: "/productos/custom" },
+  { label: "Ver todos los productos", href: "/productos" },
+];
+
+const companyLinks = [
+  { label: "Nosotros", href: "/nosotros" },
+  { label: "Servicios", href: "/servicios" },
+  { label: "Casos de éxito", href: "/casos" },
+  { label: "Precios", href: "/precios" },
+];
+
+function FooterLinkGroup({ title, links }: { title: string; links: { label: string; href: string }[] }) {
+  return (
+    <div>
+      <h4 className="text-xs font-bold uppercase tracking-widest text-secondary">{title}</h4>
+      <ul className="mt-5 space-y-3">
+        {links.map((link) => (
+          <li key={link.href}>
+            <Link href={link.href} className="text-sm text-white/70 hover:text-secondary transition-colors duration-200">
+              {link.label}
+            </Link>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-gradient-to-br from-[#005647] via-[#0A3D35] to-[#005647] text-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
-          {/* Logo y descripción */}
-          <div className="lg:col-span-2">
-            <div className="flex items-center gap-3 mb-6">
-              <div className="w-12 h-12 bg-[#00DBA0] rounded-lg flex items-center justify-center">
-                <span className="text-[#005647] text-2xl">T</span>
-              </div>
-              <div>
-                <h3 className="text-2xl">Tecnera</h3>
-                <p className="text-sm text-gray-300">Soluciones Digitales</p>
-              </div>
-            </div>
-            <p className="text-gray-100 mb-6 leading-relaxed">
-              Plataforma SaaS diseñada para cooperativas, mutuales y sindicatos en LATAM.
-              Gestiona tus afiliados de forma simple, segura y profesional.
+    <footer className="bg-neutral text-white">
+      <div className="mx-auto max-w-[90rem] px-4 sm:px-6 lg:px-6 py-16">
+        <div className="grid grid-cols-1 tablet:grid-cols-2 lg:grid-cols-4 gap-12 pb-12 border-b border-white/10">
+          <div className="lg:col-span-1">
+            <Image
+              src="/products/TECNERA/imagotipo-tecnera-blanco.png"
+              alt="Tecnera"
+              width={168}
+              height={31}
+              className="h-8 w-auto"
+            />
+            <p className="mt-5 max-w-xs text-sm text-white/70 leading-relaxed">
+              Software para organizaciones: CRM de afiliados, ERP de operaciones y desarrollos a medida.
             </p>
-            <div className="flex gap-4">
+            <div className="mt-6 flex gap-3">
               <a
                 href="https://wa.me/5492235254045"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 bg-white/10 hover:bg-[#00DBA0] rounded-lg flex items-center justify-center transition-colors duration-300"
+                className="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 hover:bg-secondary hover:text-primary transition-colors duration-200"
                 aria-label="WhatsApp"
               >
-                <MessageCircle className="w-5 h-5" />
+                <MessageCircle className="h-5 w-5" />
               </a>
               <a
                 href="mailto:contacto@tecnera.com"
-                className="w-10 h-10 bg-white/10 hover:bg-[#00DBA0] rounded-lg flex items-center justify-center transition-colors duration-300"
+                className="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 hover:bg-secondary hover:text-primary transition-colors duration-200"
                 aria-label="Email"
               >
-                <Mail className="w-5 h-5" />
+                <Mail className="h-5 w-5" />
               </a>
             </div>
           </div>
 
-          {/* Contacto */}
+          <FooterLinkGroup title="Productos" links={productLinks} />
+          <FooterLinkGroup title="Empresa" links={companyLinks} />
+
           <div>
-            <h4 className="text-lg mb-6">Contacto</h4>
-            <div className="space-y-4">
+            <h4 className="text-xs font-bold uppercase tracking-widest text-secondary">Contacto</h4>
+            <div className="mt-5 space-y-3">
               <a
                 href="https://wa.me/5492235254045"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-start gap-3 text-gray-200 hover:text-[#00DBA0] transition-colors duration-200"
+                className="flex items-start gap-3 text-sm text-white/70 hover:text-secondary transition-colors duration-200"
               >
-                <Phone className="w-5 h-5 flex-shrink-0 mt-0.5" />
+                <Phone className="h-4 w-4 flex-shrink-0 mt-0.5" />
                 <span>+54 223 5 254045</span>
               </a>
               <a
                 href="mailto:contacto@tecnera.com"
-                className="flex items-start gap-3 text-gray-200 hover:text-[#00DBA0] transition-colors duration-200"
+                className="flex items-start gap-3 text-sm text-white/70 hover:text-secondary transition-colors duration-200"
               >
-                <Mail className="w-5 h-5 flex-shrink-0 mt-0.5" />
+                <Mail className="h-4 w-4 flex-shrink-0 mt-0.5" />
                 <span>contacto@tecnera.com</span>
               </a>
-              <div className="flex items-start gap-3 text-gray-200">
-                <MapPin className="w-5 h-5 flex-shrink-0 mt-0.5" />
+              <div className="flex items-start gap-3 text-sm text-white/70">
+                <MapPin className="h-4 w-4 flex-shrink-0 mt-0.5" />
                 <span>Mar del Plata, Argentina</span>
               </div>
             </div>
           </div>
-
-          {/* Enlaces rápidos */}
-          <div>
-            <h4 className="text-lg mb-6">Enlaces</h4>
-            <div className="space-y-3">
-              <ul className="mt-3 space-y-2 text-sm text-white/70">
-                <li><Link href="#inicio" className="block text-gray-200 hover:text-[#00DBA0] transition-colors duration-200">Inicio</Link></li>
-                <li><Link href="#funcionalidades" className="block text-gray-200 hover:text-[#00DBA0] transition-colors duration-200">Funcionalidades</Link></li>
-                <li><Link href="#faq" className="block text-gray-200 hover:text-[#00DBA0] transition-colors duration-200">Preguntas frecuentes</Link></li>
-                <li><Link href="/legal" className="block text-gray-200 hover:text-[#00DBA0] transition-colors duration-200">Legal</Link></li>
-                <li><Link href="/privacidad" className="block text-gray-200 hover:text-[#00DBA0] transition-colors duration-200">Privacidad</Link></li>
-              </ul>
-            </div>
-          </div>
         </div>
 
-        <div className="border-t border-white/10 pt-8">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-sm text-gray-300 text-center md:text-left">
-              © {currentYear} Tecnera - Soluciones Digitales. Todos los derechos reservados.
-            </p>
-            <div className="flex flex-wrap justify-center gap-6 text-sm text-gray-300">
-              <a href="#privacidad" className="hover:text-[#00DBA0] transition-colors duration-200">
-                Política de Privacidad
-              </a>
-              <a href="#terminos" className="hover:text-[#00DBA0] transition-colors duration-200">
-                Términos de Uso
-              </a>
-              <a href="#cookies" className="hover:text-[#00DBA0] transition-colors duration-200">
-                Cookies
-              </a>
-            </div>
-          </div>
+        <div className="pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
+          <p className="text-sm text-white/60 text-center md:text-left">
+            © {currentYear} Tecnera. Todos los derechos reservados.
+          </p>
         </div>
       </div>
     </footer>

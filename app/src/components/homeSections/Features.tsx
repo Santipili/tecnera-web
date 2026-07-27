@@ -1,75 +1,49 @@
 "use client";
 import { motion } from "framer-motion";
-import { features } from "@/data/features";
+import SectionHeader from "@/components/ui/SectionHeader";
+import { features, type FeatureAccent } from "@/data/features";
+
+const accentClasses: Record<FeatureAccent, { box: string; icon: string }> = {
+  primary: { box: "bg-neutral", icon: "text-white" },
+  muted: { box: "bg-red-800/80", icon: "text-white" },
+  amber: { box: "bg-amber-500", icon: "text-white" },
+  blue: { box: "bg-link", icon: "text-white" },
+};
 
 export default function Features() {
   return (
-    <section className="pt-20 bg-gradient-to-b from-white to-[#EAEAEA] transition-colors duration-300 pb-20">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 ">
-        <motion.div
-          className="text-center mb-16"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          viewport={{ once: true }}
-        >
-          <h2 className="text-3xl md:text-4xl lg:text-5xl text-[#005647] mb-6">
-            Todo lo que necesitas en un solo lugar
-          </h2>
-          <p className="text-lg text-[#3A3A3A] max-w-3xl mx-auto">
-            Tecnera incluye todas las herramientas esenciales para gestionar tu organización
-            de manera profesional y eficiente.
-          </p>
-        </motion.div>
+    <section className="relative py-24 transition-colors duration-300">
+      <div className="mx-auto max-w-[105rem] px-4 sm:px-6 lg:px-6">
+        <SectionHeader
+          tag="Beneficios"
+          title="Todo lo que necesitás en un solo lugar"
+          centered
+          emphasize
+        />
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 tablet:grid-cols-2 lg:grid-cols-4 gap-4">
           {features.map((feature, index) => {
             const Icon = feature.icon;
+            const accent = accentClasses[feature.accent];
             return (
               <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 30 }}
+                key={feature.title}
+                initial={{ opacity: 0, y: 24 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.4, delay: index * 0.1 }}
-                viewport={{ once: true, margin: "-50px" }}
-                className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border-b-4 border-[#00DBA0]"
+                transition={{ duration: 0.5, delay: index * 0.08 }}
+                viewport={{ once: true, margin: "-10%" }}
+                className="rounded-[2rem] border border-primary/10 bg-white px-8 py-6 shadow-lg shadow-black/30 hover:border-secondary/40 transition-all duration-300"
               >
-                <div className={`w-16 h-16 bg-gradient-to-br ${feature.color} rounded-xl flex items-center justify-center mb-6 shadow-lg`}>
-                  <Icon className="w-8 h-8 text-white" />
+                <div className={`flex h-12 w-12 items-center justify-center rounded-2xl ${accent.box}`}>
+                  <Icon className={`h-6 w-6 ${accent.icon}`} strokeWidth={2} />
                 </div>
-                <h3 className="text-xl text-[#005647] mb-3">{feature.title}</h3>
-                <p className="text-[#3A3A3A] leading-relaxed">{feature.description}</p>
+                <h3 className="mt-6 text-xl font-extrabold text-neutral">{feature.title}</h3>
+                <p className="mt-3 text-base text-subtext leading-relaxed">{feature.description}</p>
               </motion.div>
             );
           })}
         </div>
-{/* 
-        <motion.div
-          className="mt-16 text-center"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 0.5, delay: 0.3 }}
-          viewport={{ once: true }}
-        >
-          <p className="text-[#3A3A3A] mb-6 text-lg">
-            Y mucho más: exportación de datos, búsquedas avanzadas, historial de cambios, notificaciones...
-          </p>
-          <div className="inline-flex flex-wrap justify-center gap-3">
-            {["Sin instalación", "Actualizaciones automáticas", "Multi-dispositivo", "Backups automáticos"].map((pill) => (
-              <span key={pill} className="bg-white px-4 py-2 rounded-full text-sm text-[#005647] shadow">
-                ✓ {pill}
-              </span>
-            ))}
-          </div>
-        </motion.div> */}
       </div>
-
-      {/* <div className="mt-16 bg-gradient-to-r from-[#005647] to-[#00A478] rounded-2xl p-8 md:p-12 text-white text-center">
-        <h3 className="text-2xl md:text-3xl mb-4">Es momento de modernizarse sin complicaciones</h3>
-        <p className="text-lg text-gray-100 max-w-2xl mx-auto">
-          Tecnera te ayuda a dar el salto digital de forma simple, segura y sin perder tu información histórica.
-        </p>
-      </div> */}
     </section>
   );
 }

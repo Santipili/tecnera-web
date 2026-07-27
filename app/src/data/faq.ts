@@ -5,9 +5,9 @@ export interface FAQItem {
 
 export const faqs: FAQItem[] = [
   {
-    question: "¿Puedo importar mis afiliados desde un archivo?",
+    question: "¿Como puedo migrar mi informacion a las plataformas?",
     answer:
-      "Sí, absolutamente. Tecnera permite importar tu base de datos actual desde archivos CSV o Excel. Nuestro sistema mapea automáticamente los campos y valida la información para garantizar una migración sin errores. El proceso toma solo minutos y conservas todo tu historial.",
+      "Tecnera permite importar tu base de datos actual desde archivos Excel. Nuestro sistema mapea automáticamente los campos y valida la información para garantizar una migración sin errores. El proceso toma solo minutos y conservas todo tu historial, en caso de que lo necesites te podemos asistir con la migracion de tu informacion.",
   },
   {
     question: "¿Cuanto tiempo lleva tener algo funcionando?",

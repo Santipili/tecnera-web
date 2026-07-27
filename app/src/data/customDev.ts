@@ -1,23 +1,24 @@
 export interface CustomDev {
   title: string;
+  kicker: string;
   description: string;
   features: string[];
-  image: string;
+  logo: string;
   ctaHref: string;
+  ctaLabel: string;
 }
 
 export const customDev: CustomDev = {
-  title: "Desarrollo Personalizado",
+  title: "Desarrollos a medida",
+  kicker: "Desarrollo personalizado",
   description:
     "Cuando tu organización necesita algo específico, diseñamos y desarrollamos soluciones digitales adaptadas a tus procesos reales.",
   features: [
-    "Aplicaciones web a medida",
-    "Dashboards y reportes",
-    "Automatización de procesos",
-    "Integración con bases de datos",
-    "Digitalización de procesos",
-    "Herramientas internas",
+    "Aplicaciones web y dashboards a medida",
+    "Automatización de procesos e integraciones",
+    "Digitalización de lo que hoy es manual",
   ],
-  image: "https://images.unsplash.com/photo-1551434678-e076c223a692?w=800&q=80",
+  logo: "/products/TECNERA/SVG/IMAGOTIPO_TECNERA_COLOR.svg",
   ctaHref: "/productos/custom",
+  ctaLabel: "Más detalles",
 };

@@ -1,37 +1,54 @@
 "use client";
 import { motion } from "framer-motion";
 import SectionHeader from "@/components/ui/SectionHeader";
-import ProductCard from "@/components/ui/ProductCard";
+import ProductRow from "@/components/ui/ProductRow";
 import { products } from "@/data/products";
+import { customDev } from "@/data/customDev";
 
 export default function Products() {
   return (
-    <section id="productos" className="py-24 bg-[#EAEAEA] transition-colors duration-300">
-      <div className="mx-auto max-w-7xl px-4 tablet:px-6 laptop:px-6">
+    <section id="productos" className="relative py-24 transition-colors duration-300">
+      <div className="mx-auto max-w-[90rem] px-4 sm:px-6 lg:px-6">
         <SectionHeader
           tag="Productos"
-          title="Dejá atrás Excel, WhatsApp y procesos manuales."
-          description="Herramientas probadas que se adaptan a tu realidad. Implementacion rapida, resultados desde el primer dia."
+          title="Deja atras las planillas y archivos compartidos con nuestras soluciones integrales"
           centered
+          emphasize
         />
-        <div className="grid grid-cols-1 tablet:grid-cols-2 gap-8 max-w-4xl mx-auto">
+        <div className="flex flex-col gap-14">
           {products.map((product, i) => (
             <motion.div
-              key={i}
-              initial={{ opacity: 0, x: i % 2 === 0 ? -30 : 30 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              key={product.slug}
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: i * 0.15 }}
               viewport={{ once: true }}
             >
-              <ProductCard
+              <ProductRow
                 title={product.title}
                 description={product.description}
                 features={product.features}
-                image={product.image}
+                logo={product.logo}
                 href={product.href}
+                ctaLabel={product.ctaLabel}
               />
             </motion.div>
           ))}
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: products.length * 0.15 }}
+            viewport={{ once: true }}
+          >
+            <ProductRow
+              title={customDev.title}
+              description={customDev.description}
+              features={customDev.features}
+              logo={customDev.logo}
+              href={customDev.ctaHref}
+              ctaLabel={customDev.ctaLabel}
+            />
+          </motion.div>
         </div>
       </div>
     </section>
