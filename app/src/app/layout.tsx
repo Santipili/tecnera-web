@@ -40,7 +40,7 @@ export default function RootLayout({
   return (
     <html lang="es">
       <body className={`${geistSans.variable} ${geistMono.variable} ${nunito.variable} ${michroma.variable} antialiased bg-light`}>
-        <div className="fixed inset-0 -z-10 pointer-events-none">
+        <div className="fixed inset-0 -z-10 pointer-events-none opacity-65">
           <NeuralNetworkBackground className="h-full w-full" />
         </div>
         {children}
