@@ -8,6 +8,8 @@ interface SectionHeaderProps {
   centered?: boolean;
   dark?: boolean;
   emphasize?: boolean;
+  titleSizeClass?: string;
+  descriptionSizeClass?: string;
 }
 
 export default function SectionHeader({
@@ -17,6 +19,8 @@ export default function SectionHeader({
   centered = false,
   dark = false,
   emphasize = false,
+  titleSizeClass,
+  descriptionSizeClass,
 }: SectionHeaderProps) {
   void tag;
   const emphasizeWidthRem = Math.max(6, Math.min(24, title.length * 0.24));
@@ -28,8 +32,8 @@ export default function SectionHeader({
         transition={{ duration: 0.5 }}
         viewport={{ once: true }}
         className={`font-[family-name:var(--font-heading)] font-normal tracking-wide leading-snug ${
-          emphasize ? "text-2xl tablet:text-3xl [-webkit-text-stroke:1.5px_currentColor]" : "text-2xl tablet:text-3xl"
-        } ${dark ? "text-white" : "text-neutral"} ${
+          titleSizeClass ?? "text-2xl tablet:text-3xl"
+        } ${emphasize ? "[-webkit-text-stroke:1.5px_currentColor]" : ""} ${dark ? "text-white" : "text-neutral"} ${
           emphasize ? "[text-shadow:0_0_14px_rgba(249,250,248,1),0_0_8px_rgba(249,250,248,1),0_2px_4px_rgba(249,250,248,1)]" : ""
         }`}
       >
@@ -53,7 +57,7 @@ export default function SectionHeader({
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.5, delay: 0.15 }}
           viewport={{ once: true }}
-          className={`mt-4 max-w-2xl text-base leading-relaxed ${
+          className={`mt-4 max-w-2xl leading-relaxed ${descriptionSizeClass ?? "text-base"} ${
             dark ? "text-white/70" : "text-subtext"
           } ${centered ? "mx-auto" : ""}`}
         >
