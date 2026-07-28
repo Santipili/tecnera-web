@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import Link from "next/link";
 import Header from "@/components/layout/Header";
 import PrimaryCTAButton from "@/components/ui/PrimaryCTAButton";
 import WhatsappCTAButton from "@/components/ui/WhatsappCTAButton";
+import NeuralNetworkBackground from "@/components/ui/NeuralNetworkBackground";
 import { products } from "@/data/products";
 import { Users, Building2, GraduationCap } from "lucide-react";
 
@@ -19,28 +21,45 @@ export default function MannazPage() {
       <Header />
       <main>
         {/* Hero */}
-        <section className="py-24 bg-gradient-to-br from-primary via-[#0A3D35] to-primary text-white">
-          <div className="max-w-7xl mx-auto px-4 tablet:px-6 laptop:px-8">
-            <div className="grid laptop:grid-cols-2 gap-12 items-center">
-              <div>
-                <span className="inline-block rounded-full border border-secondary/40 bg-secondary/10 px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-secondary mb-6">
-                  Producto Tecnera
-                </span>
-                <h1 className="text-4xl laptop:text-5xl font-extrabold leading-tight mb-6">
-                  {product.title}
-                </h1>
-                <p className="text-white/80 text-lg mb-8 leading-relaxed max-w-lg">
-                  Mannaz centraliza la información de cada afiliado o miembro y te da control sobre visitas,
-                  campañas, segmentaciones, historial, zonas, grupos y acciones institucionales.
-                </p>
-                <div className="flex flex-wrap gap-4">
-                  <PrimaryCTAButton source="mannaz_hero" />
-                  <WhatsappCTAButton source="mannaz_hero" />
+        <section className="relative overflow-hidden bg-light py-3">
+          <div className="absolute inset-0 z-0 opacity-65">
+            <NeuralNetworkBackground className="h-full w-full" color="28, 28, 28" nodeCount={260} />
+          </div>
+          <div className="relative z-10 max-w-7xl mx-auto px-4 tablet:px-6 laptop:px-8">
+            <div className="grid laptop:grid-cols-[minmax(0,0.9fr)_minmax(0,1.6fr)] gap-12 items-center">
+              {/* Logo */}
+              <div className="flex justify-center laptop:justify-start translate-y-2 laptop:-translate-x-[11.5rem]">
+                <div className="relative flex-shrink-0 w-[26rem] h-[20rem] laptop:w-[34rem] laptop:h-[26rem]">
+                  <Image
+                    src={product.logo}
+                    alt={product.title}
+                    fill
+                    className="object-contain"
+                  />
                 </div>
               </div>
-              <div className="relative h-72 laptop:h-96 rounded-2xl overflow-hidden shadow-2xl">
-                <Image src={product.image} alt={product.title} fill className="object-cover" />
-                <div className="absolute inset-0 bg-gradient-to-t from-primary/60 to-transparent" />
+
+              {/* Texto */}
+              <div className="ml-auto w-full max-w-2xl">
+                <div className="bg-white/15 backdrop-blur-sm rounded-2xl p-5 laptop:p-6 mb-6">
+                  <p className="text-neutral text-xl font-bold leading-relaxed mb-4">
+                    Mannaz centraliza la información de cada afiliado o miembro en una sola plataforma
+                    pensada para mutuales, sindicatos, cooperativas y organizaciones con socios.
+                  </p>
+                  <p className="text-neutral text-xl font-bold leading-relaxed">
+                    Gestioná visitas, campañas, segmentaciones y acciones institucionales con datos
+                    siempre actualizados y disponibles.
+                  </p>
+                </div>
+                <div className="flex flex-wrap gap-4">
+                  <PrimaryCTAButton source="mannaz_hero" variant="primary" label="Solicitar demo" />
+                  <Link
+                    href="/precios"
+                    className="inline-flex items-center gap-2 rounded-full bg-white text-primary px-7 py-3.5 text-sm font-bold shadow-lg shadow-black/20 hover:bg-secondary transition-colors duration-200"
+                  >
+                    Ver precios
+                  </Link>
+                </div>
               </div>
             </div>
           </div>
