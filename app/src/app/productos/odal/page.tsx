@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import Link from "next/link";
 import Header from "@/components/layout/Header";
+import SectionHeader from "@/components/ui/SectionHeader";
 import PrimaryCTAButton from "@/components/ui/PrimaryCTAButton";
-import WhatsappCTAButton from "@/components/ui/WhatsappCTAButton";
 import NeuralNetworkBackground from "@/components/ui/NeuralNetworkBackground";
 import { products } from "@/data/products";
 import {
@@ -46,6 +47,7 @@ const relevantAreas: {
   title: string;
   desc: string;
   bullets: string[];
+  image: string;
 }[] = [
   {
     icon: Upload,
@@ -56,6 +58,7 @@ const relevantAreas: {
       "Carga masiva con validación antes de confirmar",
       "Acompañamiento durante todo el proceso de migración",
     ],
+    image: "/products/ODAL/imagenes-app/data-import.png",
   },
   {
     icon: ShieldCheck,
@@ -66,6 +69,7 @@ const relevantAreas: {
       "Roles configurables por equipo o función",
       "Control total sobre la información sensible de la empresa",
     ],
+    image: "/products/ODAL/imagenes-app/permits.png",
   },
   {
     icon: BarChart3,
@@ -76,6 +80,7 @@ const relevantAreas: {
       "Análisis por cliente, equipo, edificio o técnico",
       "Exportá la información que necesites cuando la necesites",
     ],
+    image: "/products/ODAL/imagenes-app/reports.png",
   },
 ];
 
@@ -98,63 +103,50 @@ const pricingPlans = [
   },
 ];
 
-function PlaceholderScreenshot({
-  icon: Icon,
-  label,
-  className = "",
-}: {
-  icon: LucideIcon;
-  label: string;
-  className?: string;
-}) {
-  return (
-    <div
-      className={`relative flex flex-col items-center justify-center gap-3 bg-gradient-to-br from-primary/5 via-secondary/5 to-transparent border-2 border-dashed border-primary/15 rounded-xl ${className}`}
-    >
-      <Icon className="w-10 h-10 text-primary/30" />
-      <span className="text-xs font-semibold text-primary/40 uppercase tracking-widest text-center px-4">
-        {label}
-      </span>
-    </div>
-  );
-}
-
 export default function OdalPage() {
   return (
     <div className="min-h-screen">
       <Header />
       <main>
         {/* Hero */}
-        <section className="relative overflow-hidden bg-light py-12">
-          <div className="absolute inset-0 z-0">
-            <NeuralNetworkBackground className="h-full w-full" color="28, 28, 28" />
+        <section className="relative overflow-hidden bg-light py-3">
+          <div className="absolute inset-0 z-0 opacity-65">
+            <NeuralNetworkBackground className="h-full w-full" color="28, 28, 28" nodeCount={260} />
           </div>
           <div className="relative z-10 max-w-7xl mx-auto px-4 tablet:px-6 laptop:px-8">
             <div className="grid laptop:grid-cols-[minmax(0,0.9fr)_minmax(0,1.6fr)] gap-12 items-center">
               {/* Logo */}
               <div className="flex justify-center laptop:justify-start translate-y-2 laptop:-translate-x-24">
-                <div className="relative w-[30rem] h-[30rem] laptop:w-[39rem] laptop:h-[39rem] flex items-center justify-center">
+                <div className="relative flex-shrink-0 w-[18rem] h-[20rem] laptop:w-[23rem] laptop:h-[26rem]">
                   <Image
                     src={product.logo}
                     alt={product.title}
-                    width={490}
-                    height={490}
-                    className="relative object-contain"
+                    fill
+                    className="object-contain"
                   />
                 </div>
               </div>
 
-              {/* Card */}
-              <div className="ml-auto w-full max-w-2xl bg-white border border-primary/10 rounded-2xl p-5 laptop:p-6 shadow-lg shadow-black/30">
-                <p className="text-neutral text-lg leading-relaxed mb-6">
-                  Odal centraliza reclamos, órdenes de trabajo, presupuestos e inspecciones en una sola
-                  plataforma pensada para empresas de mantenimiento y servicios técnicos. Ordená tu operación
-                  diaria y tomá decisiones con información real, actualizada y disponible en el momento en
-                  que la necesitás.
-                </p>
+              {/* Texto */}
+              <div className="ml-auto w-full max-w-2xl">
+                <div className="bg-white/15 backdrop-blur-sm rounded-2xl p-5 laptop:p-6 mb-6">
+                  <p className="text-neutral text-xl font-bold leading-relaxed mb-4">
+                    Odal centraliza reclamos, órdenes de trabajo, presupuestos e inspecciones en una sola
+                    plataforma pensada para empresas de mantenimiento y servicios técnicos.
+                  </p>
+                  <p className="text-neutral text-xl font-bold leading-relaxed">
+                    Ordená tu operación diaria y tomá decisiones con información real, actualizada y disponible
+                    en el momento en que la necesitás.
+                  </p>
+                </div>
                 <div className="flex flex-wrap gap-4">
-                  <PrimaryCTAButton source="odal_hero" label="Solicitar demo" />
-                  <WhatsappCTAButton source="odal_hero" label="Contratar el servicio" />
+                  <PrimaryCTAButton source="odal_hero" variant="primary" label="Solicitar demo" />
+                  <Link
+                    href="#precios"
+                    className="inline-flex items-center gap-2 rounded-full bg-white text-primary px-7 py-3.5 text-sm font-bold shadow-lg shadow-black/20 hover:bg-secondary transition-colors duration-200"
+                  >
+                    Ver precios
+                  </Link>
                 </div>
               </div>
             </div>
@@ -164,24 +156,29 @@ export default function OdalPage() {
         {/* Dashboard */}
         <section className="py-24 bg-light">
           <div className="max-w-6xl mx-auto px-4 tablet:px-6 laptop:px-8">
-            <h2 className="font-[family-name:var(--font-heading)] text-2xl tablet:text-3xl font-normal tracking-wide text-neutral text-center mb-3">
-              Así se ve Odal por dentro
-            </h2>
-            <p className="text-subtext text-center max-w-2xl mx-auto mb-12 leading-relaxed">
-              Un panel de inicio pensado para que veas de un vistazo el estado de tu operación apenas
-              iniciás sesión.
-            </p>
+            <SectionHeader
+              tag="Odal"
+              title="Así se ve Odal por dentro"
+              description="Un panel de inicio pensado para que veas de un vistazo el estado de tu operación apenas iniciás sesión."
+              centered
+              emphasize
+              titleSizeClass="text-4xl tablet:text-5xl"
+              descriptionSizeClass="text-xl"
+            />
             <div className="rounded-2xl border border-neutral-100 bg-white shadow-xl overflow-hidden">
               <div className="flex items-center gap-2 px-5 py-3.5 border-b border-neutral-100 bg-[#F4F4F4]">
                 <span className="w-3 h-3 rounded-full bg-[#FF5F57]" />
                 <span className="w-3 h-3 rounded-full bg-[#FEBC2E]" />
                 <span className="w-3 h-3 rounded-full bg-[#28C840]" />
               </div>
-              <PlaceholderScreenshot
-                icon={BarChart3}
-                label="Captura del dashboard de inicio"
-                className="h-80 laptop:h-[26rem] rounded-none border-none"
-              />
+              <div className="relative w-full aspect-[1809/890]">
+                <Image
+                  src="/products/ODAL/imagenes-app/dashboard.png"
+                  alt="Captura del dashboard de inicio"
+                  fill
+                  className="object-contain"
+                />
+              </div>
             </div>
           </div>
         </section>
@@ -189,12 +186,15 @@ export default function OdalPage() {
         {/* Customización */}
         <section className="py-24 bg-[#EAEAEA]">
           <div className="max-w-7xl mx-auto px-4 tablet:px-6 laptop:px-8">
-            <h2 className="font-[family-name:var(--font-heading)] text-2xl tablet:text-3xl font-normal tracking-wide text-neutral text-center mb-3">
-              Customización de la plataforma
-            </h2>
-            <p className="text-subtext text-center max-w-2xl mx-auto mb-12 leading-relaxed">
-              Odal se adapta a tu empresa, no al revés. Elegí el nivel de personalización que necesitás.
-            </p>
+            <SectionHeader
+              tag="Odal"
+              title="Customización de la plataforma"
+              description="Odal se adapta a tu empresa, no al revés. Elegí el nivel de personalización que necesitás."
+              centered
+              emphasize
+              titleSizeClass="text-4xl tablet:text-5xl"
+              descriptionSizeClass="text-xl"
+            />
             <div className="grid tablet:grid-cols-3 gap-6">
               {customizationCards.map(({ icon: Icon, title, desc }, i) => (
                 <div key={i} className="bg-white rounded-2xl p-8 shadow-sm">
@@ -212,17 +212,20 @@ export default function OdalPage() {
         {/* Áreas relevantes */}
         <section className="py-24 bg-light">
           <div className="max-w-[88rem] mx-auto px-4 tablet:px-6 laptop:px-8">
-            <h2 className="font-[family-name:var(--font-heading)] text-2xl tablet:text-3xl font-normal tracking-wide text-neutral text-center mb-16">
-              Áreas relevantes
-            </h2>
+            <SectionHeader
+              tag="Odal"
+              title="Áreas relevantes"
+              centered
+              emphasize
+              titleSizeClass="text-4xl tablet:text-5xl"
+              descriptionSizeClass="text-xl"
+            />
             <div className="flex flex-col gap-16">
-              {relevantAreas.map(({ icon: Icon, title, desc, bullets }, i) => {
+              {relevantAreas.map(({ title, desc, bullets, image }, i) => {
                 const screenshot = (
-                  <PlaceholderScreenshot
-                    icon={Icon}
-                    label={title}
-                    className="shrink-0 aspect-video h-[30rem] laptop:h-[35rem]"
-                  />
+                  <div className="relative flex-[2] min-w-[20rem] laptop:min-w-[62rem] aspect-[1825/888] rounded-xl overflow-hidden border border-neutral-100 shadow-sm">
+                    <Image src={image} alt={title} fill className="object-cover" />
+                  </div>
                 );
                 const card = (
                   <div className="flex-1 min-w-[20rem] min-h-[24rem] laptop:min-h-[28rem] bg-white rounded-2xl p-8 shadow-sm flex flex-col justify-center">
@@ -253,14 +256,17 @@ export default function OdalPage() {
         </section>
 
         {/* Pricing */}
-        <section className="py-24 bg-[#EAEAEA]">
+        <section id="precios" className="py-24 bg-[#EAEAEA]">
           <div className="max-w-6xl mx-auto px-4 tablet:px-6 laptop:px-8">
-            <h2 className="font-[family-name:var(--font-heading)] text-2xl tablet:text-3xl font-normal tracking-wide text-neutral text-center mb-3">
-              Planes y precios
-            </h2>
-            <p className="text-subtext text-center max-w-2xl mx-auto mb-12 leading-relaxed">
-              Elegí el plan que se ajuste al tamaño y las necesidades de tu empresa.
-            </p>
+            <SectionHeader
+              tag="Odal"
+              title="Planes y precios"
+              description="Elegí el plan que se ajuste al tamaño y las necesidades de tu empresa."
+              centered
+              emphasize
+              titleSizeClass="text-4xl tablet:text-5xl"
+              descriptionSizeClass="text-xl"
+            />
             <div className="grid tablet:grid-cols-3 gap-6 items-start">
               {pricingPlans.map(({ name, desc, features, highlighted }, i) => (
                 <div
