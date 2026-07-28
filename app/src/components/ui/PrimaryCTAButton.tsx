@@ -3,7 +3,7 @@
 interface PrimaryCTAButtonProps {
   label?: string;
   source: string;
-  variant?: "secondary" | "orange" | "primary" | "odal" | "black";
+  variant?: "secondary" | "orange" | "primary" | "odal" | "black" | "white";
   size?: "md" | "lg";
 }
 
@@ -11,13 +11,15 @@ const variantClass = {
   secondary:
     "bg-secondary text-primary hover:bg-focus shadow-secondary/20",
   orange:
-    "bg-orange text-white hover:bg-orange/90 shadow-orange/30",
+    "bg-orange text-white hover:bg-[#D4650F] shadow-orange/30",
   primary:
-    "bg-primary text-white hover:bg-primary/90 shadow-primary/30",
+    "bg-primary text-white hover:bg-tertiary shadow-primary/30",
   odal:
     "bg-emerald-500 text-white hover:bg-emerald-600 shadow-black/20",
   black:
-    "bg-neutral text-white hover:bg-neutral/90 shadow-black/30",
+    "bg-neutral text-white hover:bg-[#000000] shadow-black/30",
+  white:
+    "bg-white text-primary hover:bg-secondary shadow-black/20",
 };
 
 const sizeClass = {
