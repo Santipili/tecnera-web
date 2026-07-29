@@ -29,7 +29,7 @@ export default function MannazPage() {
             <div className="grid laptop:grid-cols-[minmax(0,0.9fr)_minmax(0,1.6fr)] gap-12 items-center">
               {/* Logo */}
               <div className="flex justify-center laptop:justify-start translate-y-2 laptop:-translate-x-[11.5rem]">
-                <div className="relative flex-shrink-0 w-[26rem] h-[20rem] laptop:w-[34rem] laptop:h-[26rem]">
+                <div className="relative flex-shrink-0 w-[14rem] h-[10.75rem] tablet:w-[19rem] tablet:h-[14.5rem] laptop:w-[34rem] laptop:h-[26rem]">
                   <Image
                     src={product.logo}
                     alt={product.title}

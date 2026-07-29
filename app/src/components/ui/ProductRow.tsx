@@ -38,7 +38,7 @@ export default function ProductRow({
     "flex items-center justify-center bg-white border-b lg:border-b-0 lg:border-r border-primary/10 p-3 lg:w-[30%] flex-shrink-0";
 
   const btnClass =
-    "absolute bottom-5 right-5 lg:bottom-6 lg:right-6 inline-flex items-center justify-center gap-2 rounded-full bg-white px-6 py-2.5 text-sm font-bold text-primary hover:scale-[1.15] active:scale-100 transition-transform duration-[350ms] cursor-pointer w-fit";
+    "mt-4 lg:mt-0 lg:absolute lg:bottom-6 lg:right-6 inline-flex items-center justify-center gap-2 rounded-full bg-white px-6 py-2.5 text-sm font-bold text-primary hover:scale-[1.15] active:scale-100 transition-transform duration-[350ms] cursor-pointer w-fit";
 
   return (
     <div className="w-full lg:w-[96%] mx-auto">
@@ -54,8 +54,8 @@ export default function ProductRow({
           </div>
         </div>
 
-        <div className="flex flex-1 flex-col justify-center p-5 pb-16 lg:p-6 lg:pb-16">
-          <h3 className="text-4xl font-extrabold text-white">{title}</h3>
+        <div className="flex flex-1 flex-col justify-center p-5 lg:p-6 lg:pb-16">
+          <h3 className="text-2xl lg:text-4xl font-extrabold text-white">{title}</h3>
           <p className="mt-2 text-lg font-semibold text-white/80 leading-relaxed">{description}</p>
           <ul className="mt-3 space-y-1">
             {features.map((feature, i) => (
