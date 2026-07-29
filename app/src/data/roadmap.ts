@@ -10,7 +10,7 @@ export interface RoadmapItem {
 export const upcomingModules: RoadmapItem[] = [
   {
     icon: MessageSquare,
-    title: "Servicio de mensajeria interna integrada",
+    title: "Mensajeria interna integrada",
     description: "Chat propio dentro de la plataforma, sin depender de WhatsApp, para toda tu operación.",
   },
   {
