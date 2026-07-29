@@ -17,6 +17,8 @@ import {
   ShieldCheck,
   BarChart3,
   LifeBuoy,
+  FileSignature,
+  Fingerprint,
   type LucideIcon,
 } from "lucide-react";
 
@@ -309,9 +311,23 @@ export default function OdalPage() {
               titleSizeClass="text-4xl tablet:text-5xl"
               descriptionSizeClass="text-xl"
             />
-            <div className="relative grid grid-cols-1 tablet:grid-cols-3 gap-8 tablet:gap-6">
-              <div className="hidden tablet:block absolute top-7 left-[16.66%] right-[16.66%] h-0.5 bg-primary/15" />
-              {[upcomingModules[1], upcomingModules[0], upcomingModules[2]].map((item, i) => {
+            <div className="relative grid grid-cols-1 tablet:grid-cols-5 gap-8 tablet:gap-6">
+              <div className="hidden tablet:block absolute top-7 left-[10%] right-[10%] h-0.5 bg-primary/15" />
+              {[
+                upcomingModules[1],
+                upcomingModules[0],
+                {
+                  icon: FileSignature,
+                  title: "Sistema de firma digital",
+                  description: "Firmá documentos y órdenes de trabajo directamente desde la plataforma.",
+                },
+                {
+                  icon: Fingerprint,
+                  title: "Fichado electronico",
+                  description: "Control de entrada y salida de técnicos y personal desde la app.",
+                },
+                upcomingModules[2],
+              ].map((item, i) => {
                 const Icon = item.icon;
                 return (
                   <div key={item.title} className="relative flex flex-col items-center text-center">
