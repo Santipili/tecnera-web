@@ -28,8 +28,38 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Tecnera",
-  description: "Tecnera - Digital Solutions",
+  title: "Tecnera | Innovacion en soluciones digitales",
+  description: "Creamos soluciones digitales que conectan personas, procesos e información.",
+  applicationName: "Tecnera",
+  keywords: [
+    "desarrollo de software",
+    "software para empresas",
+    "aplicaciones web",
+    "sistemas de gestión",
+    "CRM",
+    "ERP",
+    "Tecnera",
+  ],
+  authors: [{ name: "Tecnera" }],
+  creator: "Tecnera",
+  publisher: "Tecnera",
+  openGraph: {
+    type: "website",
+    locale: "es_AR",
+    url: "/",
+    siteName: "Tecnera",
+    title: "Tecnera | Innovacion en soluciones digitales",
+    description:
+      "Creamos soluciones digitales que conectan personas, procesos e información.",
+    images: [
+      {
+        url: "/images/products/TECNERA/imagotipo-tecnera-color.png",
+        width: 1200,
+        height: 630,
+        alt: "Tecnera — Innovacion en soluciones digitales",
+      },
+    ],
+  },
 };
 
 export default function RootLayout({

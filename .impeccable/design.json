@@ -1,0 +1,169 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-07-29T00:00:00.000Z",
+  "title": "Design System: Tecnera",
+  "extensions": {
+    "colorMeta": {
+      "deep-pine": {
+        "role": "primary",
+        "displayName": "Deep Pine",
+        "canonical": "#005647",
+        "tonalRamp": ["#001510", "#002a22", "#004032", "#005647", "#1a7a63", "#4a9c85", "#83c2ad", "#c2e5d8"]
+      },
+      "bright-mint": {
+        "role": "secondary",
+        "displayName": "Bright Mint",
+        "canonical": "#00dba0",
+        "tonalRamp": ["#002d21", "#005440", "#007d5f", "#00a67e", "#00dba0", "#4de9bf", "#8ff2d7", "#ccfaec"]
+      },
+      "network-signal": {
+        "role": "accent",
+        "displayName": "Network Signal",
+        "canonical": "#00a478",
+        "tonalRamp": ["#001c14", "#003629", "#00543f", "#00745a", "#00a478", "#3ec49c", "#7fdcbe", "#c0f0e0"]
+      },
+      "pine-hover": { "role": "primary-hover", "displayName": "Pine Hover", "canonical": "#0a3d35" },
+      "focus-teal": { "role": "secondary-hover", "displayName": "Focus Teal", "canonical": "#00c2a8" },
+      "info-link": { "role": "tertiary", "displayName": "Info Link", "canonical": "#0095c7" },
+      "warm-amber": { "role": "tertiary", "displayName": "Warm Amber", "canonical": "#f47c20" },
+      "carbon": { "role": "neutral", "displayName": "Carbon", "canonical": "#1c1c1c" },
+      "subtext-grey": { "role": "neutral", "displayName": "Subtext Grey", "canonical": "#666666" },
+      "paper": { "role": "neutral", "displayName": "Paper", "canonical": "#f9faf8" },
+      "card-white": { "role": "neutral", "displayName": "Card White", "canonical": "#ffffff" },
+      "night-pine": { "role": "neutral", "displayName": "Night Pine", "canonical": "#0a1f1c" }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display (Michroma)", "purpose": "One hero/section-headline moment per page. Never body copy or UI chrome." },
+      "body": { "displayName": "Body (Nunito)", "purpose": "Everything a visitor actually reads: paragraphs, labels, buttons, nav." }
+    },
+    "shadows": [
+      {
+        "name": "card-ambient",
+        "value": "0 10px 15px -3px rgba(0,0,0,0.3), 0 4px 6px -4px rgba(0,0,0,0.3)",
+        "purpose": "Current elevation for floating cards (Features, FAQ, ProductRow). Flagged in DESIGN.md Do's and Don'ts as heavier/darker than the calm Field Office foundation calls for — soften toward a lighter, more diffused shadow in future component work."
+      },
+      {
+        "name": "cta-primary",
+        "value": "0 10px 15px -3px rgba(0,86,71,0.3)",
+        "purpose": "Tinted shadow under the primary (Deep Pine) CTA button."
+      },
+      {
+        "name": "cta-secondary",
+        "value": "0 10px 15px -3px rgba(0,219,160,0.2)",
+        "purpose": "Tinted shadow under the secondary (Bright Mint) CTA button."
+      }
+    ],
+    "motion": [
+      { "name": "duration-fast", "value": "0.2s", "purpose": "Hover/press micro-interactions (button scale, color shifts)." },
+      { "name": "duration-standard", "value": "0.3s", "purpose": "Default transition speed for borders, backgrounds, shadows." },
+      { "name": "duration-entrance", "value": "0.5s-0.6s", "purpose": "Scroll-triggered entrance animation (Framer Motion whileInView), ease-out, fires once per session (viewport once:true)." }
+    ],
+    "breakpoints": [
+      { "name": "phone", "value": "320px" },
+      { "name": "tablet", "value": "640px" },
+      { "name": "tabletxl", "value": "840px" },
+      { "name": "laptop", "value": "1024px" },
+      { "name": "desktop", "value": "1280px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Main CTA. Deep Pine fill, white text, calendar icon, scales up on hover.",
+      "html": "<button class=\"ds-btn-primary\"><svg class=\"ds-btn-icon\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.5\"><path stroke-linecap=\"round\" stroke-linejoin=\"round\" d=\"M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5\"/></svg><span>Agendar cita</span></button>",
+      "css": ".ds-btn-primary { display: inline-flex; align-items: center; justify-content: center; gap: 8px; border-radius: 9999px; padding: 14px 28px; font-size: 14px; font-weight: 700; background: #005647; color: #ffffff; box-shadow: 0 10px 15px -3px rgba(0,86,71,0.3); border: none; cursor: pointer; transition: background 0.2s, transform 0.2s; } .ds-btn-primary:hover { background: #0a3d35; transform: scale(1.03); } .ds-btn-primary:active { transform: scale(1); } .ds-btn-icon { width: 16px; height: 16px; flex-shrink: 0; }"
+    },
+    {
+      "name": "Secondary Button",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "Bright Mint fill CTA, used as the alternate/lighter action.",
+      "html": "<button class=\"ds-btn-secondary\">Ver precios</button>",
+      "css": ".ds-btn-secondary { display: inline-flex; align-items: center; justify-content: center; border-radius: 9999px; padding: 14px 28px; font-size: 14px; font-weight: 700; background: #00dba0; color: #005647; box-shadow: 0 10px 15px -3px rgba(0,219,160,0.2); border: none; cursor: pointer; transition: background 0.2s, transform 0.2s; } .ds-btn-secondary:hover { background: #00c2a8; transform: scale(1.03); } .ds-btn-secondary:active { transform: scale(1); }"
+    },
+    {
+      "name": "Ghost Button",
+      "kind": "button",
+      "refersTo": "button-ghost",
+      "description": "Translucent glass button for use over the network canvas or photographic/dark surfaces (e.g. WhatsApp CTA).",
+      "html": "<button class=\"ds-btn-ghost\">Escribinos</button>",
+      "css": ".ds-btn-ghost { display: inline-flex; align-items: center; gap: 8px; border-radius: 9999px; padding: 14px 28px; font-size: 14px; font-weight: 700; background: rgba(255,255,255,0.1); color: #ffffff; border: 1px solid rgba(255,255,255,0.3); backdrop-filter: blur(4px); cursor: pointer; transition: background 0.2s, border-color 0.2s, transform 0.2s; } .ds-btn-ghost:hover { background: rgba(255,255,255,0.2); border-color: rgba(255,255,255,0.5); transform: scale(1.03); }"
+    },
+    {
+      "name": "Feature Card",
+      "kind": "card",
+      "refersTo": "card-surface",
+      "description": "Floating white card with an accent icon tile; the base card pattern reused across Features, Services, and info grids.",
+      "html": "<div class=\"ds-card-feature\"><div class=\"ds-card-feature-icon\"><svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" width=\"24\" height=\"24\"><path stroke-linecap=\"round\" stroke-linejoin=\"round\" d=\"M13 10V3L4 14h7v7l9-11h-7z\"/></svg></div><h3 class=\"ds-card-feature-title\">Título de la función</h3><p class=\"ds-card-feature-desc\">Descripción breve del beneficio para el visitante.</p></div>",
+      "css": ".ds-card-feature { border-radius: 32px; border: 1px solid rgba(0,86,71,0.1); background: #ffffff; padding: 24px 32px; box-shadow: 0 10px 15px -3px rgba(0,0,0,0.3), 0 4px 6px -4px rgba(0,0,0,0.3); transition: border-color 0.3s; } .ds-card-feature:hover { border-color: rgba(0,219,160,0.4); } .ds-card-feature-icon { display: flex; align-items: center; justify-content: center; width: 48px; height: 48px; border-radius: 16px; background: #1c1c1c; color: #ffffff; margin-bottom: 24px; } .ds-card-feature-title { margin-top: 0; font-size: 20px; font-weight: 800; color: #1c1c1c; } .ds-card-feature-desc { margin-top: 12px; font-size: 16px; line-height: 1.6; color: #666666; }"
+    },
+    {
+      "name": "Content Panel",
+      "kind": "card",
+      "refersTo": "card-surface",
+      "description": "Large rounded panel used for grouped content (FAQ list, contact form) — same floating language at larger scale.",
+      "html": "<div class=\"ds-panel\"><h3 class=\"ds-panel-title\">Contanos tu proyecto</h3><p class=\"ds-panel-desc\">Dejanos tus datos y te respondemos a la brevedad.</p></div>",
+      "css": ".ds-panel { border-radius: 32px; border: 1px solid rgba(0,86,71,0.1); background: #ffffff; padding: 32px 40px; box-shadow: 0 10px 15px -3px rgba(0,0,0,0.3), 0 4px 6px -4px rgba(0,0,0,0.3); } .ds-panel-title { margin: 0; font-size: 20px; font-weight: 800; color: #1c1c1c; } .ds-panel-desc { margin-top: 8px; font-size: 14px; line-height: 1.6; color: #666666; }"
+    },
+    {
+      "name": "Product Row Banner",
+      "kind": "card",
+      "description": "Dark, full-width product banner (Deep Pine fill, white text) — the one inverted card variant in the system, used to introduce Mannaz/Odal on the products index.",
+      "html": "<div class=\"ds-product-row\"><div class=\"ds-product-row-content\"><h3 class=\"ds-product-row-title\">Mannaz</h3><p class=\"ds-product-row-desc\">CRM para gestionar afiliados, campañas y visitas en un solo lugar.</p><button class=\"ds-product-row-cta\">Descubrir más</button></div></div>",
+      "css": ".ds-product-row { position: relative; border-radius: 32px; background: #005647; box-shadow: 0 10px 15px -3px rgba(0,0,0,0.3), 0 4px 6px -4px rgba(0,0,0,0.3); overflow: hidden; padding: 24px; } .ds-product-row-title { margin: 0; font-size: 36px; font-weight: 800; color: #ffffff; } .ds-product-row-desc { margin-top: 8px; font-size: 18px; font-weight: 600; color: rgba(255,255,255,0.8); } .ds-product-row-cta { position: absolute; bottom: 20px; right: 20px; border-radius: 9999px; background: #ffffff; color: #005647; font-size: 14px; font-weight: 700; padding: 10px 24px; border: none; cursor: pointer; transition: transform 0.35s; } .ds-product-row-cta:hover { transform: scale(1.15); }"
+    },
+    {
+      "name": "Input Field",
+      "kind": "input",
+      "description": "Text input / textarea used in the contact form.",
+      "html": "<input class=\"ds-input\" placeholder=\"Nombre y apellido\" />",
+      "css": ".ds-input { width: 100%; border-radius: 12px; border: 1px solid rgba(0,86,71,0.15); background: #f9faf8; padding: 12px 16px; font-size: 14px; color: #1c1c1c; transition: border-color 0.2s; } .ds-input::placeholder { color: #666666; } .ds-input:focus { border-color: #005647; outline: none; }"
+    },
+    {
+      "name": "Section Header",
+      "kind": "custom",
+      "description": "Michroma headline with a short animated underline stroke in Bright Mint (or Deep Pine when emphasized) — the recurring section-intro pattern.",
+      "html": "<header class=\"ds-section-header\"><h2 class=\"ds-section-header-title\">Todo lo que necesitás en un solo lugar</h2><span class=\"ds-section-header-rule\"></span></header>",
+      "css": ".ds-section-header-title { margin: 0; font-family: 'Michroma', sans-serif; font-weight: 400; letter-spacing: 0.02em; line-height: 1.3; font-size: clamp(1.5rem, 3vw, 2rem); color: #1c1c1c; } .ds-section-header-rule { display: block; margin-top: 8px; height: 2px; width: 64px; background: #00dba0; }"
+    },
+    {
+      "name": "Living Network",
+      "kind": "custom",
+      "description": "Signature background motif: a canvas of small drifting, connecting nodes rendered behind nearly every page. This snippet is a static illustrative approximation only — the real implementation is an animated <canvas> (NeuralNetworkBackground.tsx), not CSS.",
+      "html": "<div class=\"ds-living-network\" aria-hidden=\"true\"></div>",
+      "css": ".ds-living-network { position: absolute; inset: 0; opacity: 0.65; background-image: radial-gradient(circle at 15% 25%, rgba(0,164,120,0.5) 0 2px, transparent 2px), radial-gradient(circle at 45% 60%, rgba(0,164,120,0.5) 0 2.5px, transparent 2.5px), radial-gradient(circle at 70% 20%, rgba(0,164,120,0.5) 0 2px, transparent 2px), radial-gradient(circle at 85% 70%, rgba(0,164,120,0.5) 0 3px, transparent 3px), radial-gradient(circle at 30% 85%, rgba(0,164,120,0.5) 0 2px, transparent 2px); background-repeat: no-repeat; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Connected Field Office",
+    "overview": "Tecnera is a calm, human workspace before it is a piece of technology. The foundation is a field office, not a control room: white floating cards, generous air, soft shadows, unhurried spacing. A visitor should feel like they've walked into a well-run, approachable company — never an intimidating enterprise dashboard, never a wall of gauges and metrics. This is deliberate: Tecnera doesn't sell monitoring software, it sells simplification, and the interface has to feel simpler than the operations it replaces.\n\nUnderneath that calm surface runs the second half of the system: a living network. A slow, softly-connecting mesh of nodes and lines drifts behind the content on nearly every page, quietly reinforcing that every product, page, and idea belongs to one intelligent, evolving ecosystem. It is atmosphere, not data-viz — there is no dashboard read to it, no implication of live metrics or monitoring. It should feel closer to Notion's calm productivity surfaces or Apple Intelligence's soft ambient glow than to a NOC screen.",
+    "keyCharacteristics": [
+      "Human before corporate — soft white surfaces and generous whitespace, not dense enterprise chrome.",
+      "Intelligent before futuristic — the network is a quiet undercurrent, never a sci-fi or dashboard motif.",
+      "Calm before flashy — restraint is the default; loud effects are the exception, not the house style.",
+      "Connected before modular — every surface reads as one ecosystem.",
+      "Premium through simplicity — quality is communicated by what's left out, not by visual density."
+    ],
+    "rules": [
+      { "name": "The One Accent Rule", "body": "Bright Mint is the only color allowed to say \"act now.\" Warm Amber and Info Link are single-purpose exceptions for specific components, never general CTA colors.", "section": "colors" },
+      { "name": "The One Display Moment Rule", "body": "Michroma appears once per page as the hero/section headline generator — never in body copy, buttons, or dense UI text. Its rarity is what keeps it feeling special rather than gimmicky.", "section": "typography" },
+      { "name": "The Floating-Not-Stacked Rule", "body": "Cards read as resting gently above the network canvas, not as a stack of opaque panels. Backdrop-blur glass panels, not solid fills, are the preferred way to place text over the network when contrast is needed.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do keep the living network present and continuous across pages — it's the connective tissue of the brand, not a homepage-only flourish.",
+      "Do use full-pill shape for every clickable CTA; reserve square/rounded-xl corners for input fields and small icon tiles only.",
+      "Do use Bright Mint as the only \"go\" signal color; keep Warm Amber and Info Link scoped to their single existing contexts.",
+      "Do pair Michroma sparingly (one display/headline moment per section) with Nunito for everything readable.",
+      "Do favor backdrop-blur glass panels over solid fills when placing text on top of the network canvas."
+    ],
+    "donts": [
+      "Don't introduce dashboard/control-room visual language (gauges, live-metric tickers, dense data grids as decoration) — the network is atmosphere, not a data visualization.",
+      "Don't extend the current heavy 3px text-stroke-and-glow hero treatment to new headlines; new display type should read closer to the calm Field Office foundation.",
+      "Don't carry the current shadow-black/30 heavy card shadow forward as the standard; new elevated surfaces should use a lighter, more diffused ambient shadow.",
+      "Don't use sharp/square corners anywhere in the primary UI.",
+      "Don't fabricate metrics, client counts, or case studies to fill empty sections — those numbers are placeholder, not fact."
+    ]
+  }
+}
