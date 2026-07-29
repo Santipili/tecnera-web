@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import Link from "next/link";
 import Header from "@/components/layout/Header";
 import PrimaryCTAButton from "@/components/ui/PrimaryCTAButton";
 import WhatsappCTAButton from "@/components/ui/WhatsappCTAButton";
+import NeuralNetworkBackground from "@/components/ui/NeuralNetworkBackground";
 import { customDev as product } from "@/data/customDev";
 import {
   Search,
@@ -84,27 +86,40 @@ export default function CustomPage() {
       <Header />
       <main>
         {/* Hero */}
-        <section className="py-24 bg-gradient-to-br from-[#0A3D35] via-primary to-[#005647] text-white">
-          <div className="max-w-7xl mx-auto px-4 tablet:px-6 laptop:px-8">
-            <div className="grid laptop:grid-cols-2 gap-12 items-center">
-              <div>
-                <span className="inline-block rounded-full border border-secondary/40 bg-secondary/10 px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-secondary mb-6">
-                  Producto Tecnera
-                </span>
-                <h1 className="text-4xl laptop:text-5xl font-extrabold leading-tight mb-6">
-                  {product.title}
-                </h1>
-                <p className="text-white/80 text-lg mb-8 leading-relaxed max-w-lg">
-                  {product.description}
-                </p>
-                <div className="flex flex-wrap gap-4">
-                  <PrimaryCTAButton source="custom_hero" />
-                  <WhatsappCTAButton source="custom_hero" />
+        <section className="relative overflow-hidden bg-light py-3">
+          <div className="absolute inset-0 z-0 opacity-65">
+            <NeuralNetworkBackground className="h-full w-full" color="28, 28, 28" nodeCount={260} />
+          </div>
+          <div className="relative z-10 max-w-7xl mx-auto px-4 tablet:px-6 laptop:px-8">
+            <div className="grid laptop:grid-cols-[minmax(0,0.9fr)_minmax(0,1.6fr)] gap-12 items-center">
+              {/* Logo */}
+              <div className="flex justify-center laptop:justify-start translate-y-2 laptop:-translate-x-24">
+                <div className="relative flex-shrink-0 w-[18rem] h-[20rem] laptop:w-[23rem] laptop:h-[26rem]">
+                  <Image
+                    src={product.logo}
+                    alt={product.title}
+                    fill
+                    className="object-contain"
+                  />
                 </div>
               </div>
-              <div className="relative h-72 laptop:h-96 rounded-2xl overflow-hidden shadow-2xl">
-                <Image src="/products/TECNERA/imagotipo-tecnera-blanco.png" alt={product.title} fill className="object-contain p-16" />
-                <div className="absolute inset-0 bg-gradient-to-t from-primary/60 to-transparent" />
+
+              {/* Texto */}
+              <div className="ml-auto w-full max-w-2xl">
+                <div className="bg-white/15 backdrop-blur-sm rounded-2xl p-5 laptop:p-6 mb-6">
+                  <p className="text-neutral text-xl font-bold leading-relaxed">
+                    {product.description}
+                  </p>
+                </div>
+                <div className="flex flex-wrap gap-4">
+                  <PrimaryCTAButton source="custom_hero" variant="primary" label="Contanos tu proyecto" />
+                  <Link
+                    href="#que-podemos-desarrollar"
+                    className="inline-flex items-center gap-2 rounded-full bg-white text-primary px-7 py-3.5 text-sm font-bold shadow-lg shadow-black/20 hover:bg-secondary transition-colors duration-200"
+                  >
+                    Ver qué podemos hacer
+                  </Link>
+                </div>
               </div>
             </div>
           </div>
@@ -136,7 +151,7 @@ export default function CustomPage() {
         </section>
 
         {/* Qué podemos desarrollar */}
-        <section className="py-24 bg-[#EAEAEA]">
+        <section id="que-podemos-desarrollar" className="py-24 bg-[#EAEAEA]">
           <div className="max-w-[88rem] mx-auto px-4 tablet:px-6 laptop:px-8">
             <h2 className="text-3xl font-extrabold text-neutral text-center mb-16">
               ¿Qué podemos desarrollar?
@@ -147,11 +162,11 @@ export default function CustomPage() {
                   <PlaceholderScreenshot
                     icon={Icon}
                     label={title}
-                    className="shrink-0 aspect-video h-[30rem] laptop:h-[35rem]"
+                    className="w-full aspect-video laptop:h-[35rem] laptop:w-auto laptop:shrink-0"
                   />
                 );
                 const card = (
-                  <div className="flex-1 min-w-[20rem] min-h-[24rem] laptop:min-h-[28rem] bg-white rounded-2xl p-8 shadow-sm flex flex-col justify-center">
+                  <div className="w-full laptop:flex-1 laptop:w-auto min-h-[24rem] laptop:min-h-[28rem] bg-white rounded-2xl p-8 shadow-sm flex flex-col justify-center">
                     <h3 className="text-xl font-bold text-neutral mb-2">{title}</h3>
                     <p className="text-subtext mb-5">{desc}</p>
                     <ul className="space-y-3">
@@ -167,7 +182,7 @@ export default function CustomPage() {
                 return (
                   <div
                     key={i}
-                    className={`flex gap-14 items-center ${i === 1 ? "flex-row-reverse" : ""}`}
+                    className={`flex flex-col laptop:flex-row gap-8 laptop:gap-14 items-center ${i === 1 ? "laptop:flex-row-reverse" : ""}`}
                   >
                     {screenshot}
                     {card}
