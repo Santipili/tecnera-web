@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 import PrimaryCTAButton from "@/components/ui/PrimaryCTAButton";
 
 const navLinks = [
-  { href: "/productos", label: "Productos" },
+  { href: "/#productos", label: "Productos" },
   { href: "/servicios", label: "Servicios" },
   { href: "/casos", label: "Casos" },
   { href: "/nosotros", label: "Nosotros" },

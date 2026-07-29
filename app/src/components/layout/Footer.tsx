@@ -7,7 +7,7 @@ const productLinks = [
   { label: "Mannaz — CRM de afiliados", href: "/productos/mannaz" },
   { label: "Odal — ERP de operaciones", href: "/productos/odal" },
   { label: "Desarrollos a medida", href: "/productos/custom" },
-  { label: "Ver todos los productos", href: "/productos" },
+  { label: "Ver todos los productos", href: "/#productos" },
 ];
 
 const companyLinks = [
