@@ -101,7 +101,20 @@ const relevantAreas: {
   },
 ];
 
-const pricingPlans = [
+interface PricingFeature {
+  label: string;
+  comingSoon?: boolean;
+}
+
+interface PricingPlan {
+  name: string;
+  features: PricingFeature[];
+  priceNote: string;
+  userTiers?: { label: string; price: string }[];
+  variant: "white" | "primary" | "black";
+}
+
+const pricingPlans: PricingPlan[] = [
   {
     name: "Basico",
     features: [
@@ -151,13 +164,15 @@ const pricingPlans = [
 export default function OdalPage() {
   return (
     <div className="min-h-screen">
+      <div className="fixed inset-0 -z-10 bg-light">
+        <div className="h-full w-full opacity-[0.35] pointer-events-none">
+          <NeuralNetworkBackground className="h-full w-full" color="28, 28, 28" nodeCount={260} />
+        </div>
+      </div>
       <Header />
       <main>
         {/* Hero */}
-        <section className="relative overflow-hidden bg-light py-3">
-          <div className="absolute inset-0 z-0 opacity-65">
-            <NeuralNetworkBackground className="h-full w-full" color="28, 28, 28" nodeCount={260} />
-          </div>
+        <section className="relative py-3">
           <div className="relative z-10 max-w-7xl mx-auto px-4 tablet:px-6 laptop:px-8">
             <div className="grid laptop:grid-cols-[minmax(0,0.9fr)_minmax(0,1.6fr)] gap-12 items-center">
               {/* Logo */}
@@ -199,14 +214,16 @@ export default function OdalPage() {
         </section>
 
         {/* Dashboard */}
-        <section className="py-24 bg-light">
+        <section className="py-24">
           <div className="max-w-6xl mx-auto px-4 tablet:px-6 laptop:px-8">
             <SectionHeader
               tag="Odal"
               title="Así se ve Odal por dentro"
               description="Un panel de inicio pensado para que veas de un vistazo el estado de tu operación apenas iniciás sesión."
+              descriptionClassName="text-neutral/80 [text-shadow:0_1px_3px_rgba(249,250,248,0.9)]"
               centered
               emphasize
+              icon
               titleSizeClass="text-4xl tablet:text-5xl"
               descriptionSizeClass="text-xl"
             />
@@ -229,14 +246,16 @@ export default function OdalPage() {
         </section>
 
         {/* Customización */}
-        <section className="py-24 bg-[#EAEAEA]">
+        <section className="py-24">
           <div className="max-w-[100rem] mx-auto px-4 tablet:px-6 laptop:px-8">
             <SectionHeader
               tag="Odal"
               title="Customización de la plataforma"
               description="Odal se adapta a tu empresa, no al revés. Elegí el nivel de personalización que necesitás."
+              descriptionClassName="text-neutral/80 [text-shadow:0_1px_3px_rgba(249,250,248,0.9)]"
               centered
               emphasize
+              icon
               titleSizeClass="text-4xl tablet:text-5xl"
               descriptionSizeClass="text-xl"
             />
@@ -255,13 +274,14 @@ export default function OdalPage() {
         </section>
 
         {/* Áreas relevantes */}
-        <section className="py-24 bg-light">
+        <section className="py-24">
           <div className="max-w-[88rem] mx-auto px-4 tablet:px-6 laptop:px-8">
             <SectionHeader
               tag="Odal"
               title="Áreas relevantes"
               centered
               emphasize
+              icon
               titleSizeClass="text-4xl tablet:text-5xl"
               descriptionSizeClass="text-xl"
             />
@@ -300,14 +320,16 @@ export default function OdalPage() {
         </section>
 
         {/* Roadmap */}
-        <section className="py-24 bg-light">
+        <section className="py-24">
           <div className="max-w-[88rem] mx-auto px-4 tablet:px-6 laptop:px-8">
             <SectionHeader
               tag="Odal"
               title="Lo que viene para Odal"
               description="Módulos transversales a todas nuestras plataformas que también van a estar disponibles en Odal."
+              descriptionClassName="text-neutral/80 [text-shadow:0_1px_3px_rgba(249,250,248,0.9)]"
               centered
               emphasize
+              icon
               titleSizeClass="text-4xl tablet:text-5xl"
               descriptionSizeClass="text-xl"
             />
@@ -340,7 +362,7 @@ export default function OdalPage() {
                       </div>
                       <h3 className="font-bold text-neutral text-left">{item.title}</h3>
                     </div>
-                    <p className="mt-2 text-sm text-subtext leading-relaxed">{item.description}</p>
+                    <p className="mt-2 text-sm text-neutral/80 leading-relaxed [text-shadow:0_1px_3px_rgba(249,250,248,0.9)]">{item.description}</p>
                   </div>
                 );
               })}
@@ -349,13 +371,14 @@ export default function OdalPage() {
         </section>
 
         {/* Pricing */}
-        <section id="precios" className="py-24 bg-[#EAEAEA]">
+        <section id="precios" className="py-24">
           <div className="max-w-7xl mx-auto px-4 tablet:px-6 laptop:px-8">
             <SectionHeader
               tag="Odal"
               title="Planes y precios"
               centered
               emphasize
+              icon
               titleSizeClass="text-4xl tablet:text-5xl"
             />
             <div className="grid tablet:grid-cols-3 gap-6 items-stretch">
@@ -386,11 +409,6 @@ export default function OdalPage() {
                       {variant === "primary" && (
                         <span className="inline-block rounded-full bg-white px-3 py-1 text-xs font-bold uppercase tracking-widest text-primary">
                           Recomendado
-                        </span>
-                      )}
-                      {variant === "white" && (
-                        <span className="inline-block rounded-full bg-primary px-3 py-1 text-xs font-bold uppercase tracking-widest text-white">
-                          Inicial
                         </span>
                       )}
                     </div>
