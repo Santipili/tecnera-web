@@ -19,6 +19,7 @@ export default function Features() {
           title="Todo lo que necesitás en un solo lugar"
           centered
           emphasize
+          icon
         />
 
         <div className="grid grid-cols-1 tablet:grid-cols-2 lg:grid-cols-4 gap-4">

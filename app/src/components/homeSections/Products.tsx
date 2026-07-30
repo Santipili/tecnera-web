@@ -14,6 +14,7 @@ export default function Products() {
           title="Deja atras las planillas y archivos compartidos con nuestras soluciones integrales"
           centered
           emphasize
+          icon
         />
         <div className="flex flex-col gap-14">
           {products.map((product, i) => (
