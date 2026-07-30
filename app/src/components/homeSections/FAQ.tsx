@@ -2,7 +2,7 @@
 import { useState } from "react";
 import SectionHeader from "@/components/ui/SectionHeader";
 import { motion } from "framer-motion";
-import { faqs } from "@/data/faq";
+import { faqCategories } from "@/data/faq";
 import type { FAQItem } from "@/data/faq";
 
 function AccordionItem({
@@ -40,86 +40,64 @@ function AccordionItem({
   );
 }
 
-const inputClass =
-  "w-full rounded-xl border border-primary/15 bg-light px-4 py-3 text-sm text-neutral placeholder:text-subtext focus:border-primary focus:outline-none transition-colors";
-
 export default function FAQ() {
+  const [activeCategory, setActiveCategory] = useState(faqCategories[0].id);
   const [openIndex, setOpenIndex] = useState<number | null>(0);
-  const [submitted, setSubmitted] = useState(false);
+
+  const handleSelectCategory = (id: string) => {
+    setActiveCategory(id);
+    setOpenIndex(0);
+  };
 
   const handleToggle = (index: number) => {
     setOpenIndex(openIndex === index ? null : index);
   };
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    const data = Object.fromEntries(new FormData(e.currentTarget));
-    console.log({ action: "contacto_form_submit", source: "faq", data });
-    setSubmitted(true);
-    e.currentTarget.reset();
-  };
+  const category = faqCategories.find((c) => c.id === activeCategory) ?? faqCategories[0];
 
   return (
     <section id="faq" className="relative py-24 transition-colors duration-300">
-      <div className="mx-auto max-w-[90rem] px-4 sm:px-6 lg:px-6">
+      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-6">
         <SectionHeader
           tag="Preguntas frecuentes"
           title="Puede que ya tengamos la respuesta"
           centered
           emphasize
+          icon
         />
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+        <div className="grid tablet:grid-cols-[16rem_1fr] gap-6 items-start">
+          <nav className="flex tablet:flex-col gap-2 overflow-x-auto tablet:overflow-visible pb-2 tablet:pb-0">
+            {faqCategories.map((cat) => (
+              <button
+                key={cat.id}
+                onClick={() => handleSelectCategory(cat.id)}
+                className={`flex-shrink-0 tablet:w-full text-left rounded-xl px-5 py-3.5 text-sm font-bold transition-colors duration-200 cursor-pointer ${
+                  activeCategory === cat.id
+                    ? "bg-primary text-white shadow-lg shadow-black/20"
+                    : "bg-white text-neutral border border-primary/10 hover:border-secondary/40"
+                }`}
+              >
+                {cat.label}
+              </button>
+            ))}
+          </nav>
+
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            viewport={{ once: true }}
+            key={category.id}
+            initial={{ opacity: 0, y: 15 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.4 }}
             className="rounded-[2rem] border border-primary/10 bg-white p-8 lg:p-10 shadow-lg shadow-black/30"
           >
-            {faqs.map((faq, index) => (
+            {category.items.map((faq, index) => (
               <AccordionItem
-                key={index}
+                key={faq.question}
                 item={faq}
                 isOpen={openIndex === index}
                 onToggle={() => handleToggle(index)}
               />
             ))}
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.1 }}
-            viewport={{ once: true }}
-            className="rounded-[2rem] border border-primary/10 bg-light p-8 lg:p-10 shadow-lg shadow-black/30"
-          >
-            <h3 className="text-xl font-extrabold text-neutral">Contanos tu proyecto</h3>
-            <p className="mt-2 text-sm text-subtext leading-relaxed">
-              Dejanos tus datos y te respondemos a la brevedad.
-            </p>
-
-            {submitted ? (
-              <div className="mt-8 flex items-center gap-3 rounded-xl bg-secondary/10 px-4 py-4 text-sm font-bold text-primary">
-                <svg className="h-5 w-5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-                </svg>
-                ¡Gracias! Recibimos tu mensaje y te vamos a contactar pronto.
-              </div>
-            ) : (
-              <form onSubmit={handleSubmit} className="mt-8 flex flex-col gap-4">
-                <input name="name" required placeholder="Nombre y apellido" className={inputClass} />
-                <input name="email" type="email" required placeholder="Email" className={inputClass} />
-                <input name="organization" placeholder="Organización" className={inputClass} />
-                <textarea name="message" required rows={4} placeholder="Contanos sobre tu proyecto o consulta" className={inputClass} />
-                <button
-                  type="submit"
-                  className="mt-2 inline-flex items-center justify-center gap-2 rounded-full bg-primary px-7 py-3.5 text-sm font-bold text-white hover:bg-secondary hover:text-primary transition-colors cursor-pointer w-fit"
-                >
-                  Enviar mensaje
-                </button>
-              </form>
-            )}
           </motion.div>
         </div>
       </div>
