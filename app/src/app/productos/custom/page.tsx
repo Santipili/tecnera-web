@@ -1,19 +1,19 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import Link from "next/link";
 import Header from "@/components/layout/Header";
+import SectionHeader from "@/components/ui/SectionHeader";
 import PrimaryCTAButton from "@/components/ui/PrimaryCTAButton";
 import WhatsappCTAButton from "@/components/ui/WhatsappCTAButton";
+import DevelopmentNetworkDiagram from "@/components/ui/DevelopmentNetworkDiagram";
+import ContactAndServicesSplit from "@/components/ui/ContactAndServicesSplit";
 import NeuralNetworkBackground from "@/components/ui/NeuralNetworkBackground";
 import { customDev as product } from "@/data/customDev";
 import {
-  Search,
-  Workflow,
   Rocket,
-  LayoutDashboard,
-  Database,
-  CheckCircle2,
-  type LucideIcon,
+  MessageCircle,
+  FileText,
+  PenTool,
+  Code2,
 } from "lucide-react";
 
 export const metadata: Metadata = {
@@ -21,221 +21,131 @@ export const metadata: Metadata = {
   description: "Creamos software a medida para resolver las necesidades específicas de tu organización.",
 };
 
-const developmentAreas: {
-  icon: LucideIcon;
-  title: string;
-  desc: string;
-  bullets: string[];
-}[] = [
-  {
-    icon: LayoutDashboard,
-    title: "Aplicaciones web y dashboards a medida",
-    desc: "Interfaces pensadas para tu equipo, no para todos.",
-    bullets: [
-      "Diseño adaptado a tus procesos reales",
-      "Accesos y permisos según cada rol",
-      "Reportes y métricas que importan a tu operación",
-    ],
-  },
-  {
-    icon: Workflow,
-    title: "Automatización de procesos e integraciones",
-    desc: "Menos tareas manuales, más tiempo para lo importante.",
-    bullets: [
-      "Conexión con las herramientas que ya usás",
-      "Flujos automáticos entre sistemas",
-      "Notificaciones y alertas en tiempo real",
-    ],
-  },
-  {
-    icon: Database,
-    title: "Digitalización de lo que hoy es manual",
-    desc: "Pasá de planillas sueltas a información centralizada.",
-    bullets: [
-      "Migración de datos desde Excel o papel",
-      "Un solo lugar para toda la información",
-      "Historial y trazabilidad de cada cambio",
-    ],
-  },
-];
-
-function PlaceholderScreenshot({
-  icon: Icon,
-  label,
-  className = "",
-}: {
-  icon: LucideIcon;
-  label: string;
-  className?: string;
-}) {
-  return (
-    <div
-      className={`relative flex flex-col items-center justify-center gap-3 bg-gradient-to-br from-primary/5 via-secondary/5 to-transparent border-2 border-dashed border-primary/15 rounded-xl ${className}`}
-    >
-      <Icon className="w-10 h-10 text-primary/30" />
-      <span className="text-xs font-semibold text-primary/40 uppercase tracking-widest text-center px-4">
-        {label}
-      </span>
-    </div>
-  );
-}
-
 export default function CustomPage() {
   return (
-    <div className="min-h-screen bg-light">
+    <div className="min-h-screen">
+      <div className="fixed inset-0 -z-10 bg-light">
+        <div className="h-full w-full opacity-[0.35] pointer-events-none">
+          <NeuralNetworkBackground className="h-full w-full" color="28, 28, 28" nodeCount={260} />
+        </div>
+      </div>
       <Header />
       <main>
         {/* Hero */}
-        <section className="relative overflow-hidden bg-light py-3">
-          <div className="absolute inset-0 z-0 opacity-65">
-            <NeuralNetworkBackground className="h-full w-full" color="28, 28, 28" nodeCount={260} />
-          </div>
+        <section className="relative pt-36 pb-12 tablet:pb-16">
           <div className="relative z-10 max-w-7xl mx-auto px-4 tablet:px-6 laptop:px-8">
             <div className="grid laptop:grid-cols-[minmax(0,0.9fr)_minmax(0,1.6fr)] gap-12 items-center">
               {/* Logo */}
-              <div className="flex justify-center laptop:justify-start translate-y-2 laptop:-translate-x-24">
-                <div className="relative flex-shrink-0 w-[18rem] h-[20rem] laptop:w-[23rem] laptop:h-[26rem]">
-                  <Image
-                    src={product.logo}
-                    alt={product.title}
-                    fill
-                    className="object-contain"
-                  />
-                </div>
+              <div className="flex justify-center laptop:justify-start">
+                <Image
+                  src={product.logo}
+                  alt={product.title}
+                  width={420}
+                  height={78}
+                  className="w-56 tablet:w-64 laptop:w-[26rem] h-auto flex-shrink-0 laptop:-translate-x-16"
+                />
               </div>
 
               {/* Texto */}
               <div className="ml-auto w-full max-w-2xl">
-                <div className="bg-white/15 backdrop-blur-sm rounded-2xl p-5 laptop:p-6 mb-6">
+                <div className="bg-white/15 backdrop-blur-sm rounded-2xl p-5 laptop:p-6">
                   <p className="text-neutral text-xl font-bold leading-relaxed">
-                    {product.description}
+                    Llega un momento en el cual el uso de las herramientas comunes no satisface las
+                    necesidades de tu trabajo, para ello somos capaces de desarrollar soluciones
+                    digitales que se adapten a tus flujos y problemáticas a la medida.
                   </p>
                 </div>
-                <div className="flex flex-wrap gap-4">
-                  <PrimaryCTAButton source="custom_hero" variant="primary" label="Contanos tu proyecto" />
-                  <Link
-                    href="#que-podemos-desarrollar"
-                    className="inline-flex items-center gap-2 rounded-full bg-white text-primary px-7 py-3.5 text-sm font-bold shadow-lg shadow-black/20 hover:bg-secondary transition-colors duration-200"
-                  >
-                    Ver qué podemos hacer
-                  </Link>
-                </div>
+              </div>
+            </div>
+
+            <div className="grid laptop:grid-cols-[minmax(0,0.9fr)_minmax(0,1.6fr)] gap-12 mt-6">
+              <div />
+              <div className="ml-auto w-full max-w-2xl flex flex-wrap gap-4">
+                <PrimaryCTAButton source="custom_hero" variant="primary" label="Contanos tu proyecto" />
+                <WhatsappCTAButton source="custom_hero" />
               </div>
             </div>
           </div>
         </section>
 
-        {/* Ejemplo de dashboard */}
-        <section className="py-24 bg-light">
-          <div className="max-w-6xl mx-auto px-4 tablet:px-6 laptop:px-8">
-            <h2 className="text-3xl font-extrabold text-neutral text-center mb-3">
-              Cada desarrollo es distinto
-            </h2>
-            <p className="text-subtext text-center max-w-2xl mx-auto mb-12 leading-relaxed">
-              No hay dos proyectos iguales, pero así se ve un dashboard construido a medida para
-              ordenar la operación de tu organización.
-            </p>
-            <div className="rounded-2xl border border-neutral-100 bg-white shadow-xl overflow-hidden">
-              <div className="flex items-center gap-2 px-5 py-3.5 border-b border-neutral-100 bg-[#F4F4F4]">
-                <span className="w-3 h-3 rounded-full bg-[#FF5F57]" />
-                <span className="w-3 h-3 rounded-full bg-[#FEBC2E]" />
-                <span className="w-3 h-3 rounded-full bg-[#28C840]" />
-              </div>
-              <PlaceholderScreenshot
-                icon={LayoutDashboard}
-                label="Ejemplo de dashboard a medida"
-                className="h-80 laptop:h-[26rem] rounded-none border-none"
-              />
-            </div>
-          </div>
-        </section>
-
-        {/* Qué podemos desarrollar */}
-        <section id="que-podemos-desarrollar" className="py-24 bg-[#EAEAEA]">
-          <div className="max-w-[88rem] mx-auto px-4 tablet:px-6 laptop:px-8">
-            <h2 className="text-3xl font-extrabold text-neutral text-center mb-16">
-              ¿Qué podemos desarrollar?
-            </h2>
-            <div className="flex flex-col gap-16">
-              {developmentAreas.map(({ icon: Icon, title, desc, bullets }, i) => {
-                const screenshot = (
-                  <PlaceholderScreenshot
-                    icon={Icon}
-                    label={title}
-                    className="w-full aspect-video laptop:h-[35rem] laptop:w-auto laptop:shrink-0"
-                  />
-                );
-                const card = (
-                  <div className="w-full laptop:flex-1 laptop:w-auto min-h-[24rem] laptop:min-h-[28rem] bg-white rounded-2xl p-8 shadow-sm flex flex-col justify-center">
-                    <h3 className="text-xl font-bold text-neutral mb-2">{title}</h3>
-                    <p className="text-subtext mb-5">{desc}</p>
-                    <ul className="space-y-3">
-                      {bullets.map((bullet, j) => (
-                        <li key={j} className="flex items-start gap-3 text-neutral text-sm font-medium">
-                          <CheckCircle2 className="w-5 h-5 text-secondary flex-shrink-0 mt-0.5" />
-                          {bullet}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                );
-                return (
-                  <div
-                    key={i}
-                    className={`flex flex-col laptop:flex-row gap-8 laptop:gap-14 items-center ${i === 1 ? "laptop:flex-row-reverse" : ""}`}
-                  >
-                    {screenshot}
-                    {card}
-                  </div>
-                );
-              })}
+        {/* Cada desarrollo es distinto */}
+        <section className="py-24">
+          <div className="max-w-[100rem] mx-auto px-4 tablet:px-6 laptop:px-8">
+            <SectionHeader
+              tag="Desarrollo a medida"
+              title="Cada desarrollo es distinto"
+              description="No hay dos proyectos iguales. Tomamos lo disperso de tu operación y lo convertimos en una sola solución pensada para tu forma de trabajar."
+              centered
+              emphasize
+              icon
+              titleSizeClass="text-4xl tablet:text-5xl"
+              descriptionSizeClass="text-xl"
+            />
+            <div className="laptop:w-[90%] laptop:mr-auto">
+              <DevelopmentNetworkDiagram />
             </div>
           </div>
         </section>
 
         {/* Proceso */}
-        <section className="py-20 bg-light">
+        <section className="py-24">
           <div className="max-w-7xl mx-auto px-4 tablet:px-6 laptop:px-8">
-            <h2 className="text-3xl font-extrabold text-neutral text-center mb-12">
-              Nuestro proceso
-            </h2>
-            <div className="grid tablet:grid-cols-3 gap-6">
-              {[
-                { icon: Search, step: "01", title: "Entendemos tu problema", desc: "Nos reunimos para entender tu necesidad real, tus flujos de trabajo y qué solución tendría más impacto." },
-                { icon: Workflow, step: "02", title: "Diseñamos y construimos", desc: "Desarrollo iterativo con entregas frecuentes. Ves el avance desde la primera semana." },
-                { icon: Rocket, step: "03", title: "Lanzamos y acompañamos", desc: "Implementación, capacitación y soporte continuo. No desaparecemos después de entregar." },
-              ].map((item, i) => {
-                const Icon = item.icon;
-                return (
-                  <div key={i} className="bg-white rounded-2xl p-8 shadow-sm relative overflow-hidden">
-                    <span className="absolute top-4 right-5 text-5xl font-black text-neutral/5 select-none">
-                      {item.step}
-                    </span>
-                    <div className="w-14 h-14 bg-gradient-to-br from-primary to-secondary rounded-xl flex items-center justify-center mb-5">
-                      <Icon className="w-7 h-7 text-white" />
+            <SectionHeader
+              tag="Desarrollo a medida"
+              title="Así se construye un desarrollo a medida"
+              description="Desde el primer contacto hasta el acompañamiento posterior, este es el camino que recorremos junto a cada cliente."
+              centered
+              emphasize
+              icon
+              titleSizeClass="text-4xl tablet:text-5xl"
+              descriptionSizeClass="text-xl"
+            />
+            <div className="relative">
+              <div className="hidden tablet:block absolute top-0 bottom-0 left-1/2 -translate-x-1/2 w-0.5 bg-primary/15" />
+              <div className="flex flex-col gap-10 tablet:gap-14">
+                {[
+                  { icon: MessageCircle, title: "Primer contacto y relevamiento", desc: "Nos reunimos con vos para entender tu operación real: qué procesos usás hoy, qué te frena y qué resultado esperás.", box: "bg-primary" },
+                  { icon: FileText, title: "Propuesta y presupuesto", desc: "Definimos el alcance de la solución, los tiempos de entrega y el presupuesto, sin letra chica ni sorpresas.", box: "bg-red-800/80" },
+                  { icon: PenTool, title: "Diseño y validación", desc: "Diseñamos la solución y la validamos con vos antes de escribir una sola línea de código definitiva.", box: "bg-neutral" },
+                  { icon: Code2, title: "Desarrollo iterativo", desc: "Construimos por etapas con entregas frecuentes, para que veas el avance real desde la primera semana.", box: "bg-link" },
+                  { icon: Rocket, title: "Lanzamiento y acompañamiento", desc: "Implementamos, capacitamos a tu equipo y seguimos disponibles después de la entrega, no solo durante el proyecto.", box: "bg-amber-500" },
+                ].map((item, i) => {
+                  const Icon = item.icon;
+                  const isEven = i % 2 === 0;
+                  const card = (
+                    <div className="w-full tablet:w-[calc(50%-2.5rem)] min-h-[13rem] bg-white rounded-2xl p-9 shadow-sm relative overflow-hidden flex flex-col justify-center">
+                      <div className="flex items-center gap-4 mb-4">
+                        <div className={`w-14 h-14 flex-shrink-0 rounded-xl flex items-center justify-center ${item.box}`}>
+                          <Icon className="w-7 h-7 text-white" />
+                        </div>
+                        <h3 className="text-xl font-bold text-neutral">{item.title}</h3>
+                      </div>
+                      <p className="text-subtext text-base leading-relaxed">{item.desc}</p>
                     </div>
-                    <h3 className="text-lg font-bold text-neutral mb-2">{item.title}</h3>
-                    <p className="text-subtext text-sm leading-relaxed">{item.desc}</p>
-                  </div>
-                );
-              })}
+                  );
+                  return (
+                    <div key={i} className="relative flex items-center">
+                      <div className="hidden tablet:flex absolute left-1/2 -translate-x-1/2 z-10 h-14 w-14 items-center justify-center rounded-full bg-primary text-white text-xl font-extrabold shadow-lg shadow-black/20">
+                        {i + 1}
+                      </div>
+                      <div className={`w-full flex ${isEven ? "tablet:justify-start" : "tablet:justify-end"}`}>
+                        {card}
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
             </div>
           </div>
         </section>
 
-        {/* CTA */}
-        <section className="py-20 bg-gradient-to-r from-primary to-[#00A478] text-white text-center">
-          <div className="max-w-3xl mx-auto px-4">
-            <h2 className="text-3xl font-extrabold mb-4">Tenés un problema, nosotros tenemos la solución</h2>
-            <p className="text-white/80 mb-8 text-lg leading-relaxed">
-              Contanos qué necesitás y armamos una propuesta a medida sin compromiso.
-            </p>
-            <div className="flex flex-wrap gap-4 justify-center">
-              <PrimaryCTAButton source="custom_cta" />
-              <WhatsappCTAButton source="custom_cta" />
-            </div>
+        {/* Contacto y Servicios */}
+        <section className="py-24">
+          <div className="max-w-7xl mx-auto px-4 tablet:px-6 laptop:px-8">
+            <ContactAndServicesSplit />
           </div>
         </section>
+
       </main>
     </div>
   );
