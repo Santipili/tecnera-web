@@ -1,0 +1,17 @@
+{
+  "name": "tecnera-contact-api",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "API minima en Express para el formulario de contacto de Tecnera",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "nodemailer": "^9.0.3"
+  }
+}
