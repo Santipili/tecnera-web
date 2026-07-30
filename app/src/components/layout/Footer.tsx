@@ -15,7 +15,6 @@ const companyLinks = [
   { label: "Nosotros", href: "/nosotros" },
   { label: "Servicios", href: "/servicios" },
   { label: "Casos de éxito", href: "/casos" },
-  { label: "Precios", href: "/precios" },
 ];
 
 function FooterLinkGroup({ title, links }: { title: string; links: { label: string; href: string }[] }) {

@@ -53,7 +53,7 @@ export default function MannazPage() {
                 </div>
                 <div className="flex flex-wrap gap-4">
                   <PrimaryCTAButton source="mannaz_hero" href="/contacto?reason=mannaz" variant="primary" label="Solicitar demo" />
-                  <PrimaryCTAButton source="mannaz_hero_precios" href="/precios" variant="white" icon={false} label="Ver precios" />
+                  <PrimaryCTAButton source="mannaz_hero_contacto" href="/contacto?reason=mannaz" variant="white" icon={false} label="Consultar" />
                 </div>
               </div>
             </div>

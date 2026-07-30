@@ -8,9 +8,8 @@ import PrimaryCTAButton from "@/components/ui/PrimaryCTAButton";
 const navLinks = [
   { href: "/#productos", label: "Productos" },
   { href: "/servicios", label: "Servicios" },
-  { href: "/casos", label: "Casos" },
   { href: "/nosotros", label: "Nosotros" },
-  { href: "/precios", label: "Precios" },
+  { href: "/preguntas-frecuentes", label: "Preguntas frecuentes" },
 ];
 
 export default function Header() {
@@ -31,7 +30,7 @@ export default function Header() {
             width={168}
             height={31}
             priority
-            className="h-10 w-auto"
+            className="h-9 w-auto"
           />
         </Link>
 
