@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import Link from "next/link";
 import Header from "@/components/layout/Header";
+import SectionHeader from "@/components/ui/SectionHeader";
 import PrimaryCTAButton from "@/components/ui/PrimaryCTAButton";
 import WhatsappCTAButton from "@/components/ui/WhatsappCTAButton";
 import NeuralNetworkBackground from "@/components/ui/NeuralNetworkBackground";
@@ -42,23 +42,18 @@ export default function MannazPage() {
               {/* Texto */}
               <div className="ml-auto w-full max-w-2xl">
                 <div className="bg-white/15 backdrop-blur-sm rounded-2xl p-5 laptop:p-6 mb-6">
-                  <p className="text-neutral text-xl font-bold leading-relaxed mb-4">
+                  <h1 className="text-neutral text-xl font-bold leading-relaxed mb-4">
                     Mannaz centraliza la información de cada afiliado o miembro en una sola plataforma
                     pensada para mutuales, sindicatos, cooperativas y organizaciones con socios.
-                  </p>
+                  </h1>
                   <p className="text-neutral text-xl font-bold leading-relaxed">
                     Gestioná visitas, campañas, segmentaciones y acciones institucionales con datos
                     siempre actualizados y disponibles.
                   </p>
                 </div>
                 <div className="flex flex-wrap gap-4">
-                  <PrimaryCTAButton source="mannaz_hero" variant="primary" label="Solicitar demo" />
-                  <Link
-                    href="/precios"
-                    className="inline-flex items-center gap-2 rounded-full bg-white text-primary px-7 py-3.5 text-sm font-bold shadow-lg shadow-black/20 hover:bg-secondary transition-colors duration-200"
-                  >
-                    Ver precios
-                  </Link>
+                  <PrimaryCTAButton source="mannaz_hero" href="/contacto?reason=mannaz" variant="primary" label="Solicitar demo" />
+                  <PrimaryCTAButton source="mannaz_hero_precios" href="/precios" variant="white" icon={false} label="Ver precios" />
                 </div>
               </div>
             </div>
@@ -68,9 +63,7 @@ export default function MannazPage() {
         {/* Features */}
         <section className="py-24 bg-light">
           <div className="max-w-4xl mx-auto px-4 tablet:px-6">
-            <h2 className="text-3xl font-extrabold text-neutral text-center mb-12">
-              Todo lo que incluye
-            </h2>
+            <SectionHeader tag="Mannaz" title="Todo lo que incluye" centered />
             <div className="grid tablet:grid-cols-2 gap-5">
               {product.features.map((feature, i) => (
                 <div key={i} className="flex items-start gap-4 p-6 bg-white rounded-xl border border-neutral-100 shadow-sm">
@@ -89,9 +82,7 @@ export default function MannazPage() {
         {/* ¿Para quién es? */}
         <section className="py-20 bg-[#EAEAEA]">
           <div className="max-w-7xl mx-auto px-4 tablet:px-6 laptop:px-8">
-            <h2 className="text-3xl font-extrabold text-neutral text-center mb-12">
-              ¿Para qué tipo de organización?
-            </h2>
+            <SectionHeader tag="Mannaz" title="¿Para qué tipo de organización?" centered />
             <div className="grid tablet:grid-cols-3 gap-6">
               {[
                 { icon: Users, title: "Mutuales y sindicatos", desc: "Gestioná afiliados, cuotas y comunicación institucional desde un solo lugar." },
@@ -116,10 +107,14 @@ export default function MannazPage() {
         {/* CTA */}
         <section className="py-20 bg-gradient-to-r from-primary to-[#00A478] text-white text-center">
           <div className="max-w-3xl mx-auto px-4">
-            <h2 className="text-3xl font-extrabold mb-4">¿Listo para ordenar tu base de afiliados?</h2>
-            <p className="text-white/80 mb-8 text-lg leading-relaxed">
-              Hablemos sobre cómo Mannaz puede reemplazar tus planillas y mensajes dispersos.
-            </p>
+            <SectionHeader
+              tag="Mannaz"
+              title="¿Listo para ordenar tu base de afiliados?"
+              description="Hablemos sobre cómo Mannaz puede reemplazar tus planillas y mensajes dispersos."
+              descriptionSizeClass="text-lg"
+              centered
+              dark
+            />
             <div className="flex flex-wrap gap-4 justify-center">
               <PrimaryCTAButton source="mannaz_cta" />
               <WhatsappCTAButton source="mannaz_cta" />

@@ -175,17 +175,17 @@ export default function OdalPage() {
               {/* Texto */}
               <div className="ml-auto w-full max-w-2xl">
                 <div className="bg-white/15 backdrop-blur-sm rounded-2xl p-5 laptop:p-6 mb-6">
-                  <p className="text-neutral text-xl font-bold leading-relaxed mb-4">
+                  <h1 className="text-neutral text-xl font-bold leading-relaxed mb-4">
                     Odal centraliza reclamos, órdenes de trabajo, presupuestos e inspecciones en una sola
                     plataforma pensada para empresas de mantenimiento y servicios técnicos.
-                  </p>
+                  </h1>
                   <p className="text-neutral text-xl font-bold leading-relaxed">
                     Ordená tu operación diaria y tomá decisiones con información real, actualizada y disponible
                     en el momento en que la necesitás.
                   </p>
                 </div>
                 <div className="flex flex-wrap gap-4">
-                  <PrimaryCTAButton source="odal_hero" variant="primary" label="Solicitar demo" />
+                  <PrimaryCTAButton source="odal_hero" href="/contacto?reason=odal" variant="primary" label="Solicitar demo" />
                   <Link
                     href="#precios"
                     className="inline-flex items-center gap-2 rounded-full bg-white text-primary px-7 py-3.5 text-sm font-bold shadow-lg shadow-black/20 hover:bg-secondary transition-colors duration-200"

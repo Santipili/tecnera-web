@@ -54,7 +54,7 @@ export default function Header() {
 
         <div className="flex items-center gap-3">
           <div className="hidden lg:block">
-            <PrimaryCTAButton source="header" variant="primary" label="Contacto" />
+            <PrimaryCTAButton source="header" variant="primary" label="Contacto" href="/contacto" />
           </div>
 
           <button
@@ -95,7 +95,7 @@ export default function Header() {
             ))}
           </ul>
           <div className="mt-4">
-            <PrimaryCTAButton source="header-mobile" variant="primary" label="Contacto" />
+            <PrimaryCTAButton source="header-mobile" variant="primary" label="Contacto" href="/contacto" />
           </div>
         </div>
       )}
