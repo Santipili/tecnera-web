@@ -2,6 +2,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Mail, Phone, MapPin, MessageCircle } from "lucide-react";
+import { WHATSAPP_URL, CONTACT_EMAIL } from "@/data/contact";
 
 const productLinks = [
   { label: "Mannaz — CRM de afiliados", href: "/productos/mannaz" },
@@ -54,7 +55,7 @@ export default function Footer() {
             </p>
             <div className="mt-6 flex gap-3">
               <a
-                href="https://wa.me/5492235254045"
+                href={WHATSAPP_URL}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 hover:bg-secondary hover:text-primary transition-colors duration-200"
@@ -63,7 +64,7 @@ export default function Footer() {
                 <MessageCircle className="h-5 w-5" />
               </a>
               <a
-                href="mailto:contacto@tecnera.com"
+                href={`mailto:${CONTACT_EMAIL}`}
                 className="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 hover:bg-secondary hover:text-primary transition-colors duration-200"
                 aria-label="Email"
               >
@@ -79,7 +80,7 @@ export default function Footer() {
             <h4 className="text-xs font-bold uppercase tracking-widest text-secondary">Contacto</h4>
             <div className="mt-5 space-y-3">
               <a
-                href="https://wa.me/5492235254045"
+                href={WHATSAPP_URL}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-start gap-3 text-sm text-white/70 hover:text-secondary transition-colors duration-200"
@@ -88,11 +89,11 @@ export default function Footer() {
                 <span>+54 223 5 254045</span>
               </a>
               <a
-                href="mailto:contacto@tecnera.com"
+                href={`mailto:${CONTACT_EMAIL}`}
                 className="flex items-start gap-3 text-sm text-white/70 hover:text-secondary transition-colors duration-200"
               >
                 <Mail className="h-4 w-4 flex-shrink-0 mt-0.5" />
-                <span>contacto@tecnera.com</span>
+                <span>{CONTACT_EMAIL}</span>
               </a>
               <div className="flex items-start gap-3 text-sm text-white/70">
                 <MapPin className="h-4 w-4 flex-shrink-0 mt-0.5" />
