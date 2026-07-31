@@ -32,6 +32,7 @@ export default function Products() {
                 logo={product.logo}
                 href={product.href}
                 ctaLabel={product.ctaLabel}
+                tight={product.slug === "odal"}
               />
             </motion.div>
           ))}

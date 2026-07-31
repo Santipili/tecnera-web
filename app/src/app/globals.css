@@ -36,7 +36,6 @@
 }
 
 html {
-  overflow-x: hidden;
   scrollbar-gutter: stable;
 }
 
@@ -45,5 +44,4 @@ body {
   color: var(--foreground);
   font-family: var(--font-nunito);
   transition: background-color 0.3s ease, color 0.3s ease;
-  overflow-x: hidden;
 }

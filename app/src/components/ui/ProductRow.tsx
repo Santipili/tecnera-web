@@ -11,6 +11,7 @@ interface ProductRowProps {
   logo: string;
   href?: string;
   ctaLabel?: string;
+  tight?: boolean;
 }
 
 const ArrowIcon = () => (
@@ -26,8 +27,9 @@ export default function ProductRow({
   logo,
   href,
   ctaLabel = "Descubrir más",
+  tight = false,
 }: ProductRowProps) {
-  const cardClass = "relative flex flex-col laptop:flex-row overflow-hidden rounded-[2rem] bg-primary shadow-lg shadow-black/30 laptop:min-h-[17.5rem]";
+  const cardClass = "relative flex flex-col laptop:flex-row overflow-hidden rounded-[2rem] bg-primary shadow-lg shadow-black/30";
 
   const imageBoxClass =
     "flex items-center justify-center bg-white border-b laptop:border-b-0 laptop:border-r border-primary/10 p-3 laptop:w-[24%] flex-shrink-0";
@@ -49,9 +51,9 @@ export default function ProductRow({
           </div>
         </div>
 
-        <div className="flex flex-1 flex-col justify-center p-5 laptop:p-6 laptop:pb-14">
-          <p className="text-lg tablet:text-xl font-semibold text-white leading-relaxed">{description}</p>
-          <ul className="mt-4 space-y-1.5">
+        <div className={`flex flex-1 flex-col justify-center p-5 laptop:p-6 ${tight ? "laptop:pb-12" : "laptop:pb-14"}`}>
+          <p className={`text-lg tablet:text-xl font-semibold text-white ${tight ? "leading-snug" : "leading-relaxed"}`}>{description}</p>
+          <ul className={`${tight ? "mt-3 space-y-1" : "mt-4 space-y-1.5"}`}>
             {features.map((feature, i) => (
               <li key={i} className="flex items-start gap-2.5 text-base text-white">
                 <CheckCircle2 className="h-5 w-5 flex-shrink-0 mt-0.5 text-white" />

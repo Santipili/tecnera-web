@@ -24,21 +24,21 @@ export default function ContactoPage() {
     <div className="min-h-screen">
       <Header />
       <main>
-        {/* Canales + formulario */}
-        <section className="py-24">
-          <div className="max-w-6xl mx-auto px-4 tablet:px-6 laptop:px-6">
-            <div className="grid laptop:grid-cols-[minmax(0,1.3fr)_minmax(0,1fr)] gap-8 laptop:gap-10 items-start">
-              {/* Formulario */}
-              <Suspense fallback={null}>
-                <ContactForm />
-              </Suspense>
+        {/* Formulario + canales */}
+        <section className="min-h-[calc(100dvh-4.5rem)] flex flex-col justify-start pt-12 pb-6">
+          <div className="w-full max-w-6xl mx-auto px-4 tablet:px-6 laptop:px-6 flex flex-col gap-6">
+            {/* Formulario */}
+            <Suspense fallback={null}>
+              <ContactForm />
+            </Suspense>
 
-              {/* Canales */}
-              <div className="flex flex-col gap-5">
-                <h3 className="font-[family-name:var(--font-heading)] font-normal tracking-wide text-neutral text-3xl tablet:text-4xl laptop:text-5xl leading-tight mb-2">
-                  Otras formas de contacto
-                </h3>
+            {/* Canales */}
+            <div className="flex flex-col gap-4">
+              <h3 className="font-[family-name:var(--font-heading)] font-normal tracking-wide text-neutral text-xl tablet:text-2xl leading-tight">
+                Otras formas de contacto
+              </h3>
 
+              <div className="grid tablet:grid-cols-2 gap-4">
                 <IconLinkCard
                   icon={<WhatsAppIcon />}
                   label="WhatsApp"
@@ -53,32 +53,32 @@ export default function ContactoPage() {
                   value={CONTACT_EMAIL}
                   href={`mailto:${CONTACT_EMAIL}`}
                 />
+              </div>
 
-                <p className="flex items-center gap-2 px-2 text-sm text-subtext">
-                  <MapPin className="h-4 w-4 flex-shrink-0" />
+              <div className="flex flex-wrap items-center justify-start gap-4">
+                <a
+                  href={INSTAGRAM_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Instagram"
+                  className="flex h-12 w-12 items-center justify-center rounded-full border border-primary/10 bg-white text-neutral/60 shadow-sm hover:border-secondary/40 hover:text-secondary transition-colors duration-200"
+                >
+                  <Instagram className="h-6 w-6" />
+                </a>
+                <a
+                  href={LINKEDIN_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="LinkedIn"
+                  className="flex h-12 w-12 items-center justify-center rounded-full border border-primary/10 bg-white text-neutral/60 shadow-sm hover:border-secondary/40 hover:text-secondary transition-colors duration-200"
+                >
+                  <Linkedin className="h-6 w-6" />
+                </a>
+
+                <p className="flex items-center gap-2 text-base text-subtext">
+                  <MapPin className="h-5 w-5 flex-shrink-0" />
                   Mar del Plata, Argentina
                 </p>
-
-                <div className="flex items-center gap-3 px-2">
-                  <a
-                    href={INSTAGRAM_URL}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label="Instagram"
-                    className="flex h-9 w-9 items-center justify-center rounded-full border border-primary/10 bg-white text-neutral/60 shadow-sm hover:border-secondary/40 hover:text-secondary transition-colors duration-200"
-                  >
-                    <Instagram className="h-4 w-4" />
-                  </a>
-                  <a
-                    href={LINKEDIN_URL}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label="LinkedIn"
-                    className="flex h-9 w-9 items-center justify-center rounded-full border border-primary/10 bg-white text-neutral/60 shadow-sm hover:border-secondary/40 hover:text-secondary transition-colors duration-200"
-                  >
-                    <Linkedin className="h-4 w-4" />
-                  </a>
-                </div>
               </div>
             </div>
           </div>

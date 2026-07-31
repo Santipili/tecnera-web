@@ -52,14 +52,14 @@ export default function ContactForm() {
 
   return (
     <div className="overflow-hidden rounded-[2rem] border border-primary/10 bg-white shadow-lg shadow-black/10">
-      <div className="border-b border-primary/10 px-8 py-7 laptop:px-10 laptop:py-8">
+      <div className="border-b border-primary/10 px-8 py-4 laptop:px-10 laptop:py-5">
         <h1 className="font-[family-name:var(--font-heading)] text-xl tablet:text-2xl font-normal text-neutral">
           ¿Cómo podemos ayudarte?
         </h1>
       </div>
 
       {submitted ? (
-        <div className="flex items-center gap-3 px-8 py-10 laptop:px-10">
+        <div className="flex items-center gap-3 px-8 py-8 laptop:px-10">
           <span className="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-full bg-secondary/15 text-secondary">
             <Check className="h-5 w-5" strokeWidth={3} />
           </span>
@@ -69,7 +69,7 @@ export default function ContactForm() {
         </div>
       ) : (
         <form onSubmit={handleSubmit} className="grid tablet:grid-cols-2">
-          <div className="flex flex-col gap-4 bg-light/60 px-8 py-7 laptop:px-10 laptop:py-8">
+          <div className="flex flex-col gap-3 bg-light/60 px-8 py-5 laptop:px-10 laptop:py-6">
             <Field icon={User} label="Nombre y apellido">
               <input name="name" required placeholder="Juan Pérez" className={fieldClass} />
             </Field>
@@ -93,19 +93,19 @@ export default function ContactForm() {
             </Field>
           </div>
 
-          <div className="flex flex-col gap-4 px-8 py-7 laptop:px-10 laptop:py-8">
+          <div className="flex flex-col gap-3 px-8 py-5 laptop:px-10 laptop:py-6">
             <div className="relative flex-1">
               <MessageSquare className="pointer-events-none absolute left-3.5 top-3.5 h-4 w-4 text-primary/40" />
               <textarea
                 name="message"
                 required
                 placeholder="Contanos en qué podemos ayudarte"
-                className={`${fieldClass} h-full min-h-[9.5rem] resize-none`}
+                className={`${fieldClass} h-full min-h-[6rem] resize-none`}
               />
             </div>
             <button
               type="submit"
-              className="inline-flex items-center justify-center gap-2 rounded-full bg-primary px-7 py-3.5 text-sm font-bold text-white shadow-lg shadow-primary/25 hover:bg-secondary hover:text-primary hover:scale-[1.02] active:scale-100 transition-all duration-200 cursor-pointer"
+              className="inline-flex items-center justify-center gap-2 rounded-full bg-primary px-7 py-3.5 text-sm font-bold text-white shadow-lg shadow-primary/25 hover:scale-[1.05] active:scale-100 transition-transform duration-200 cursor-pointer"
             >
               Enviar mensaje
               <ArrowRight className="h-4 w-4 flex-shrink-0" strokeWidth={2.5} />
