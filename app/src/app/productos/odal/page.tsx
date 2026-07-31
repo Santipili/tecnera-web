@@ -190,11 +190,11 @@ export default function OdalPage() {
               {/* Texto */}
               <div className="ml-auto w-full max-w-2xl">
                 <div className="bg-white/15 backdrop-blur-sm rounded-2xl p-5 laptop:p-6 mb-6">
-                  <h1 className="text-neutral text-xl font-bold leading-relaxed mb-4">
+                  <h1 className="text-neutral text-lg tablet:text-xl font-bold leading-relaxed mb-4">
                     Odal centraliza reclamos, órdenes de trabajo, presupuestos e inspecciones en una sola
                     plataforma pensada para empresas de mantenimiento y servicios técnicos.
                   </h1>
-                  <p className="text-neutral text-xl font-bold leading-relaxed">
+                  <p className="text-neutral text-lg tablet:text-xl font-bold leading-relaxed">
                     Ordená tu operación diaria y tomá decisiones con información real, actualizada y disponible
                     en el momento en que la necesitás.
                   </p>
@@ -224,8 +224,8 @@ export default function OdalPage() {
               centered
               emphasize
               icon
-              titleSizeClass="text-4xl tablet:text-5xl"
-              descriptionSizeClass="text-xl"
+              titleSizeClass="text-3xl tablet:text-4xl laptop:text-5xl"
+              descriptionSizeClass="text-lg tablet:text-xl"
             />
             <div className="rounded-2xl border border-neutral-100 bg-white shadow-xl overflow-hidden">
               <div className="flex items-center gap-2 px-5 py-3.5 border-b border-neutral-100 bg-[#F4F4F4]">
@@ -256,8 +256,8 @@ export default function OdalPage() {
               centered
               emphasize
               icon
-              titleSizeClass="text-4xl tablet:text-5xl"
-              descriptionSizeClass="text-xl"
+              titleSizeClass="text-3xl tablet:text-4xl laptop:text-5xl"
+              descriptionSizeClass="text-lg tablet:text-xl"
             />
             <div className="grid grid-cols-1 tablet:grid-cols-4 gap-6">
               {customizationCards.map(({ icon: Icon, title, desc }, i) => (
@@ -265,7 +265,7 @@ export default function OdalPage() {
                   <div className={`w-14 h-14 rounded-xl flex items-center justify-center mb-5 ${customizationAccents[i].box}`}>
                     <Icon className={`w-7 h-7 ${customizationAccents[i].icon}`} />
                   </div>
-                  <h3 className="text-lg font-bold text-neutral mb-2">{title}</h3>
+                  <h3 className="text-base tablet:text-lg font-bold text-neutral mb-2">{title}</h3>
                   <p className="text-subtext text-sm leading-relaxed">{desc}</p>
                 </div>
               ))}
@@ -282,8 +282,8 @@ export default function OdalPage() {
               centered
               emphasize
               icon
-              titleSizeClass="text-4xl tablet:text-5xl"
-              descriptionSizeClass="text-xl"
+              titleSizeClass="text-3xl tablet:text-4xl laptop:text-5xl"
+              descriptionSizeClass="text-lg tablet:text-xl"
             />
             <div className="flex flex-col gap-16">
               {relevantAreas.map(({ title, bullets, image }, i) => {
@@ -294,7 +294,7 @@ export default function OdalPage() {
                 );
                 const card = (
                   <div className="w-full laptop:flex-1 laptop:w-auto min-h-[26rem] laptop:min-h-[30rem] bg-white rounded-2xl p-9 shadow-sm flex flex-col justify-start">
-                    <h3 className="text-xl font-bold text-neutral mb-6">{title}</h3>
+                    <h3 className="text-lg tablet:text-xl font-bold text-neutral mb-6">{title}</h3>
                     <ul className="space-y-4">
                       {bullets.map((bullet, j) => (
                         <li key={j} className="flex items-start gap-3 text-neutral text-sm font-medium leading-relaxed">
@@ -330,8 +330,8 @@ export default function OdalPage() {
               centered
               emphasize
               icon
-              titleSizeClass="text-4xl tablet:text-5xl"
-              descriptionSizeClass="text-xl"
+              titleSizeClass="text-3xl tablet:text-4xl laptop:text-5xl"
+              descriptionSizeClass="text-lg tablet:text-xl"
             />
             <div className="relative grid grid-cols-1 tablet:grid-cols-5 gap-8 tablet:gap-6">
               <div className="hidden tablet:block absolute top-7 left-[10%] right-[10%] h-0.5 bg-primary/15" />
@@ -379,7 +379,7 @@ export default function OdalPage() {
               centered
               emphasize
               icon
-              titleSizeClass="text-4xl tablet:text-5xl"
+              titleSizeClass="text-3xl tablet:text-4xl laptop:text-5xl"
             />
             <div className="grid tablet:grid-cols-3 gap-6 items-stretch">
               {pricingPlans.map(({ name, features, priceNote, userTiers, variant }, i) => {
@@ -400,11 +400,11 @@ export default function OdalPage() {
                   <div key={i} className={`rounded-2xl pt-6 pb-8 px-8 flex flex-col h-full ${cardClass}`}>
                     <div className="flex items-center gap-3 mb-6">
                       {variant === "black" ? (
-                        <span className="inline-block rounded-full bg-white px-4 py-0 text-3xl font-extrabold text-black">
+                        <span className="inline-block rounded-full bg-white px-4 py-0 text-2xl tablet:text-3xl font-extrabold text-black">
                           {name}
                         </span>
                       ) : (
-                        <h3 className="text-3xl font-extrabold">{name}</h3>
+                        <h3 className="text-2xl tablet:text-3xl font-extrabold">{name}</h3>
                       )}
                       {variant === "primary" && (
                         <span className="inline-block rounded-full bg-white px-3 py-1 text-xs font-bold uppercase tracking-widest text-primary">
@@ -414,7 +414,7 @@ export default function OdalPage() {
                     </div>
                     <ul className="space-y-3 mb-6 min-h-[17rem]">
                       {features.map((feature, j) => (
-                        <li key={j} className="flex items-start gap-3 text-lg font-medium">
+                        <li key={j} className="flex items-start gap-3 text-base tablet:text-lg font-medium">
                           <CheckCircle2 className={`w-6 h-6 flex-shrink-0 mt-0.5 ${variant === "white" ? "text-primary" : variant === "black" ? "text-amber-400" : "text-white"}`} />
                           <span className="flex flex-col items-start gap-1.5">
                             {feature.label}

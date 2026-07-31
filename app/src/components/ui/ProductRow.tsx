@@ -55,8 +55,8 @@ export default function ProductRow({
         </div>
 
         <div className="flex flex-1 flex-col justify-center p-5 lg:p-6 lg:pb-16">
-          <h3 className="text-2xl lg:text-4xl font-extrabold text-white">{title}</h3>
-          <p className="mt-2 text-lg font-semibold text-white/80 leading-relaxed">{description}</p>
+          <h3 className="text-xl tablet:text-2xl lg:text-4xl font-extrabold text-white">{title}</h3>
+          <p className="mt-2 text-base tablet:text-lg font-semibold text-white/80 leading-relaxed">{description}</p>
           <ul className="mt-3 space-y-1">
             {features.map((feature, i) => (
               <li key={i} className="flex items-start gap-2.5 text-sm text-white">

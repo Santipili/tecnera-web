@@ -52,7 +52,7 @@ export default function ServiciosPage() {
               {/* Texto */}
               <div className="ml-auto w-full max-w-2xl">
                 <div className="bg-white/15 backdrop-blur-sm rounded-2xl p-5 laptop:p-6 mb-6">
-                  <p className="text-neutral text-xl font-bold leading-relaxed">
+                  <p className="text-neutral text-lg tablet:text-xl font-bold leading-relaxed">
                     Combinamos tecnología moderna con conocimiento del sector para entregar soluciones que realmente se usan.
                   </p>
                 </div>
@@ -85,13 +85,13 @@ export default function ServiciosPage() {
                   >
                     <div className={`flex items-center gap-4 px-8 laptop:px-10 py-5 ${accent.box}`}>
                       <Icon className="h-7 w-7 flex-shrink-0 text-white" strokeWidth={2} />
-                      <h3 className="text-xl laptop:text-2xl font-extrabold text-white leading-snug">
+                      <h3 className="text-lg tablet:text-xl laptop:text-2xl font-extrabold text-white leading-snug">
                         {service.title}
                       </h3>
                     </div>
                     <div className="flex flex-col laptop:flex-row gap-6 laptop:gap-8 px-8 laptop:px-10 py-6">
                       <div className="flex-1 flex flex-col justify-start">
-                        <p className="text-xl text-neutral font-medium leading-relaxed">{service.description}</p>
+                        <p className="text-base tablet:text-xl text-neutral font-medium leading-relaxed">{service.description}</p>
                         <ul className="mt-3 space-y-3 border-t-2 border-primary pt-6">
                           {service.bullets.map((bullet) => (
                             <li key={bullet} className="flex items-start gap-3 text-neutral text-base font-medium">
@@ -118,7 +118,7 @@ export default function ServiciosPage() {
                   <svg viewBox="0 0 1294.904 2000" className="h-7 w-auto flex-shrink-0" aria-hidden="true">
                     <path d={TECNERA_ICON_PATH} fill="#1C1C1C" />
                   </svg>
-                  <h3 className="text-xl laptop:text-2xl font-extrabold text-neutral leading-snug">
+                  <h3 className="text-lg tablet:text-xl laptop:text-2xl font-extrabold text-neutral leading-snug">
                     Enterate de cómo trabajamos
                   </h3>
                 </div>
@@ -138,7 +138,7 @@ export default function ServiciosPage() {
                   <svg viewBox="0 0 1294.904 2000" className="h-7 w-auto flex-shrink-0" aria-hidden="true">
                     <path d={TECNERA_ICON_PATH} fill="#ffffff" />
                   </svg>
-                  <h3 className="text-xl laptop:text-2xl font-extrabold leading-snug">
+                  <h3 className="text-lg tablet:text-xl laptop:text-2xl font-extrabold leading-snug">
                     ¿Ya sabés qué necesitás?
                   </h3>
                 </div>

@@ -42,11 +42,11 @@ export default function MannazPage() {
               {/* Texto */}
               <div className="ml-auto w-full max-w-2xl">
                 <div className="bg-white/15 backdrop-blur-sm rounded-2xl p-5 laptop:p-6 mb-6">
-                  <h1 className="text-neutral text-xl font-bold leading-relaxed mb-4">
+                  <h1 className="text-neutral text-lg tablet:text-xl font-bold leading-relaxed mb-4">
                     Mannaz centraliza la información de cada afiliado o miembro en una sola plataforma
                     pensada para mutuales, sindicatos, cooperativas y organizaciones con socios.
                   </h1>
-                  <p className="text-neutral text-xl font-bold leading-relaxed">
+                  <p className="text-neutral text-lg tablet:text-xl font-bold leading-relaxed">
                     Gestioná visitas, campañas, segmentaciones y acciones institucionales con datos
                     siempre actualizados y disponibles.
                   </p>
@@ -95,7 +95,7 @@ export default function MannazPage() {
                     <div className="w-14 h-14 bg-gradient-to-br from-primary to-secondary rounded-xl flex items-center justify-center mb-5">
                       <Icon className="w-7 h-7 text-white" />
                     </div>
-                    <h3 className="text-lg font-bold text-neutral mb-2">{item.title}</h3>
+                    <h3 className="text-base tablet:text-lg font-bold text-neutral mb-2">{item.title}</h3>
                     <p className="text-subtext text-sm leading-relaxed">{item.desc}</p>
                   </div>
                 );
@@ -111,7 +111,7 @@ export default function MannazPage() {
               tag="Mannaz"
               title="¿Listo para ordenar tu base de afiliados?"
               description="Hablemos sobre cómo Mannaz puede reemplazar tus planillas y mensajes dispersos."
-              descriptionSizeClass="text-lg"
+              descriptionSizeClass="text-base tablet:text-lg"
               centered
               dark
             />

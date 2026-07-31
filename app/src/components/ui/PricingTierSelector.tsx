@@ -40,7 +40,7 @@ export default function PricingTierSelector({
           </button>
         ))}
       </div>
-      <p className={`mt-3 text-3xl font-extrabold ${isWhite ? "text-neutral" : "text-white"}`}>
+      <p className={`mt-3 text-2xl tablet:text-3xl font-extrabold ${isWhite ? "text-neutral" : "text-white"}`}>
         {tiers[selected].price}
       </p>
     </div>

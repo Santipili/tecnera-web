@@ -14,7 +14,7 @@ export default function Roadmap() {
             viewport={{ once: true, margin: "-10%" }}
             className="rounded-[2rem] border border-primary/10 bg-white p-8 lg:p-10 shadow-lg shadow-black/30 min-h-[28rem]"
           >
-            <span className="block text-center text-xl font-extrabold uppercase tracking-widest text-neutral">
+            <span className="block text-center text-lg tablet:text-xl font-extrabold uppercase tracking-widest text-neutral">
               Lo que viene de cara al futuro
             </span>
             <span className="mx-auto mt-2 block h-0.5 bg-neutral" style={{ maxWidth: "7.5rem" }} />
@@ -48,7 +48,7 @@ export default function Roadmap() {
             viewport={{ once: true, margin: "-10%" }}
             className="rounded-[2rem] bg-primary p-8 lg:p-10 text-white shadow-lg shadow-black/30 min-h-[28rem]"
           >
-            <span className="block text-center text-xl font-extrabold uppercase tracking-widest text-white">
+            <span className="block text-center text-lg tablet:text-xl font-extrabold uppercase tracking-widest text-white">
               Integraciones y desarrollos con IA
             </span>
             <span className="mx-auto mt-2 block h-0.5 bg-white" style={{ maxWidth: "8.5rem" }} />

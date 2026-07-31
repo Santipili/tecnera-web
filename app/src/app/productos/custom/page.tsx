@@ -49,7 +49,7 @@ export default function CustomPage() {
               {/* Texto */}
               <div className="ml-auto w-full max-w-2xl">
                 <div className="bg-white/15 backdrop-blur-sm rounded-2xl p-5 laptop:p-6">
-                  <p className="text-neutral text-xl font-bold leading-relaxed">
+                  <p className="text-neutral text-lg tablet:text-xl font-bold leading-relaxed">
                     Llega un momento en el cual el uso de las herramientas comunes no satisface las
                     necesidades de tu trabajo, para ello somos capaces de desarrollar soluciones
                     digitales que se adapten a tus flujos y problemáticas a la medida.
@@ -78,8 +78,8 @@ export default function CustomPage() {
               centered
               emphasize
               icon
-              titleSizeClass="text-4xl tablet:text-5xl"
-              descriptionSizeClass="text-xl"
+              titleSizeClass="text-3xl tablet:text-4xl laptop:text-5xl"
+              descriptionSizeClass="text-lg tablet:text-xl"
             />
             <div className="laptop:w-[90%] laptop:mr-auto">
               <DevelopmentNetworkDiagram />
@@ -97,8 +97,8 @@ export default function CustomPage() {
               centered
               emphasize
               icon
-              titleSizeClass="text-4xl tablet:text-5xl"
-              descriptionSizeClass="text-xl"
+              titleSizeClass="text-3xl tablet:text-4xl laptop:text-5xl"
+              descriptionSizeClass="text-lg tablet:text-xl"
             />
             <div className="relative">
               <div className="hidden tablet:block absolute top-0 bottom-0 left-1/2 -translate-x-1/2 w-0.5 bg-primary/15" />
@@ -118,14 +118,14 @@ export default function CustomPage() {
                         <div className={`w-14 h-14 flex-shrink-0 rounded-xl flex items-center justify-center ${item.box}`}>
                           <Icon className="w-7 h-7 text-white" />
                         </div>
-                        <h3 className="text-xl font-bold text-neutral">{item.title}</h3>
+                        <h3 className="text-lg tablet:text-xl font-bold text-neutral">{item.title}</h3>
                       </div>
-                      <p className="text-subtext text-base leading-relaxed">{item.desc}</p>
+                      <p className="text-subtext text-sm tablet:text-base leading-relaxed">{item.desc}</p>
                     </div>
                   );
                   return (
                     <div key={i} className="relative flex items-center">
-                      <div className="hidden tablet:flex absolute left-1/2 -translate-x-1/2 z-10 h-14 w-14 items-center justify-center rounded-full bg-primary text-white text-xl font-extrabold shadow-lg shadow-black/20">
+                      <div className="hidden tablet:flex absolute left-1/2 -translate-x-1/2 z-10 h-14 w-14 items-center justify-center rounded-full bg-primary text-white text-lg tablet:text-xl font-extrabold shadow-lg shadow-black/20">
                         {i + 1}
                       </div>
                       <div className={`w-full flex ${isEven ? "tablet:justify-start" : "tablet:justify-end"}`}>

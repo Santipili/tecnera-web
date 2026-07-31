@@ -1,7 +1,6 @@
 "use client";
 import Link from "next/link";
 import { ArrowRight, Smartphone, LayoutDashboard, Workflow, Plug } from "lucide-react";
-import ContactFormCard from "@/components/ui/ContactFormCard";
 
 const serviceHighlights = [
   { icon: Smartphone, label: "Apps móviles" },
@@ -13,13 +12,26 @@ const serviceHighlights = [
 export default function ContactAndServicesSplit() {
   return (
     <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
-      <ContactFormCard source="custom_dev" />
+      <div className="flex flex-col justify-center rounded-[2rem] border border-primary/10 bg-white p-8 laptop:p-10 shadow-lg shadow-black/10">
+        <h3 className="text-xl tablet:text-2xl laptop:text-3xl font-extrabold leading-tight text-neutral">
+          ¿Ya sabés qué necesitás?
+        </h3>
+        <p className="mt-3 text-subtext leading-relaxed">
+          Contanos tu proyecto y te respondemos a la brevedad.
+        </p>
+        <Link
+          href="/contacto"
+          className="mt-6 inline-flex w-fit items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-bold text-white hover:scale-[1.05] transition-transform duration-200"
+        >
+          Ir a contacto <ArrowRight className="h-4 w-4" />
+        </Link>
+      </div>
 
       <Link
         href="/servicios"
         className="group flex flex-col rounded-[2rem] bg-primary p-8 laptop:p-10 shadow-lg shadow-black/10 text-white hover:shadow-xl transition-all duration-300"
       >
-        <h3 className="text-2xl laptop:text-3xl font-extrabold leading-tight">
+        <h3 className="text-xl tablet:text-2xl laptop:text-3xl font-extrabold leading-tight">
           ¿Todavía no sabés qué necesitás?
         </h3>
         <p className="mt-3 text-white/80 leading-relaxed">

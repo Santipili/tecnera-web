@@ -44,7 +44,7 @@ export default async function ContactoPage({
 
               {/* Canales */}
               <div className="flex flex-col gap-5">
-                <h3 className="font-[family-name:var(--font-heading)] font-normal tracking-wide text-neutral text-4xl laptop:text-5xl leading-tight mb-2">
+                <h3 className="font-[family-name:var(--font-heading)] font-normal tracking-wide text-neutral text-3xl tablet:text-4xl laptop:text-5xl leading-tight mb-2">
                   Otras formas de contacto
                 </h3>
 

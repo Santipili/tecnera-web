@@ -227,7 +227,7 @@ export default function DevelopmentNetworkDiagram() {
           ))}
         </div>
         <p className="mt-6 text-xs font-bold uppercase tracking-widest text-subtext">Lo que te llevás</p>
-        <p className="mt-2 text-xl font-extrabold text-primary">Una sola solución</p>
+        <p className="mt-2 text-lg tablet:text-xl font-extrabold text-primary">Una sola solución</p>
         <p className="text-base text-subtext">a la medida de tu operación</p>
       </div>
     </div>

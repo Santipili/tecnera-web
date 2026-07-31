@@ -38,7 +38,7 @@ export default function Features() {
                 <div className={`flex h-12 w-12 items-center justify-center rounded-2xl ${accent.box}`}>
                   <Icon className={`h-6 w-6 ${accent.icon}`} strokeWidth={2} />
                 </div>
-                <h3 className="mt-6 text-xl font-extrabold text-neutral">{feature.title}</h3>
+                <h3 className="mt-6 text-lg tablet:text-xl font-extrabold text-neutral">{feature.title}</h3>
                 <p className="mt-3 text-base text-subtext leading-relaxed">{feature.description}</p>
               </motion.div>
             );

@@ -16,7 +16,7 @@ export default function ServiceCard({ title, description, icon }: ServiceCardPro
       <div className="h-12 w-12 rounded-xl bg-secondary/10 group-hover:bg-secondary/20 flex items-center justify-center text-secondary mb-5 transition-colors duration-300">
         {icon}
       </div>
-      <h3 className="font-bold text-neutral text-lg">{title}</h3>
+      <h3 className="font-bold text-neutral text-base tablet:text-lg">{title}</h3>
       <p className="mt-2 text-sm text-subtext leading-relaxed">{description}</p>
       <button
         onClick={handleClick}

@@ -75,7 +75,7 @@ export default function HeroCarrousel() {
                   <span className="inline-block rounded-full border border-secondary/40 bg-secondary/10 px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-secondary backdrop-blur-sm">
                     {slide.tagline}
                   </span>
-                  <h1 className="mt-5 text-3xl tablet:text-4xl laptop:text-5xl desktop:text-6xl font-extrabold leading-[1.1] tracking-tight text-white">
+                  <h1 className="mt-5 text-2xl tablet:text-3xl laptop:text-5xl desktop:text-6xl font-extrabold leading-[1.1] tracking-tight text-white">
                     {slide.title}
                   </h1>
                   <p className="mt-5 text-base tablet:text-lg text-white/75 max-w-xl leading-relaxed">

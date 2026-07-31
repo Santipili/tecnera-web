@@ -57,7 +57,7 @@ export default function ProductCard({
             {kicker}
           </span>
         )}
-        <h3 className="mt-1 text-xl font-extrabold text-neutral">{title}</h3>
+        <h3 className="mt-1 text-lg tablet:text-xl font-extrabold text-neutral">{title}</h3>
         <p className="mt-2 text-sm text-subtext leading-relaxed">{description}</p>
         <ul className="mt-5 space-y-3">
           {features.map((feature, i) => (

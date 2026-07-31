@@ -33,7 +33,7 @@ export default function SectionHeader({
   const emphasizeWidthRem = Math.max(6, Math.min(24, title.length * 0.24));
 
   const titleClass = `font-[family-name:var(--font-heading)] font-normal tracking-wide leading-snug ${
-    titleSizeClass ?? "text-2xl tablet:text-3xl"
+    titleSizeClass ?? "text-xl tablet:text-2xl laptop:text-3xl"
   } ${emphasize ? "[-webkit-text-stroke:1.5px_currentColor]" : ""} ${dark ? "text-white" : "text-neutral"} ${
     emphasize ? "[text-shadow:0_0_14px_rgba(249,250,248,1),0_0_8px_rgba(249,250,248,1),0_2px_4px_rgba(249,250,248,1)]" : ""
   }`;

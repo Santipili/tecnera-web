@@ -22,7 +22,7 @@ export default function ContactForm({ initialReason }: { initialReason?: Contact
 
   return (
     <div className="rounded-[2rem] border border-primary/10 bg-white p-8 laptop:p-10 shadow-sm">
-      <h1 className="text-lg font-bold text-neutral">¿Cómo podemos ayudarte?</h1>
+      <h1 className="text-base tablet:text-lg font-bold text-neutral">¿Cómo podemos ayudarte?</h1>
 
       {submitted ? (
         <div className="mt-8 flex items-center gap-3 rounded-xl bg-secondary/10 px-4 py-4 text-sm font-bold text-primary">
