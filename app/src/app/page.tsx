@@ -1,5 +1,5 @@
 import Header from "@/components/layout/Header";
-import { Hero, Products, Features, Roadmap } from "@/components/homeSections";
+import { Hero, Products, Roadmap } from "@/components/homeSections";
 
 export default function Home() {
   return (
@@ -8,7 +8,6 @@ export default function Home() {
       <main>
         <Hero />
         <Products />
-        <Features />
         <Roadmap />
       </main>
     </div>

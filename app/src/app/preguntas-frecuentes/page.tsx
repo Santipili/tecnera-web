@@ -12,8 +12,8 @@ export default function PreguntasFrecuentesPage() {
   return (
     <div className="min-h-screen">
       <div className="fixed inset-0 -z-10 bg-light">
-        <div className="h-full w-full opacity-[0.75] pointer-events-none">
-          <NeuralNetworkBackground className="h-full w-full" color="78, 209, 209" nodeCount={260} />
+        <div className="h-full w-full opacity-[0.40] pointer-events-none">
+          <NeuralNetworkBackground className="h-full w-full" color="0, 86, 71" />
         </div>
       </div>
       <Header />

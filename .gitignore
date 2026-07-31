@@ -47,6 +47,7 @@ skills-lock.json
 
 /app/node_modules
 /app/.next
+/app/out
 package-lock.json
 
 .impeccable/

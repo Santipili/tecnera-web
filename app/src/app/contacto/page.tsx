@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Suspense } from "react";
 import Header from "@/components/layout/Header";
-import ContactForm from "./ContactForm";
+import ContactForm from "@/components/ui/ContactForm";
 import IconLinkCard from "@/components/ui/IconLinkCard";
 import { Mail, MapPin, Instagram, Linkedin } from "lucide-react";
 import { WHATSAPP_URL, CONTACT_EMAIL, INSTAGRAM_URL, LINKEDIN_URL } from "@/data/contact";
@@ -26,7 +26,7 @@ export default function ContactoPage() {
       <main>
         {/* Canales + formulario */}
         <section className="py-24">
-          <div className="max-w-6xl mx-auto px-4 tablet:px-6 laptop:px-8">
+          <div className="max-w-6xl mx-auto px-4 tablet:px-6 laptop:px-6">
             <div className="grid laptop:grid-cols-[minmax(0,1.3fr)_minmax(0,1fr)] gap-8 laptop:gap-10 items-start">
               {/* Formulario */}
               <Suspense fallback={null}>

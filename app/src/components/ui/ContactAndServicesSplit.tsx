@@ -11,7 +11,7 @@ const serviceHighlights = [
 
 export default function ContactAndServicesSplit() {
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
+    <div className="grid grid-cols-1 laptop:grid-cols-2 gap-8 items-start">
       <div className="flex flex-col justify-center rounded-[2rem] border border-primary/10 bg-white p-8 laptop:p-10 shadow-lg shadow-black/10">
         <h3 className="text-xl tablet:text-2xl laptop:text-3xl font-extrabold leading-tight text-neutral">
           ¿Ya sabés qué necesitás?

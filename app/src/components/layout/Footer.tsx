@@ -40,9 +40,9 @@ export default function Footer() {
 
   return (
     <footer className="bg-neutral text-white">
-      <div className="mx-auto max-w-[90rem] px-4 sm:px-6 lg:px-6 py-16">
-        <div className="grid grid-cols-1 tablet:grid-cols-2 lg:grid-cols-4 gap-12 pb-12 border-b border-white/10">
-          <div className="lg:col-span-1">
+      <div className="mx-auto max-w-[90rem] px-4 tablet:px-6 laptop:px-6 py-16">
+        <div className="grid grid-cols-1 tablet:grid-cols-2 laptop:grid-cols-4 gap-12 pb-12 border-b border-white/10">
+          <div className="laptop:col-span-1">
             <Image
               src={withBasePath("/products/TECNERA/imagotipo-tecnera-blanco.png")}
               alt="Tecnera"
@@ -103,8 +103,8 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-sm text-white/60 text-center md:text-left">
+        <div className="pt-8 flex flex-col tabletxl:flex-row items-center justify-between gap-4">
+          <p className="text-sm text-white/60 text-center tabletxl:text-left">
             © {currentYear} Tecnera. Todos los derechos reservados.
           </p>
         </div>

@@ -11,7 +11,7 @@ module.exports = {
           secondary: "#00A478",   // Verde agua
           focus: "#00c2a8",
           dark: "#0A1F1C",
-          neutral: "#1C1C1C",     // Gris oscuro
+          neutral: "#262626",     // Gris oscuro
           subtext: "#666666",     // Gris claro
           link: "#0095C7",
           light: "#F9FAF8"

@@ -203,7 +203,7 @@ export default function DevelopmentNetworkDiagram() {
             textAnchor="middle"
             fontSize={21}
             fontWeight={800}
-            fill="#005647"
+            fill="#1C1C1C"
           >
             Una sola solución
           </text>
@@ -227,7 +227,7 @@ export default function DevelopmentNetworkDiagram() {
           ))}
         </div>
         <p className="mt-6 text-xs font-bold uppercase tracking-widest text-subtext">Lo que te llevás</p>
-        <p className="mt-2 text-lg tablet:text-xl font-extrabold text-primary">Una sola solución</p>
+        <p className="mt-2 text-lg tablet:text-xl font-extrabold text-neutral">Una sola solución</p>
         <p className="text-base text-subtext">a la medida de tu operación</p>
       </div>
     </div>

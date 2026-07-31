@@ -4,16 +4,16 @@ import SectionHeader from "@/components/ui/SectionHeader";
 import { features, type FeatureAccent } from "@/data/features";
 
 const accentClasses: Record<FeatureAccent, { box: string; icon: string }> = {
-  primary: { box: "bg-neutral", icon: "text-white" },
-  muted: { box: "bg-red-800/80", icon: "text-white" },
-  amber: { box: "bg-amber-500", icon: "text-white" },
-  blue: { box: "bg-link", icon: "text-white" },
+  primary: { box: "bg-primary", icon: "text-white" },
+  muted: { box: "bg-primary", icon: "text-white" },
+  amber: { box: "bg-primary", icon: "text-white" },
+  blue: { box: "bg-primary", icon: "text-white" },
 };
 
 export default function Features() {
   return (
     <section className="relative py-24 transition-colors duration-300">
-      <div className="mx-auto max-w-[105rem] px-4 sm:px-6 lg:px-6">
+      <div className="mx-auto max-w-[105rem] px-4 tablet:px-6 laptop:px-6">
         <SectionHeader
           tag="Beneficios"
           title="Todo lo que necesitás en un solo lugar"
@@ -22,7 +22,7 @@ export default function Features() {
           icon
         />
 
-        <div className="grid grid-cols-1 tablet:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div className="grid grid-cols-1 tablet:grid-cols-2 laptop:grid-cols-4 gap-4">
           {features.map((feature, index) => {
             const Icon = feature.icon;
             const accent = accentClasses[feature.accent];

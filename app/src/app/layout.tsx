@@ -70,8 +70,10 @@ export default function RootLayout({
   return (
     <html lang="es">
       <body className={`${geistSans.variable} ${geistMono.variable} ${nunito.variable} ${michroma.variable} antialiased bg-light`}>
-        <div className="fixed inset-0 -z-10 pointer-events-none opacity-65">
-          <NeuralNetworkBackground className="h-full w-full" />
+        <div className="fixed inset-0 -z-10 bg-light">
+          <div className="h-full w-full opacity-[0.40] pointer-events-none">
+            <NeuralNetworkBackground className="h-full w-full" color="0, 86, 71" />
+          </div>
         </div>
         {children}
         <Footer />

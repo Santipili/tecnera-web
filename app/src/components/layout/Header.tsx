@@ -23,7 +23,7 @@ export default function Header() {
 
   return (
     <header className="sticky top-0 z-50 bg-light/90 backdrop-blur border-b border-neutral-200 transition-colors duration-300">
-      <nav className="w-full px-4 sm:px-6 lg:px-6 h-18 flex items-center justify-between">
+      <nav className="w-full px-4 tablet:px-6 laptop:px-6 h-18 grid grid-cols-[auto_1fr_auto] items-center">
         <Link href="/" className="flex items-center flex-shrink-0">
           <Image
             src={withBasePath("/products/TECNERA/SVG/IMAGOTIPO_TECNERA_COLOR.svg")}
@@ -35,12 +35,12 @@ export default function Header() {
           />
         </Link>
 
-        <ul className="hidden lg:flex items-center gap-8 text-sm">
+        <ul className="hidden laptop:flex items-center justify-center gap-8 text-base">
           {navLinks.map((link) => (
             <li key={link.href}>
               <Link
                 href={link.href}
-                className={`font-bold uppercase tracking-wide text-xs transition-colors duration-200 ${
+                className={`font-bold uppercase tracking-wide text-sm transition-colors duration-200 ${
                   pathname.startsWith(link.href)
                     ? "text-primary"
                     : "text-neutral/60 hover:text-primary"
@@ -52,8 +52,8 @@ export default function Header() {
           ))}
         </ul>
 
-        <div className="flex items-center gap-3">
-          <div className="hidden lg:block">
+        <div className="flex items-center justify-self-end gap-3">
+          <div className="hidden laptop:block">
             <PrimaryCTAButton source="header" variant="primary" label="Contacto" href="/contacto" />
           </div>
 
@@ -62,7 +62,7 @@ export default function Header() {
             onClick={() => setMenuOpen((open) => !open)}
             aria-expanded={menuOpen}
             aria-label={menuOpen ? "Cerrar menú" : "Abrir menú"}
-            className="lg:hidden inline-flex items-center justify-center h-10 w-10 rounded-full border border-neutral-200 text-primary"
+            className="laptop:hidden inline-flex items-center justify-center h-10 w-10 rounded-full border border-neutral-200 text-primary"
           >
             <span className="sr-only">Menú</span>
             {menuOpen ? (
@@ -79,7 +79,7 @@ export default function Header() {
       </nav>
 
       {menuOpen && (
-        <div className="lg:hidden border-t border-neutral-200 bg-light px-4 sm:px-6 py-6">
+        <div className="laptop:hidden border-t border-neutral-200 bg-light px-4 tablet:px-6 py-6">
           <ul className="flex flex-col gap-1">
             {navLinks.map((link) => (
               <li key={link.href}>

@@ -25,16 +25,16 @@ export default function CustomPage() {
   return (
     <div className="min-h-screen">
       <div className="fixed inset-0 -z-10 bg-light">
-        <div className="h-full w-full opacity-[0.35] pointer-events-none">
-          <NeuralNetworkBackground className="h-full w-full" color="28, 28, 28" nodeCount={260} />
+        <div className="h-full w-full opacity-[0.40] pointer-events-none">
+          <NeuralNetworkBackground className="h-full w-full" color="0, 86, 71" />
         </div>
       </div>
       <Header />
       <main>
         {/* Hero */}
-        <section className="relative pt-36 pb-12 tablet:pb-16">
-          <div className="relative z-10 max-w-7xl mx-auto px-4 tablet:px-6 laptop:px-8">
-            <div className="grid laptop:grid-cols-[minmax(0,0.9fr)_minmax(0,1.6fr)] gap-12 items-center">
+        <section className="relative overflow-hidden pt-16 pb-12 tablet:pt-24 tablet:pb-16 laptop:pt-36">
+          <div className="relative z-10 max-w-[90rem] mx-auto px-4 tablet:px-6 laptop:px-6">
+            <div className="grid gap-4 tablet:gap-8 laptop:grid-cols-[minmax(0,0.9fr)_minmax(0,1.6fr)] laptop:gap-12 items-center">
               {/* Logo */}
               <div className="flex justify-center laptop:justify-start">
                 <Image
@@ -48,18 +48,16 @@ export default function CustomPage() {
 
               {/* Texto */}
               <div className="ml-auto w-full max-w-2xl">
-                <div className="bg-white/15 backdrop-blur-sm rounded-2xl p-5 laptop:p-6">
-                  <p className="text-neutral text-lg tablet:text-xl font-bold leading-relaxed">
-                    Llega un momento en el cual el uso de las herramientas comunes no satisface las
-                    necesidades de tu trabajo, para ello somos capaces de desarrollar soluciones
-                    digitales que se adapten a tus flujos y problemáticas a la medida.
-                  </p>
-                </div>
+                <p className="text-neutral text-lg tablet:text-xl font-bold leading-relaxed">
+                  Llega un momento en el cual el uso de las herramientas comunes no satisface las
+                  necesidades de tu trabajo, para ello somos capaces de desarrollar soluciones
+                  digitales que se adapten a tus flujos y problemáticas a la medida.
+                </p>
               </div>
             </div>
 
-            <div className="grid laptop:grid-cols-[minmax(0,0.9fr)_minmax(0,1.6fr)] gap-12 mt-6">
-              <div />
+            <div className="grid laptop:grid-cols-[minmax(0,0.9fr)_minmax(0,1.6fr)] laptop:gap-12 mt-4 tablet:mt-6">
+              <div className="hidden laptop:block" />
               <div className="ml-auto w-full max-w-2xl flex flex-wrap gap-4">
                 <PrimaryCTAButton source="custom_hero" variant="primary" label="Contanos tu proyecto" />
                 <WhatsappCTAButton source="custom_hero" />
@@ -70,7 +68,7 @@ export default function CustomPage() {
 
         {/* Cada desarrollo es distinto */}
         <section className="py-24">
-          <div className="max-w-[100rem] mx-auto px-4 tablet:px-6 laptop:px-8">
+          <div className="max-w-[90rem] mx-auto px-4 tablet:px-6 laptop:px-6">
             <SectionHeader
               tag="Desarrollo a medida"
               title="Cada desarrollo es distinto"
@@ -89,7 +87,7 @@ export default function CustomPage() {
 
         {/* Proceso */}
         <section className="py-24">
-          <div className="max-w-7xl mx-auto px-4 tablet:px-6 laptop:px-8">
+          <div className="max-w-[90rem] mx-auto px-4 tablet:px-6 laptop:px-6">
             <SectionHeader
               tag="Desarrollo a medida"
               title="Así se construye un desarrollo a medida"
@@ -105,10 +103,10 @@ export default function CustomPage() {
               <div className="flex flex-col gap-10 tablet:gap-14">
                 {[
                   { icon: MessageCircle, title: "Primer contacto y relevamiento", desc: "Nos reunimos con vos para entender tu operación real: qué procesos usás hoy, qué te frena y qué resultado esperás.", box: "bg-primary" },
-                  { icon: FileText, title: "Propuesta y presupuesto", desc: "Definimos el alcance de la solución, los tiempos de entrega y el presupuesto, sin letra chica ni sorpresas.", box: "bg-red-800/80" },
-                  { icon: PenTool, title: "Diseño y validación", desc: "Diseñamos la solución y la validamos con vos antes de escribir una sola línea de código definitiva.", box: "bg-neutral" },
-                  { icon: Code2, title: "Desarrollo iterativo", desc: "Construimos por etapas con entregas frecuentes, para que veas el avance real desde la primera semana.", box: "bg-link" },
-                  { icon: Rocket, title: "Lanzamiento y acompañamiento", desc: "Implementamos, capacitamos a tu equipo y seguimos disponibles después de la entrega, no solo durante el proyecto.", box: "bg-amber-500" },
+                  { icon: FileText, title: "Propuesta y presupuesto", desc: "Definimos el alcance de la solución, los tiempos de entrega y el presupuesto, sin letra chica ni sorpresas.", box: "bg-primary" },
+                  { icon: PenTool, title: "Diseño y validación", desc: "Diseñamos la solución y la validamos con vos antes de escribir una sola línea de código definitiva.", box: "bg-primary" },
+                  { icon: Code2, title: "Desarrollo iterativo", desc: "Construimos por etapas con entregas frecuentes, para que veas el avance real desde la primera semana.", box: "bg-primary" },
+                  { icon: Rocket, title: "Lanzamiento y acompañamiento", desc: "Implementamos, capacitamos a tu equipo y seguimos disponibles después de la entrega, no solo durante el proyecto.", box: "bg-primary" },
                 ].map((item, i) => {
                   const Icon = item.icon;
                   const isEven = i % 2 === 0;
@@ -141,7 +139,7 @@ export default function CustomPage() {
 
         {/* Contacto y Servicios */}
         <section className="py-24">
-          <div className="max-w-7xl mx-auto px-4 tablet:px-6 laptop:px-8">
+          <div className="max-w-[90rem] mx-auto px-4 tablet:px-6 laptop:px-6">
             <ContactAndServicesSplit />
           </div>
         </section>

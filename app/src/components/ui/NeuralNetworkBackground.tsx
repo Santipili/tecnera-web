@@ -61,14 +61,17 @@ export default function NeuralNetworkBackground({
     let animationId = 0;
 
     const initNodes = () => {
-      // densidad fija en vez de un conteo absoluto, para que se vea liviano
-      // sin importar cuán ancho sea el contenedor
-      const count = nodeCount ?? Math.round(
-        Math.min(290, Math.max(110, (width * height) / 5400))
-      );
+      // densidad y tamaño en función del ancho real del canvas: en pantallas
+      // chicas (mobile) se ve mucho más saturado con la misma cantidad/tamaño
+      // de nodos que en desktop, así que ambos escalan hacia abajo.
+      const sizeScale = width < 480 ? 0.55 : width < 768 ? 0.7 : width < 1024 ? 0.85 : 1;
+      const count = nodeCount
+        ? Math.round(nodeCount * sizeScale)
+        : Math.round(Math.min(290, Math.max(40, (width * height) / 5400)));
+
       nodes = Array.from({ length: count }, () => {
         const tier = pickTier();
-        const radius = tier.radius[0] + Math.random() * (tier.radius[1] - tier.radius[0]);
+        const radius = (tier.radius[0] + Math.random() * (tier.radius[1] - tier.radius[0])) * sizeScale;
         return {
           x: Math.random() * width,
           y: Math.random() * height,

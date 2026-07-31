@@ -13,15 +13,15 @@ export default function NosotrosPage() {
   return (
     <div className="min-h-screen">
       <div className="fixed inset-0 -z-10 bg-light">
-        <div className="h-full w-full opacity-[0.35] pointer-events-none">
-          <NeuralNetworkBackground className="h-full w-full" color="28, 28, 28" nodeCount={260} />
+        <div className="h-full w-full opacity-[0.40] pointer-events-none">
+          <NeuralNetworkBackground className="h-full w-full" color="0, 86, 71" />
         </div>
       </div>
       <Header />
       <main>
         {/* Hero */}
         <section className="py-24 text-neutral">
-          <div className="max-w-4xl mx-auto px-4 tablet:px-6 laptop:px-8">
+          <div className="max-w-4xl mx-auto px-4 tablet:px-6 laptop:px-6">
             <SectionHeader
               tag="Sobre Tecnera"
               title="Tecnología con propósito"
@@ -37,7 +37,7 @@ export default function NosotrosPage() {
 
         {/* Historia */}
         <section className="py-24">
-          <div className="max-w-5xl mx-auto px-4 tablet:px-6 laptop:px-8">
+          <div className="max-w-5xl mx-auto px-4 tablet:px-6 laptop:px-6">
             <SectionHeader
               tag="Nuestra historia"
               title="¿Por qué existe Tecnera?"
@@ -66,7 +66,7 @@ export default function NosotrosPage() {
 
         {/* Valores */}
         <section className="py-24">
-          <div className="max-w-7xl mx-auto px-4 tablet:px-6 laptop:px-8">
+          <div className="max-w-[90rem] mx-auto px-4 tablet:px-6 laptop:px-6">
             <SectionHeader
               tag="Nuestros valores"
               title="Lo que nos guía"
@@ -74,12 +74,12 @@ export default function NosotrosPage() {
               emphasize
               icon
             />
-            <div className="grid grid-cols-1 tablet:grid-cols-2 lg:grid-cols-4 gap-4">
+            <div className="grid grid-cols-1 tablet:grid-cols-2 gap-4">
               {[
-                { icon: Target, title: "Foco en el cliente", desc: "Diseñamos pensando en el usuario final, no en las tendencias tecnológicas.", box: "bg-neutral" },
-                { icon: Users, title: "Cercanos", desc: "No somos un software anónimo. Estamos del otro lado del teléfono.", box: "bg-red-800/80" },
-                { icon: Zap, title: "Entrega rápida", desc: "Primeras versiones funcionales en semanas, no en meses.", box: "bg-amber-500" },
-                { icon: Shield, title: "Confiables", desc: "Datos seguros, uptime garantizado, soporte después de la entrega.", box: "bg-link" },
+                { icon: Target, title: "Foco en el cliente", desc: "Diseñamos pensando en el usuario final, no en las tendencias tecnológicas.", box: "bg-primary" },
+                { icon: Users, title: "Cercanos", desc: "No somos un software anónimo. Estamos del otro lado del teléfono.", box: "bg-primary" },
+                { icon: Zap, title: "Entrega rápida", desc: "Primeras versiones funcionales en semanas, no en meses.", box: "bg-primary" },
+                { icon: Shield, title: "Confiables", desc: "Datos seguros, uptime garantizado, soporte después de la entrega.", box: "bg-primary" },
               ].map((value, i) => {
                 const Icon = value.icon;
                 return (
@@ -102,7 +102,7 @@ export default function NosotrosPage() {
         {/* Stats */}
         <section className="py-20">
           <div className="max-w-4xl mx-auto px-4 tablet:px-6">
-            <div className="grid grid-cols-3 gap-8 text-center">
+            <div className="grid grid-cols-3 gap-3 tablet:gap-8 text-center">
               {[
                 { number: "10+", label: "Organizaciones digitalizadas" },
                 { number: "3", label: "Productos en producción" },

@@ -7,7 +7,6 @@ import PrimaryCTAButton from "@/components/ui/PrimaryCTAButton";
 import PricingTierSelector from "@/components/ui/PricingTierSelector";
 import NeuralNetworkBackground from "@/components/ui/NeuralNetworkBackground";
 import { products } from "@/data/products";
-import { upcomingModules } from "@/data/roadmap";
 import {
   CheckCircle2,
   Layers,
@@ -17,8 +16,6 @@ import {
   ShieldCheck,
   BarChart3,
   LifeBuoy,
-  FileSignature,
-  Fingerprint,
   type LucideIcon,
 } from "lucide-react";
 import { withBasePath } from "@/lib/basePath";
@@ -31,10 +28,10 @@ export const metadata: Metadata = {
 };
 
 const customizationAccents = [
-  { box: "bg-amber-500", icon: "text-white" },
-  { box: "bg-red-800/80", icon: "text-white" },
-  { box: "bg-neutral", icon: "text-white" },
-  { box: "bg-link", icon: "text-white" },
+  { box: "bg-primary", icon: "text-white" },
+  { box: "bg-primary", icon: "text-white" },
+  { box: "bg-primary", icon: "text-white" },
+  { box: "bg-primary", icon: "text-white" },
 ];
 
 const customizationCards = [
@@ -166,18 +163,18 @@ export default function OdalPage() {
   return (
     <div className="min-h-screen">
       <div className="fixed inset-0 -z-10 bg-light">
-        <div className="h-full w-full opacity-[0.35] pointer-events-none">
-          <NeuralNetworkBackground className="h-full w-full" color="28, 28, 28" nodeCount={260} />
+        <div className="h-full w-full opacity-[0.40] pointer-events-none">
+          <NeuralNetworkBackground className="h-full w-full" color="0, 86, 71" />
         </div>
       </div>
       <Header />
       <main>
         {/* Hero */}
-        <section className="relative py-3">
-          <div className="relative z-10 max-w-7xl mx-auto px-4 tablet:px-6 laptop:px-8">
-            <div className="grid laptop:grid-cols-[minmax(0,0.9fr)_minmax(0,1.6fr)] gap-12 items-center">
+        <section className="relative overflow-hidden py-3">
+          <div className="relative z-10 max-w-[90rem] mx-auto px-4 tablet:px-6 laptop:px-6">
+            <div className="grid gap-6 tablet:gap-8 laptop:grid-cols-[minmax(0,0.9fr)_minmax(0,1.6fr)] laptop:gap-12 items-center">
               {/* Logo */}
-              <div className="flex justify-center laptop:justify-start translate-y-2 laptop:-translate-x-24">
+              <div className="flex justify-center laptop:justify-start translate-y-2">
                 <div className="relative flex-shrink-0 w-[12rem] h-[13.5rem] tablet:w-[16rem] tablet:h-[18rem] laptop:w-[23rem] laptop:h-[26rem]">
                   <Image
                     src={product.logo}
@@ -190,7 +187,7 @@ export default function OdalPage() {
 
               {/* Texto */}
               <div className="ml-auto w-full max-w-2xl">
-                <div className="bg-white/15 backdrop-blur-sm rounded-2xl p-5 laptop:p-6 mb-6">
+                <div className="mb-6">
                   <h1 className="text-neutral text-lg tablet:text-xl font-bold leading-relaxed mb-4">
                     Odal centraliza reclamos, órdenes de trabajo, presupuestos e inspecciones en una sola
                     plataforma pensada para empresas de mantenimiento y servicios técnicos.
@@ -216,7 +213,7 @@ export default function OdalPage() {
 
         {/* Dashboard */}
         <section className="py-24">
-          <div className="max-w-6xl mx-auto px-4 tablet:px-6 laptop:px-8">
+          <div className="max-w-6xl mx-auto px-4 tablet:px-6 laptop:px-6">
             <SectionHeader
               tag="Odal"
               title="Así se ve Odal por dentro"
@@ -248,7 +245,7 @@ export default function OdalPage() {
 
         {/* Customización */}
         <section className="py-24">
-          <div className="max-w-[100rem] mx-auto px-4 tablet:px-6 laptop:px-8">
+          <div className="max-w-[90rem] mx-auto px-4 tablet:px-6 laptop:px-6">
             <SectionHeader
               tag="Odal"
               title="Customización de la plataforma"
@@ -260,7 +257,7 @@ export default function OdalPage() {
               titleSizeClass="text-3xl tablet:text-4xl laptop:text-5xl"
               descriptionSizeClass="text-lg tablet:text-xl"
             />
-            <div className="grid grid-cols-1 tablet:grid-cols-4 gap-6">
+            <div className="grid grid-cols-1 tablet:grid-cols-2 laptop:grid-cols-4 gap-6">
               {customizationCards.map(({ icon: Icon, title, desc }, i) => (
                 <div key={i} className="bg-white rounded-2xl p-8 shadow-sm">
                   <div className={`w-14 h-14 rounded-xl flex items-center justify-center mb-5 ${customizationAccents[i].box}`}>
@@ -276,7 +273,7 @@ export default function OdalPage() {
 
         {/* Áreas relevantes */}
         <section className="py-24">
-          <div className="max-w-[88rem] mx-auto px-4 tablet:px-6 laptop:px-8">
+          <div className="max-w-[90rem] mx-auto px-4 tablet:px-6 laptop:px-6">
             <SectionHeader
               tag="Odal"
               title="Áreas relevantes"
@@ -289,17 +286,17 @@ export default function OdalPage() {
             <div className="flex flex-col gap-16">
               {relevantAreas.map(({ title, bullets, image }, i) => {
                 const screenshot = (
-                  <div className="relative w-full laptop:flex-[2] laptop:w-auto laptop:min-w-[62rem] aspect-[1825/888] rounded-xl overflow-hidden border border-neutral-100 shadow-sm">
+                  <div className="relative w-full laptop:flex-[2.6] laptop:w-auto laptop:min-w-[34rem] aspect-[1825/888] rounded-xl overflow-hidden border border-neutral-100 shadow-sm">
                     <Image src={image} alt={title} fill className="object-cover" />
                   </div>
                 );
                 const card = (
-                  <div className="w-full laptop:flex-1 laptop:w-auto min-h-[26rem] laptop:min-h-[30rem] bg-white rounded-2xl p-9 shadow-sm flex flex-col justify-start">
+                  <div className="w-full laptop:flex-1 laptop:w-auto laptop:max-w-[20rem] bg-white rounded-2xl p-9 shadow-sm flex flex-col justify-start">
                     <h3 className="text-lg tablet:text-xl font-bold text-neutral mb-6">{title}</h3>
                     <ul className="space-y-4">
                       {bullets.map((bullet, j) => (
                         <li key={j} className="flex items-start gap-3 text-neutral text-sm font-medium leading-relaxed">
-                          <CheckCircle2 className="w-5 h-5 text-secondary flex-shrink-0 mt-0.5" />
+                          <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
                           {bullet}
                         </li>
                       ))}
@@ -320,60 +317,9 @@ export default function OdalPage() {
           </div>
         </section>
 
-        {/* Roadmap */}
-        <section className="py-24">
-          <div className="max-w-[88rem] mx-auto px-4 tablet:px-6 laptop:px-8">
-            <SectionHeader
-              tag="Odal"
-              title="Lo que viene para Odal"
-              description="Módulos transversales a todas nuestras plataformas que también van a estar disponibles en Odal."
-              descriptionClassName="text-neutral/80 [text-shadow:0_1px_3px_rgba(249,250,248,0.9)]"
-              centered
-              emphasize
-              icon
-              titleSizeClass="text-3xl tablet:text-4xl laptop:text-5xl"
-              descriptionSizeClass="text-lg tablet:text-xl"
-            />
-            <div className="relative grid grid-cols-1 tablet:grid-cols-5 gap-8 tablet:gap-6">
-              <div className="hidden tablet:block absolute top-7 left-[10%] right-[10%] h-0.5 bg-primary/15" />
-              {[
-                upcomingModules[1],
-                upcomingModules[0],
-                {
-                  icon: FileSignature,
-                  title: "Sistema de firma digital",
-                  description: "Firmá documentos y órdenes de trabajo directamente desde la plataforma.",
-                },
-                {
-                  icon: Fingerprint,
-                  title: "Fichado electronico",
-                  description: "Control de entrada y salida de técnicos y personal desde la app.",
-                },
-                upcomingModules[2],
-              ].map((item, i) => {
-                const Icon = item.icon;
-                return (
-                  <div key={item.title} className="relative flex flex-col items-center text-center">
-                    <div className="relative z-10 flex h-14 w-14 items-center justify-center rounded-full bg-primary text-white font-extrabold shadow-lg shadow-black/20">
-                      {i + 1}
-                    </div>
-                    <div className="mt-5 flex items-center gap-3">
-                      <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-2xl bg-white shadow-sm">
-                        <Icon className="h-5 w-5 text-primary" strokeWidth={2} />
-                      </div>
-                      <h3 className="font-bold text-neutral text-left">{item.title}</h3>
-                    </div>
-                    <p className="mt-2 text-sm text-neutral/80 leading-relaxed [text-shadow:0_1px_3px_rgba(249,250,248,0.9)]">{item.description}</p>
-                  </div>
-                );
-              })}
-            </div>
-          </div>
-        </section>
-
         {/* Pricing */}
         <section id="precios" className="py-24">
-          <div className="max-w-7xl mx-auto px-4 tablet:px-6 laptop:px-8">
+          <div className="max-w-[90rem] mx-auto px-4 tablet:px-6 laptop:px-6">
             <SectionHeader
               tag="Odal"
               title="Planes y precios"
@@ -382,7 +328,7 @@ export default function OdalPage() {
               icon
               titleSizeClass="text-3xl tablet:text-4xl laptop:text-5xl"
             />
-            <div className="grid tablet:grid-cols-3 gap-6 items-stretch">
+            <div className="grid tabletxl:grid-cols-3 gap-6 items-stretch">
               {pricingPlans.map(({ name, features, priceNote, userTiers, variant }, i) => {
                 const cardClass =
                   variant === "primary"
@@ -416,7 +362,7 @@ export default function OdalPage() {
                     <ul className="space-y-3 mb-6 min-h-[17rem]">
                       {features.map((feature, j) => (
                         <li key={j} className="flex items-start gap-3 text-base tablet:text-lg font-medium">
-                          <CheckCircle2 className={`w-6 h-6 flex-shrink-0 mt-0.5 ${variant === "white" ? "text-primary" : variant === "black" ? "text-amber-400" : "text-white"}`} />
+                          <CheckCircle2 className={`w-6 h-6 flex-shrink-0 mt-0.5 ${variant === "white" ? "text-primary" : "text-white"}`} />
                           <span className="flex flex-col items-start gap-1.5">
                             {feature.label}
                             {feature.comingSoon && (

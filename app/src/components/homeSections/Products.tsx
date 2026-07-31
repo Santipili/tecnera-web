@@ -8,7 +8,7 @@ import { customDev } from "@/data/customDev";
 export default function Products() {
   return (
     <section id="productos" className="relative py-24 transition-colors duration-300">
-      <div className="mx-auto max-w-[90rem] px-4 sm:px-6 lg:px-6">
+      <div className="mx-auto max-w-[90rem] px-4 tablet:px-6 laptop:px-6">
         <SectionHeader
           tag="Productos"
           title="Deja atras las planillas y archivos compartidos con nuestras soluciones integrales"

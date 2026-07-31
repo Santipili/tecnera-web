@@ -17,16 +17,18 @@ export const metadata: Metadata = {
 
 export default function MannazPage() {
   return (
-    <div className="min-h-screen bg-light">
+    <div className="min-h-screen">
+      <div className="fixed inset-0 -z-10 bg-light">
+        <div className="h-full w-full opacity-[0.40] pointer-events-none">
+          <NeuralNetworkBackground className="h-full w-full" color="0, 86, 71" />
+        </div>
+      </div>
       <Header />
       <main>
         {/* Hero */}
-        <section className="relative overflow-hidden bg-light py-3">
-          <div className="absolute inset-0 z-0 opacity-65">
-            <NeuralNetworkBackground className="h-full w-full" color="28, 28, 28" nodeCount={260} />
-          </div>
-          <div className="relative z-10 max-w-7xl mx-auto px-4 tablet:px-6 laptop:px-8">
-            <div className="grid laptop:grid-cols-[minmax(0,0.9fr)_minmax(0,1.6fr)] gap-12 items-center">
+        <section className="relative overflow-hidden py-3">
+          <div className="relative z-10 max-w-[90rem] mx-auto px-4 tablet:px-6 laptop:px-6">
+            <div className="grid gap-6 tablet:gap-8 laptop:grid-cols-[minmax(0,0.9fr)_minmax(0,1.6fr)] laptop:gap-12 items-center">
               {/* Logo */}
               <div className="flex justify-center laptop:justify-start translate-y-2 laptop:-translate-x-[11.5rem]">
                 <div className="relative flex-shrink-0 w-[14rem] h-[10.75rem] tablet:w-[19rem] tablet:h-[14.5rem] laptop:w-[34rem] laptop:h-[26rem]">
@@ -41,7 +43,7 @@ export default function MannazPage() {
 
               {/* Texto */}
               <div className="ml-auto w-full max-w-2xl">
-                <div className="bg-white/15 backdrop-blur-sm rounded-2xl p-5 laptop:p-6 mb-6">
+                <div className="mb-6">
                   <h1 className="text-neutral text-lg tablet:text-xl font-bold leading-relaxed mb-4">
                     Mannaz centraliza la información de cada afiliado o miembro en una sola plataforma
                     pensada para mutuales, sindicatos, cooperativas y organizaciones con socios.
@@ -81,9 +83,9 @@ export default function MannazPage() {
 
         {/* ¿Para quién es? */}
         <section className="py-20 bg-[#EAEAEA]">
-          <div className="max-w-7xl mx-auto px-4 tablet:px-6 laptop:px-8">
+          <div className="max-w-[90rem] mx-auto px-4 tablet:px-6 laptop:px-6">
             <SectionHeader tag="Mannaz" title="¿Para qué tipo de organización?" centered />
-            <div className="grid tablet:grid-cols-3 gap-6">
+            <div className="grid tabletxl:grid-cols-3 gap-6">
               {[
                 { icon: Users, title: "Mutuales y sindicatos", desc: "Gestioná afiliados, cuotas y comunicación institucional desde un solo lugar." },
                 { icon: Building2, title: "Cooperativas", desc: "Ordená la relación con socios, zonas y campañas sin depender de planillas sueltas." },

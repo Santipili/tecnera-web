@@ -14,7 +14,7 @@ export default function CasosPage() {
       <Header />
       <main>
         <section className="py-24 bg-gradient-to-br from-primary via-[#0A3D35] to-primary text-white">
-          <div className="max-w-4xl mx-auto px-4 tablet:px-6 laptop:px-8 text-center">
+          <div className="max-w-4xl mx-auto px-4 tablet:px-6 laptop:px-6 text-center">
             <span className="inline-block rounded-full border border-secondary/40 bg-secondary/10 px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-secondary mb-6">
               Casos de Éxito
             </span>

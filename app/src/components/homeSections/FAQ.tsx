@@ -57,7 +57,7 @@ export default function FAQ() {
 
   return (
     <section id="faq" className="relative py-24 transition-colors duration-300">
-      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-6">
+      <div className="mx-auto max-w-6xl px-4 tablet:px-6 laptop:px-6">
         <SectionHeader
           tag="Preguntas frecuentes"
           title="Puede que ya tengamos la respuesta"
@@ -88,7 +88,7 @@ export default function FAQ() {
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.4 }}
-            className="rounded-[2rem] border border-primary/10 bg-white p-8 lg:p-10 shadow-lg shadow-black/30"
+            className="rounded-[2rem] border border-primary/10 bg-white p-8 laptop:p-10 shadow-lg shadow-black/30"
           >
             {category.items.map((faq, index) => (
               <AccordionItem
