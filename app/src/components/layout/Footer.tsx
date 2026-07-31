@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Mail, Phone, MapPin, MessageCircle } from "lucide-react";
 import { WHATSAPP_URL, CONTACT_EMAIL } from "@/data/contact";
+import { withBasePath } from "@/lib/basePath";
 
 const productLinks = [
   { label: "Mannaz — CRM de afiliados", href: "/productos/mannaz" },
@@ -43,7 +44,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 tablet:grid-cols-2 lg:grid-cols-4 gap-12 pb-12 border-b border-white/10">
           <div className="lg:col-span-1">
             <Image
-              src="/products/TECNERA/imagotipo-tecnera-blanco.png"
+              src={withBasePath("/products/TECNERA/imagotipo-tecnera-blanco.png")}
               alt="Tecnera"
               width={168}
               height={31}

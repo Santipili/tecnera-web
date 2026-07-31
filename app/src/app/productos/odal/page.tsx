@@ -21,6 +21,7 @@ import {
   Fingerprint,
   type LucideIcon,
 } from "lucide-react";
+import { withBasePath } from "@/lib/basePath";
 
 const product = products.find((p) => p.slug === "odal")!;
 
@@ -75,7 +76,7 @@ const relevantAreas: {
       "Acompañamiento durante todo el proceso de migración",
       "Actualización de datos de manera masiva",
     ],
-    image: "/products/ODAL/imagenes-app/data-import.png",
+    image: withBasePath("/products/ODAL/imagenes-app/data-import.png"),
   },
   {
     icon: ShieldCheck,
@@ -86,7 +87,7 @@ const relevantAreas: {
       "Roles configurables por equipo o función",
       "Control total sobre la información sensible de la empresa",
     ],
-    image: "/products/ODAL/imagenes-app/permits.png",
+    image: withBasePath("/products/ODAL/imagenes-app/permits.png"),
   },
   {
     icon: BarChart3,
@@ -97,7 +98,7 @@ const relevantAreas: {
       "Informes complejos segmentados en pasos para lograr la granularidad en el analisis que necesites",
       "Exportá la información que necesites cuando la necesites",
     ],
-    image: "/products/ODAL/imagenes-app/reports.png",
+    image: withBasePath("/products/ODAL/imagenes-app/reports.png"),
   },
 ];
 
@@ -235,7 +236,7 @@ export default function OdalPage() {
               </div>
               <div className="relative w-full aspect-[1809/890]">
                 <Image
-                  src="/products/ODAL/imagenes-app/dashboard.png"
+                  src={withBasePath("/products/ODAL/imagenes-app/dashboard.png")}
                   alt="Captura del dashboard de inicio"
                   fill
                   className="object-contain"

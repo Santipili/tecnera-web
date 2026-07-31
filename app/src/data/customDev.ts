@@ -1,3 +1,4 @@
+import { withBasePath } from "@/lib/basePath";
 export interface CustomDev {
   title: string;
   kicker: string;
@@ -18,7 +19,7 @@ export const customDev: CustomDev = {
     "Automatización de procesos e integraciones",
     "Digitalización de lo que hoy es manual",
   ],
-  logo: "/products/TECNERA/SVG/IMAGOTIPO_TECNERA_COLOR.svg",
+  logo: withBasePath("/products/TECNERA/SVG/IMAGOTIPO_TECNERA_COLOR.svg"),
   ctaHref: "/productos/custom",
   ctaLabel: "Más detalles",
 };

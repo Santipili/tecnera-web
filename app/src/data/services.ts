@@ -1,3 +1,4 @@
+import { withBasePath } from "@/lib/basePath";
 import type { LucideIcon } from "lucide-react";
 import {
   LayoutDashboard,
@@ -33,7 +34,7 @@ export const services: Service[] = [
       "Escalabiliad, nuestros soluciones siempre se plantean para que crezcan a la par de tu negocio",
     ],
     accent: "primary",
-    image: "/images/services/service-1.png",
+    image: withBasePath("/images/services/service-1.png"),
   },
   {
     icon: Workflow,
@@ -46,7 +47,7 @@ export const services: Service[] = [
       "Interconectividad de servicios externos paralelos",
     ],
     accent: "muted",
-    image: "/images/services/service-2.png",
+    image: withBasePath("/images/services/service-2.png"),
   },
   {
     icon: RefreshCw,
@@ -59,7 +60,7 @@ export const services: Service[] = [
       "Soluciones digitales de bajo costo para tu oprganización",
     ],
     accent: "amber",
-    image: "/images/services/service-3.png",
+    image: withBasePath("/images/services/service-3.png"),
   },
   {
     icon: Lightbulb,
@@ -72,7 +73,7 @@ export const services: Service[] = [
       "Sugerencias en soluciones digitales que se ajusten a tu organizacion",
     ],
     accent: "blue",
-    image: "/images/services/service-4.png",
+    image: withBasePath("/images/services/service-4.png"),
   },
   {
     icon: Smartphone,
@@ -85,7 +86,7 @@ export const services: Service[] = [
       "Pensadas para dar un mejores prestaciones a los clientes de tu servicio",
     ],
     accent: "primary",
-    image: "/images/services/service-5.png",
+    image: withBasePath("/images/services/service-5.png"),
   },
   {
     icon: BarChart3,
@@ -98,7 +99,7 @@ export const services: Service[] = [
       "Monitoreo de indicadores relevantes para tu negocio",
     ],
     accent: "muted",
-    image: "/images/services/service-6.png",
+    image: withBasePath("/images/services/service-6.png"),
   },
   {
     icon: Sparkles,
@@ -111,7 +112,7 @@ export const services: Service[] = [
       "Chatbots o asistentes virtuales entrenados con la información de tu negocio",
     ],
     accent: "amber",
-    image: "/images/services/service-7.png",
+    image: withBasePath("/images/services/service-7.png"),
   },
   {
     icon: Globe,
@@ -123,6 +124,6 @@ export const services: Service[] = [
       "Hosting y despliegue gestionado",
     ],
     accent: "blue",
-    image: "/images/services/service-8.png",
+    image: withBasePath("/images/services/service-8.png"),
   },
 ];

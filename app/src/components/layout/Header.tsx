@@ -4,6 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import PrimaryCTAButton from "@/components/ui/PrimaryCTAButton";
+import { withBasePath } from "@/lib/basePath";
 
 const navLinks = [
   { href: "/#productos", label: "Productos" },
@@ -25,7 +26,7 @@ export default function Header() {
       <nav className="w-full px-4 sm:px-6 lg:px-6 h-18 flex items-center justify-between">
         <Link href="/" className="flex items-center flex-shrink-0">
           <Image
-            src="/products/TECNERA/SVG/IMAGOTIPO_TECNERA_COLOR.svg"
+            src={withBasePath("/products/TECNERA/SVG/IMAGOTIPO_TECNERA_COLOR.svg")}
             alt="Tecnera"
             width={168}
             height={31}

@@ -7,6 +7,7 @@ import PrimaryCTAButton from "@/components/ui/PrimaryCTAButton";
 import NeuralNetworkBackground from "@/components/ui/NeuralNetworkBackground";
 import { services, type ServiceAccent } from "@/data/services";
 import { CheckCircle2, ArrowRight } from "lucide-react";
+import { withBasePath } from "@/lib/basePath";
 
 export const metadata: Metadata = {
   title: "Servicios | Tecnera",
@@ -41,7 +42,7 @@ export default function ServiciosPage() {
               <div className="flex justify-center laptop:justify-start translate-y-2 laptop:-translate-x-24">
                 <div className="relative flex-shrink-0 w-[18rem] h-[20rem] laptop:w-[23rem] laptop:h-[26rem]">
                   <Image
-                    src="/products/TECNERA/SVG/IMAGOTIPO_TECNERA_COLOR.svg"
+                    src={withBasePath("/products/TECNERA/SVG/IMAGOTIPO_TECNERA_COLOR.svg")}
                     alt="Tecnera"
                     fill
                     className="object-contain"

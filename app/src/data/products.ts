@@ -1,3 +1,4 @@
+import { withBasePath } from "@/lib/basePath";
 export interface Product {
   title: string;
   slug: string;
@@ -25,7 +26,7 @@ export const products: Product[] = [
     ],
     image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&q=80",
     href: "/productos/mannaz",
-    logo: "/products/MANNAZ/SVG/IMAGOTIPO_MANNAZ_COLOR.svg",
+    logo: withBasePath("/products/MANNAZ/SVG/IMAGOTIPO_MANNAZ_COLOR.svg"),
     ctaLabel: "Más detalles",
   },
   {
@@ -42,7 +43,7 @@ export const products: Product[] = [
     ],
     image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80",
     href: "/productos/odal",
-    logo: "/products/ODAL/imagotipo-odal-color.png",
+    logo: withBasePath("/products/ODAL/imagotipo-odal-color.png"),
     ctaLabel: "Más detalles",
   },
 ];
