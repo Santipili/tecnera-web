@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
+import { Suspense } from "react";
 import Header from "@/components/layout/Header";
 import ContactForm from "./ContactForm";
 import IconLinkCard from "@/components/ui/IconLinkCard";
 import { Mail, MapPin, Instagram, Linkedin } from "lucide-react";
-import { WHATSAPP_URL, CONTACT_EMAIL, INSTAGRAM_URL, LINKEDIN_URL, CONTACT_REASONS, type ContactReason } from "@/data/contact";
+import { WHATSAPP_URL, CONTACT_EMAIL, INSTAGRAM_URL, LINKEDIN_URL } from "@/data/contact";
 
 function WhatsAppIcon() {
   return (
@@ -18,19 +19,7 @@ export const metadata: Metadata = {
   description: "Escribinos por WhatsApp, mail o dejanos tu consulta y te respondemos a la brevedad.",
 };
 
-function resolveReason(value: string | string[] | undefined): ContactReason | undefined {
-  const reason = Array.isArray(value) ? value[0] : value;
-  return CONTACT_REASONS.some((r) => r.value === reason) ? (reason as ContactReason) : undefined;
-}
-
-export default async function ContactoPage({
-  searchParams,
-}: {
-  searchParams: Promise<{ reason?: string | string[] }>;
-}) {
-  const params = await searchParams;
-  const initialReason = resolveReason(params.reason);
-
+export default function ContactoPage() {
   return (
     <div className="min-h-screen">
       <Header />
@@ -40,7 +29,9 @@ export default async function ContactoPage({
           <div className="max-w-6xl mx-auto px-4 tablet:px-6 laptop:px-8">
             <div className="grid laptop:grid-cols-[minmax(0,1.3fr)_minmax(0,1fr)] gap-8 laptop:gap-10 items-start">
               {/* Formulario */}
-              <ContactForm initialReason={initialReason} />
+              <Suspense fallback={null}>
+                <ContactForm />
+              </Suspense>
 
               {/* Canales */}
               <div className="flex flex-col gap-5">

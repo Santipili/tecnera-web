@@ -1,12 +1,19 @@
 "use client";
 
 import { useState } from "react";
+import { useSearchParams } from "next/navigation";
 import { CONTACT_REASONS, type ContactReason } from "@/data/contact";
 
 const inputClass =
   "w-full rounded-xl border border-primary/15 bg-light px-4 py-3 text-sm text-neutral placeholder:text-subtext focus:border-primary focus:outline-none transition-colors";
 
-export default function ContactForm({ initialReason }: { initialReason?: ContactReason }) {
+function resolveReason(value: string | null): ContactReason | undefined {
+  return CONTACT_REASONS.some((r) => r.value === value) ? (value as ContactReason) : undefined;
+}
+
+export default function ContactForm() {
+  const searchParams = useSearchParams();
+  const initialReason = resolveReason(searchParams.get("reason"));
   const [submitted, setSubmitted] = useState(false);
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
