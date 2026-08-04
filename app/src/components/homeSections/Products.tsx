@@ -11,7 +11,7 @@ export default function Products() {
       <div className="mx-auto max-w-[90rem] px-4 tablet:px-6 laptop:px-6">
         <SectionHeader
           tag="Productos"
-          title="Deja atras las planillas y archivos compartidos con nuestras soluciones integrales"
+          title="Dejá atrás las planillas y archivos compartidos con nuestras soluciones integrales"
           centered
           emphasize
           icon

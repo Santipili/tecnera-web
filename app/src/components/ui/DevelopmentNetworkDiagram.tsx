@@ -1,7 +1,7 @@
 const inputLabels = [
   "Planillas sueltas",
   "Procesos manuales",
-  "Sistemas que no se hablan",
+  "Sistemas que no se conectan",
   "Información duplicada",
   "Tareas repetitivas",
 ];

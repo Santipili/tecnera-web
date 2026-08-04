@@ -38,17 +38,17 @@ const customizationCards = [
   {
     icon: Layers,
     title: "Nuestros planes",
-    desc: "Elegí entre nuestros distintos planes, cada uno abarca diferentes tipos y volumenes de trabajo, cada funcionalidades pensada para el tamaño de tu operación.",
+    desc: "Elegí entre nuestros distintos planes. Cada uno abarca diferentes tipos y volúmenes de trabajo, cada funcionalidad esta pensada para el tamaño de tu operación.",
   },
   {
     icon: SlidersHorizontal,
     title: "Planes a medida",
-    desc: "Partí de un plan existente y sumale los módulos extra que necesites. No todo tiene que ser rígido, resolver problemas requiere flexibilidad.",
+    desc: "Partí de un plan existente y sumále los módulos extra que necesites. No todo tiene que ser rígido, resolver problemas requiere flexibilidad.",
   },
   {
     icon: Puzzle,
     title: "Módulos customizados",
-    desc: "Si tu operación tiene una necesidad puntual y no está en nuestro catálogo, podemos customizar un módulo existente o crear desde cero uno que se adapte a tus necesidades, la herramienta adecuada para la tarea que toque.",
+    desc: "Si tu operación tiene una necesidad puntual y no está en nuestro catálogo, podemos personalizar un módulo existente o crear desde cero uno que se adapte a tus necesidades, la herramienta adecuada para la tarea que toque.",
   },
   {
     icon: LifeBuoy,
@@ -73,7 +73,7 @@ const relevantAreas: {
       "Acompañamiento durante todo el proceso de migración",
       "Actualización de datos de manera masiva",
     ],
-    image: withBasePath("/products/ODAL/imagenes-app/data-import.png"),
+    image: withBasePath("/images/odal/card-1.png"),
   },
   {
     icon: ShieldCheck,
@@ -84,18 +84,18 @@ const relevantAreas: {
       "Roles configurables por equipo o función",
       "Control total sobre la información sensible de la empresa",
     ],
-    image: withBasePath("/products/ODAL/imagenes-app/permits.png"),
+    image: withBasePath("/images/odal/card-2.png"),
   },
   {
     icon: BarChart3,
     title: "Reportes y analítica",
     bullets: [
       "Indicadores del estado de tu operación en tiempo real",
-      "Análisis detallado de todas las areas de tu negocio para tomar decisones claras",
-      "Informes complejos segmentados en pasos para lograr la granularidad en el analisis que necesites",
+      "Análisis detallado de todas las áreas de tu negocio para tomar decisones claras",
+      "Informes complejos segmentados en pasos para lograr la granularidad en el análisis que necesites",
       "Exportá la información que necesites cuando la necesites",
     ],
-    image: withBasePath("/products/ODAL/imagenes-app/reports.png"),
+    image: withBasePath("/images/odal/card-3.png"),
   },
 ];
 
@@ -114,7 +114,7 @@ interface PricingPlan {
 
 const pricingPlans: PricingPlan[] = [
   {
-    name: "Basico",
+    name: "Básico",
     features: [
       { label: "Reclamos y órdenes de trabajo" },
       { label: "Clientes, proveedores y presupuestos" },
@@ -131,7 +131,7 @@ const pricingPlans: PricingPlan[] = [
   {
     name: "Avanzado",
     features: [
-      { label: "Todo lo del plan Basico" },
+      { label: "Todo lo del plan Básico" },
       { label: "Gestión de inventario y stock" },
       { label: "Depósitos, movimientos y transferencias" },
       { label: "Monitoreo de actividad en plataforma" },
@@ -147,7 +147,7 @@ const pricingPlans: PricingPlan[] = [
   {
     name: "Personalizado",
     features: [
-      { label: "Plan Basico o Avanzado como base" },
+      { label: "Plan Básico o Avanzado como base" },
       { label: "Adaptación de módulos existentes a la medida de tus necesidades" },
       { label: "Creación de módulos específicos para tus necesidades" },
       { label: "Pensado para necesidades puntuales y procesos complejos" },
@@ -170,12 +170,12 @@ export default function OdalPage() {
       <Header />
       <main>
         {/* Hero */}
-        <section className="relative overflow-hidden py-3">
+        <section className="relative overflow-hidden pt-10 pb-3 tablet:pt-16 laptop:pt-24">
           <div className="relative z-10 max-w-[90rem] mx-auto px-4 tablet:px-6 laptop:px-6">
             <div className="grid gap-6 tablet:gap-8 laptop:grid-cols-[minmax(0,0.9fr)_minmax(0,1.6fr)] laptop:gap-12 items-center">
               {/* Logo */}
-              <div className="flex justify-center laptop:justify-start translate-y-2">
-                <div className="relative flex-shrink-0 w-[12rem] h-[13.5rem] tablet:w-[16rem] tablet:h-[18rem] laptop:w-[23rem] laptop:h-[26rem]">
+              <div className="flex justify-center laptop:justify-start translate-y-2 laptop:translate-x-[3.375rem]">
+                <div className="relative flex-shrink-0 w-[6.6rem] h-[6rem] tablet:w-[9.4rem] tablet:h-[8.5rem] laptop:w-[13.2rem] laptop:h-[12rem]">
                   <Image
                     src={product.logo}
                     alt={product.title}
@@ -283,36 +283,25 @@ export default function OdalPage() {
               titleSizeClass="text-3xl tablet:text-4xl laptop:text-5xl"
               descriptionSizeClass="text-lg tablet:text-xl"
             />
-            <div className="flex flex-col gap-16">
-              {relevantAreas.map(({ title, bullets, image }, i) => {
-                const screenshot = (
-                  <div className="relative w-full laptop:flex-[2.6] laptop:w-auto laptop:min-w-[34rem] aspect-[1825/888] rounded-xl overflow-hidden border border-neutral-100 shadow-sm">
-                    <Image src={image} alt={title} fill className="object-cover" />
+            <div className="grid grid-cols-1 laptop:grid-cols-3 gap-8 items-stretch">
+              {relevantAreas.map(({ title, bullets, image }, i) => (
+                <div key={i} className="w-full h-full bg-white rounded-2xl p-9 shadow-sm flex flex-col justify-start">
+                  <h3 className="text-lg tablet:text-xl font-bold text-neutral mb-6">{title}</h3>
+                  <ul className="space-y-4">
+                    {bullets.map((bullet, j) => (
+                      <li key={j} className="flex items-start gap-3 text-neutral text-sm font-medium leading-relaxed">
+                        <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                        {bullet}
+                      </li>
+                    ))}
+                  </ul>
+                  <div className="mt-auto pt-8">
+                    <div className="relative w-full aspect-[1586/992] rounded-xl bg-light overflow-hidden">
+                      <Image src={image} alt={title} fill className="object-contain" />
+                    </div>
                   </div>
-                );
-                const card = (
-                  <div className="w-full laptop:flex-1 laptop:w-auto laptop:max-w-[20rem] bg-white rounded-2xl p-9 shadow-sm flex flex-col justify-start">
-                    <h3 className="text-lg tablet:text-xl font-bold text-neutral mb-6">{title}</h3>
-                    <ul className="space-y-4">
-                      {bullets.map((bullet, j) => (
-                        <li key={j} className="flex items-start gap-3 text-neutral text-sm font-medium leading-relaxed">
-                          <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                          {bullet}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                );
-                return (
-                  <div
-                    key={i}
-                    className={`flex flex-col laptop:flex-row gap-8 laptop:gap-14 items-center ${i === 1 ? "laptop:flex-row-reverse" : ""}`}
-                  >
-                    {screenshot}
-                    {card}
-                  </div>
-                );
-              })}
+                </div>
+              ))}
             </div>
           </div>
         </section>

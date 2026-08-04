@@ -26,12 +26,12 @@ export const services: Service[] = [
   {
     icon: LayoutDashboard,
     title: "Software a medida",
-    description: "Sistemas en donde tus operaciones y procesos reales se unifican en una unica plataforma digital",
+    description: "Sistemas en donde tus operaciones y procesos reales se unifican en una única plataforma digital",
     bullets: [
       "Diseño adaptado a tus procesos, no al revés",
-      "Plataformas multi-dispositivo para lograr un mayor nivel de integracion con tu trabajo",
-      "Integraciones con servicios externos",
-      "Escalabiliad, nuestros soluciones siempre se plantean para que crezcan a la par de tu negocio",
+      "Plataformas multi-dispositivo para lograr un mayor nivel de integración con tu trabajo",
+      "Conexión con servicios externos",
+      "Escalabiliad, nuestras soluciones siempre se plantean para que crezcan a la par de tu negocio",
     ],
     accent: "primary",
     image: withBasePath("/images/services/service-1.png"),
@@ -52,12 +52,12 @@ export const services: Service[] = [
   {
     icon: RefreshCw,
     title: "Modernización de sistemas",
-    description: "Contamos con soluciones prediseñadas para la migracion de sistemas anitguos o la digitalizacion de tu negocio",
+    description: "Contamos con soluciones prediseñadas para la migración de sistemas antiguos o la digitalización de tu negocio",
     bullets: [
       "Plataformas con módulos preconstruidos para que se adapten a tus necesidades",
-      "Migración de informacion desde sistemas viejos o multiples archivos sueltos",
+      "Migración de información desde sistemas viejos o múltiples archivos sueltos",
       "Consolidación de información dispersa en un solo lugar",
-      "Soluciones digitales de bajo costo para tu oprganización",
+      "Soluciones digitales de bajo costo para tu organización",
     ],
     accent: "amber",
     image: withBasePath("/images/services/service-3.png"),
@@ -70,7 +70,7 @@ export const services: Service[] = [
       "Diagnóstico de tu operación actual",
       "Definición de prioridades tecnológicas",
       "Acompañamiento en la toma de decisiones",
-      "Sugerencias en soluciones digitales que se ajusten a tu organizacion",
+      "Sugerencias en soluciones digitales que se ajusten a tu organización",
     ],
     accent: "blue",
     image: withBasePath("/images/services/service-4.png"),
@@ -82,8 +82,8 @@ export const services: Service[] = [
     bullets: [
       "Apps nativas e híbridas para iOS y Android",
       "Misma información sincronizada con la plataforma web",
-      "Utiles para su uso en campo y en movimiento",
-      "Pensadas para dar un mejores prestaciones a los clientes de tu servicio",
+      "Útiles para su uso en campo y en movimiento",
+      "Pensadas para dar mejores prestaciones a los clientes de tu servicio",
     ],
     accent: "primary",
     image: withBasePath("/images/services/service-5.png"),
@@ -91,7 +91,7 @@ export const services: Service[] = [
   {
     icon: BarChart3,
     title: "Dashboards y analítica",
-    description: "Plataformas de analisis de datos, generá reportes automáticos y tomá decisiones basadas en datos reales.",
+    description: "Plataformas de análisis de datos: generá reportes automáticos y tomá decisiones basadas en datos reales.",
     bullets: [
       "Métricas clave visibles en tiempo real",
       "Reportes automáticos, sin planillas manuales",
@@ -104,7 +104,7 @@ export const services: Service[] = [
   {
     icon: Sparkles,
     title: "Soluciones con IA",
-    description: "Desarrollos con la inteligencia artificial como eje, liberar horas humanas de tareas repetitivas para hacer crecer tu negocio ",
+    description: "Desarrollos con la inteligencia artificial como eje, liberá horas humanas de tareas repetitivas para hacer crecer tu negocio ",
     bullets: [
       "Automatización de tareas manuales complejas",
       "Agentes integrados con herramientas específicas para tu negocio",

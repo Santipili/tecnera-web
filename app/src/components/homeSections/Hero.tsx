@@ -23,16 +23,6 @@ export default function Hero() {
           El salto tecnológico que tu empresa necesita
         </motion.h1>
 
-        <motion.p
-          className="mt-8 max-w-4xl text-lg tablet:text-xl font-bold text-neutral leading-relaxed [text-shadow:0_0_14px_rgba(249,250,248,1),0_0_8px_rgba(249,250,248,1),0_2px_4px_rgba(249,250,248,1)]"
-          initial={{ opacity: 0, y: 24 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.1, ease: "easeOut" }}
-        >
-          Dejá atrás Excel, WhatsApp y procesos manuales. Mannaz y Odal ordenan tu operación
-          desde el primer día, y si tu caso es distinto, lo construimos a medida.
-        </motion.p>
-
         <div className="mt-14 grid w-full max-w-[90rem] grid-cols-1 tablet:grid-cols-2 laptop:grid-cols-4 gap-4 text-left">
           {features.map((feature, index) => {
             const Icon = feature.icon;
