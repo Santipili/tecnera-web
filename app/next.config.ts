@@ -1,9 +1,10 @@
 import type { NextConfig } from "next";
 
-const BASE_PATH = process.env.NODE_ENV === "production" ? "/temporario" : "";
+const IS_GH_PAGES_EXPORT = process.env.GITHUB_PAGES_BUILD === "true";
+const BASE_PATH = IS_GH_PAGES_EXPORT ? "/temporario" : "";
 
 const nextConfig: NextConfig = {
-  output: "export",
+  ...(IS_GH_PAGES_EXPORT ? { output: "export" as const } : {}),
   basePath: BASE_PATH,
   env: {
     NEXT_PUBLIC_BASE_PATH: BASE_PATH,
